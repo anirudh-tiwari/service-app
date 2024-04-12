@@ -9,6 +9,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
  * Internal dependencies
  */
 import Splash from "../components/splash";
+import Home from "../pages/home";
 
 
 const Stack = createNativeStackNavigator();
@@ -23,6 +24,13 @@ const AppNavigator = () => {
       }}
       name="Splash"
       component={Splash}
+    />
+    <Stack.Screen
+      options={{
+        headerShown: false,
+      }}
+      name="Home"
+      component={Home}
     />
   </Stack.Navigator>
 </NavigationContainer>
