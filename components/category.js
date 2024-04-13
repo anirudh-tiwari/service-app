@@ -1,8 +1,10 @@
 import { View, TouchableOpacity, Text, Image, Dimensions } from "react-native";
+import * as Animatable from "react-native-animatable";
 
 const Category = ({
   item,
   marginTop = 0,
+  index,
 }) => {
 
   const screenWidth = Dimensions.get('window').width;
@@ -10,6 +12,7 @@ const Category = ({
   console.log('anicardWidth',cardWidth);
 
   return (
+    <Animatable.View animation="zoomIn" duration={1000} delay={index * 300}>
     <TouchableOpacity
       style={{
         borderRadius: 20,
@@ -27,9 +30,9 @@ const Category = ({
           source={item.image}
           style={{
             width: '100%',
-            height: 140,
+            height: 142,
             borderRadius: 20,
-            objectFit: 'fill'
+            objectFit: 'fill',
           }}
         />
 
@@ -47,6 +50,7 @@ const Category = ({
         </Text> */}
       </View>
     </TouchableOpacity>
+    </Animatable.View>
   );
 };
 
