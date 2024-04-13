@@ -1,6 +1,20 @@
+import { useEffect, useState } from "react";
 import { View, Text, Image, StyleSheet } from "react-native";
 
 const Header = () => {
+  const [time, setTime] = useState("");
+  useEffect(() => {
+    const currentTime = new Date().getHours();
+
+    if (currentTime < 12) {
+      setTime("Good morning,");
+    } else if (currentTime < 18) {
+      setTime("Good afternoon,");
+    } else {
+      setTime("Good evening,");
+    }
+  }, []);
+
   return (
     <View>
       <View
@@ -41,7 +55,7 @@ const Header = () => {
           }}
         />
       </View>
-      <Text style={styles.userName}>Good Morning,</Text>
+      <Text style={styles.userName}>{time}</Text>
       <Text style={styles.userName}>Anirudh 🙏</Text>
     </View>
   );

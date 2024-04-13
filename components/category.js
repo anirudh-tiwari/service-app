@@ -1,28 +1,33 @@
-import { View, TouchableOpacity, Text, Image } from "react-native";
+import { View, TouchableOpacity, Text, Image, Dimensions } from "react-native";
 
 const Category = ({
   item,
   marginTop = 0,
 }) => {
 
+  const screenWidth = Dimensions.get('window').width;
+  const cardWidth = (screenWidth - 32 - 16) / 2;
+  console.log('anicardWidth',cardWidth);
+
   return (
     <TouchableOpacity
       style={{
         borderRadius: 20,
         elevation: 5, // ADD BOX-SHADOW
-        width: 160,
+        width: cardWidth,
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: "#fff",
-        marginBottom: 10,
+        marginTop: 0,
+        // width: cardWidth
       }}
     >
       <View style={{ width: "100%" }}>
         <Image
           source={item.image}
           style={{
-            width: "100%",
-            height: 200,
+            width: '100%',
+            height: 140,
             borderRadius: 20,
             objectFit: 'fill'
           }}

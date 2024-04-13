@@ -9,16 +9,18 @@ const Home = () => {
       <View
         style={{
           paddingHorizontal: 16,
-          paddingVertical: 32,
+          paddingVertical: 16,
           backgroundColor: "black",
+          height: '100%'
         }}
       >
        <Header />
         <View
           style={{
             flexDirection: "row",
-            gap: 10,
+            gap: 16,
             flexWrap: "wrap",
+            marginVertical: 16
           }}
         >
           <Category
@@ -42,31 +44,25 @@ const Home = () => {
           <Category
             item={{
               name: "ann",
-              image: require("../assets/curroption.png"),
+              image: require("../assets/education.png"),
             }}
           />
           <Category
             item={{
               name: "ann",
-              image: require("../assets/family.png"),
+              image: require("../assets/food.png"),
             }}
           />
           <Category
             item={{
               name: "ann",
-              image: require("../assets/curroption.png"),
+              image: require("../assets/enjoyment.png"),
             }}
           />
           <Category
             item={{
               name: "ann",
-              image: require("../assets/family.png"),
-            }}
-          />
-          <Category
-            item={{
-              name: "ann",
-              image: require("../assets/curroption.png"),
+              image: require("../assets/problem.png"),
             }}
           />
         </View>
