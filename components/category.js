@@ -22,14 +22,13 @@ const Category = ({
           source={item.image}
           style={{
             width: "100%",
-            height: 120,
-            borderTopLeftRadius: 20,
-            borderTopRightRadius: 20,
-            objectFit: 'scale-down'
+            height: 200,
+            borderRadius: 20,
+            objectFit: 'fill'
           }}
         />
 
-        <Text
+        {/* <Text
           style={{
             marginTop: 10,
             fontSize: 18,
@@ -40,7 +39,7 @@ const Category = ({
           }}
         >
           {item.name}
-        </Text>
+        </Text> */}
       </View>
     </TouchableOpacity>
   );
