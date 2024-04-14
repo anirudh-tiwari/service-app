@@ -1,19 +1,21 @@
 import { View, TouchableOpacity, Text, Image, Dimensions } from "react-native";
 import * as Animatable from "react-native-animatable";
+import { useNavigation } from "@react-navigation/native";
 
 const Category = ({
   item,
-  marginTop = 0,
   index,
+  navigate,
 }) => {
 
   const screenWidth = Dimensions.get('window').width;
   const cardWidth = (screenWidth - 32 - 16) / 2;
-  console.log('anicardWidth',cardWidth);
+  navigation = useNavigation();
 
   return (
     <Animatable.View animation="zoomIn" duration={1000} delay={index * 300}>
     <TouchableOpacity
+      onPress={()=> navigation.navigate( navigate )}
       style={{
         borderRadius: 20,
         elevation: 5, // ADD BOX-SHADOW

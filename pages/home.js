@@ -55,6 +55,7 @@ const Home = () => {
             image: require("../assets/food.png"),
             index: 4,
           }}
+          navigate={'Food'}
         />
         <Category
           item={{
