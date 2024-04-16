@@ -4,7 +4,6 @@ import Carousel from '../components/carousel';
 const Food = () => {
   return (
     <View style={ styles.foodWrap }>
-      <Text>Food</Text>
       <Carousel />
     </View>
   )

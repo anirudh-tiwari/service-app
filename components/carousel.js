@@ -1,138 +1,133 @@
-import { FlatList, Image, View, Dimensions } from "react-native";
-import React, { useEffect, useRef, useState } from "react";
+const data = [
+  {
+    image: require("../assets/eatingHealthy.png"),
+    heading: 'Healthy Kitchen',
+    text: "Enjoy healthier versions of your favorite meals without sacrificing taste.",
+  },
+  {
+    image: require("../assets/liveFood.png"),
+    heading: 'Live Webcam',
+    text: "Second Image",
+  },
+  {
+    image: require("../assets/customizeFood.png"),
+    heading: 'Customize Meals',
+    text: "Second Image",
+  },
+  {
+    image: require("../assets/fixEating.png"),
+    heading: 'Fix Problem',
+    text: "Second Image",
+  },
+];
+
+import React, { useState, useRef } from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  Dimensions,
+  Image,
+} from "react-native";
 
 const Carousel = () => {
-  const flatlistRef = useRef();
-  // Get Dimesnions
-  const screenWidth = Dimensions.get("window").width;
   const [activeIndex, setActiveIndex] = useState(0);
+  const scrollViewRef = useRef(null);
 
-  // Auto Scroll
-
-  useEffect(() => {
-    let interval = setInterval(() => {
-      if (activeIndex === carouselData.length - 1) {
-        flatlistRef.current.scrollToIndex({
-          index: 0,
-          animation: true,
-        });
-      } else {
-        flatlistRef.current.scrollToIndex({
-          index: activeIndex + 1,
-          animation: true,
-        });
-      }
-    }, 2000);
-
-    return () => clearInterval(interval);
-  });
-
-  const getItemLayout = (data, index) => ({
-    length: screenWidth,
-    offset: screenWidth * index, // for first image - 300 * 0 = 0pixels, 300 * 1 = 300, 300*2 = 600
-    index: index,
-  });
-  // Data for carousel
-  const carouselData = [
-    {
-      id: "01",
-      image: require("../assets/food.png"),
-    },
-    {
-      id: "02",
-      image: require("../assets/family.png"),
-    },
-    {
-      id: "03",
-      image: require("../assets/problem.png"),
-    },
-  ];
-
-  //  Display Images // UI
-  const renderItem = ({ item, index }) => {
-    return (
-      <View>
-        <Image
-          source={item.image}
-          style={{ height: 200, width: screenWidth }}
-        />
-      </View>
-    );
-  };
-
-  // Handle Scroll
   const handleScroll = (event) => {
-    // Get the scroll position
-    const scrollPosition = event.nativeEvent.contentOffset.x;
-    console.log({ scrollPosition });
-    // Get the index of current active item
-
-    const index = scrollPosition / screenWidth;
-
-    console.log({ index });
-    // Update the index
-
-    setActiveIndex(index);
-  };
-
-  // Render Dot Indicators
-  const renderDotIndicators = () => {
-    return carouselData.map((dot, index) => {
-      // if the active index === index
-
-      if (activeIndex === index) {
-        return (
-          <View
-            style={{
-              backgroundColor: "green",
-              height: 10,
-              width: 10,
-              borderRadius: 5,
-              marginHorizontal: 6,
-            }}
-          ></View>
-        );
-      } else {
-        return (
-          <View
-            key={index}
-            style={{
-              backgroundColor: "red",
-              height: 10,
-              width: 10,
-              borderRadius: 5,
-              marginHorizontal: 6,
-            }}
-          ></View>
-        );
-      }
-    });
+    const slideSize = event.nativeEvent.layoutMeasurement.width;
+    const index = event.nativeEvent.contentOffset.x / slideSize;
+    setActiveIndex(Math.round(index));
   };
 
   return (
-    <View>
-      <FlatList
-        data={carouselData}
-        ref={flatlistRef}
-        getItemLayout={getItemLayout}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.id}
-        horizontal={true}
-        pagingEnabled={true}
+    <View style={styles.container}>
+      <ScrollView
+        ref={scrollViewRef}
+        horizontal
+        pagingEnabled
+        showsHorizontalScrollIndicator={false}
         onScroll={handleScroll}
-      />
-
-      <View
-        style={{
-          flexDirection: "row",
-          justifyContent: "center",
-          marginTop: 30,
-        }}
+        style={styles.scrollView}
       >
-        {renderDotIndicators()}
+        {data.map((item, index) => (
+          <View key={index} style={styles.slide}>
+            <Image
+              source={item.image}
+              style={styles.image}
+              resizeMode="cover"
+            />
+            <Text style={styles.heading}>{item.heading}</Text>
+            <Text style={styles.text}>{item.text}</Text>
+          </View>
+        ))}
+      </ScrollView>
+      <View style={styles.pagination}>
+        {data.map((_, index) => (
+          <Text
+            key={index}
+            style={[
+              styles.paginationDot,
+              index === activeIndex && styles.activeDot,
+            ]}
+          >
+            ⬤
+          </Text>
+        ))}
       </View>
     </View>
   );
 };
+
+const { width } = Dimensions.get("window");
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  scrollView: {
+    width,
+  },
+  slide: {
+    flex: 1,
+    width,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  image: {
+    width: "100%",
+    height: 200, // Adjust as needed
+    objectFit: 'cover',
+  },
+  heading:{
+    fontSize: 32,
+    marginTop: 20,
+    alignSelf: 'center',
+    fontWeight: '500',
+    color: 'black',
+  },
+  text: {
+    fontSize: 16,
+    alignSelf: 'center',
+    color: '#676767',
+    width: '85%',
+    textAlign: 'center',
+  },
+  pagination: {
+    flexDirection: "row",
+    position: "absolute",
+    bottom: 20,
+  },
+  paginationDot: {
+    margin: 3,
+    fontSize: 18,
+    color: "#888",
+  },
+  activeDot: {
+    color: "black",
+  },
+});
 
 export default Carousel;
