@@ -14,7 +14,7 @@ const Splash = () => {
     <View
       style={{
         flex: 1,
-        backgroundColor: "white",
+        backgroundColor: "#EFD8D1",
         justifyContent: "center",
         alignItems: "center",
       }}
