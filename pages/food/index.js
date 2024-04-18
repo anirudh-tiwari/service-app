@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet } from 'react-native'
-import Carousel from '../components/carousel';
+import Carousel from '../../components/carousel';
 
 const Food = () => {
   return (
