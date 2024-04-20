@@ -11,7 +11,7 @@ const Header = () => {
       >
         <View>
           <Text style={styles.header}>Hello, Anirudh 🙏</Text>
-          <Text style={styles.description}>What you want eat today?</Text>
+          <Text style={styles.description}>Looking for healthy options?</Text>
         </View>
         <Image
           source={require("../../assets/profilePic.png")}

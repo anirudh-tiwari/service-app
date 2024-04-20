@@ -38,9 +38,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     marginBottom: 10,
     backgroundColor: 'gray',
-    height: 48,
+    height: 44,
     borderRadius: 24,
     marginTop: 18,
+    width: '100%'
   },
   icon: {
     marginRight: 10,
