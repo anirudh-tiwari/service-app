@@ -9,7 +9,7 @@ const Category = ({
 }) => {
 
   const screenWidth = Dimensions.get('window').width;
-  const cardWidth = (screenWidth - 32 - 16) / 2;
+  const cardWidth = (screenWidth - 32 - 16) / 2;   // 16 for gap | 32 for left padding
   navigation = useNavigation();
 
   return (
