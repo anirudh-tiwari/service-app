@@ -28,6 +28,13 @@ export const cardData = [
     image: require("../../assets/burger4.jpeg"),
   },
   {
+    name: "Mango Shake",
+    desc: "with mint",
+    price: 450,
+    tag: "drinks",
+    image: require("../../assets/drink.jpeg"),
+  },
+  {
     name: "Ice-cream",
     desc: "with mango",
     price: 180,
@@ -49,6 +56,13 @@ export const cardData = [
     image: require("../../assets/burger2.jpeg"),
   },
   {
+    name: "Strawberry",
+    desc: "with mint",
+    price: 450,
+    tag: "drinks",
+    image: require("../../assets/drink2.jpeg"),
+  },
+  {
     name: "Gajar Halwa",
     desc: "with cheese",
     price: 520,
@@ -68,6 +82,13 @@ export const cardData = [
     price: 80,
     tag: "sweets",
     image: require("../../assets/sweet2.jpeg"),
+  },
+  {
+    name: "Strawberry",
+    desc: "with mint",
+    price: 450,
+    tag: "drinks",
+    image: require("../../assets/drink3.jpeg"),
   },
   {
     name: "Rasgulla",
@@ -151,6 +172,11 @@ export const cardData = [
 
 export const tagsData = [
   {
+    name: "All Menu",
+    key: "all",
+    icon: require("../../assets/fastFood.png"),
+  },
+  {
     name: "Pizza",
     key: "pizza",
     icon: require("../../assets/pizza.png"),
@@ -161,23 +187,18 @@ export const tagsData = [
     icon: require("../../assets/burger.png"),
   },
   {
+    name: "Drinks",
+    key: "drinks",
+    icon: require("../../assets/soda.png"),
+  },
+  {
     name: "Sweets",
     key: "sweets",
-    icon: require("../../assets/soda.png"),
+    icon: require("../../assets/sweet.png"),
   },
   {
     name: "Ice-cream",
     key: "cream",
-    icon: require("../../assets/pizza.png"),
-  },
-  {
-    name: "Burger",
-    key: "burger2",
-    icon: require("../../assets/burger.png"),
-  },
-  {
-    name: "Drinks",
-    key: "drinks2",
-    icon: require("../../assets/soda.png"),
+    icon: require("../../assets/cream.png"),
   },
 ];

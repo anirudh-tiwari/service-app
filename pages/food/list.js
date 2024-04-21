@@ -14,22 +14,26 @@ import Cards from "./cards";
 import { cardData, tagsData } from "./utils";
 
 const FoodList = () => {
-  const [activeTag, setActiveTag] = useState("");
+  const [activeTag, setActiveTag] = useState("all");
   const [pizzaList, setPizzaList] = useState([]);
   const [creamList, setCreamList] = useState([]);
   const [sweetsList, setSweetsList] = useState([]);
   const [burgerList, setBurgerList] = useState([]);
+  const [drinksList, setDrinksList] = useState([]);
 
   useEffect(() => {
     const pizzaData = cardData.filter((data) => data.tag === "pizza");
     const creamData = cardData.filter((data) => data.tag === "cream");
     const sweetsData = cardData.filter((data) => data.tag === "sweets");
     const burgerData = cardData.filter((data) => data.tag === "burger");
+    const drinksData = cardData.filter((data) => data.tag === "drinks");
+
 
     setPizzaList(pizzaData);
     setCreamList(creamData);
     setSweetsList(sweetsData);
     setBurgerList(burgerData);
+    setDrinksList(drinksData);
   }, []);
 
   const handleData = () => {
@@ -41,6 +45,8 @@ const FoodList = () => {
       return sweetsList;
     } else if (activeTag === "burger") {
       return burgerList;
+    } else if (activeTag === "drinks") {
+      return drinksList;
     }
     return cardData;
   };
@@ -66,7 +72,7 @@ const FoodList = () => {
               <TouchableOpacity
                 style={{
                   height: 36,
-                  width: 88,
+                  // width: 88,
                   borderRadius: 20,
                   borderWidth: 1,
                   // justifyContent: "center",
@@ -77,6 +83,7 @@ const FoodList = () => {
                   flexDirection: "row",
                   gap: 3,
                   padding: 3,
+                  paddingRight: 8
                 }}
                 onPress={() => setActiveTag(item.key)}
               >
