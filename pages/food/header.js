@@ -11,7 +11,9 @@ const Header = () => {
       >
         <View style={styles.container1}>
           <Text style={styles.header}>Hello, Anirudh 🙏</Text>
-          <Text style={styles.description}>Looking for healthy options?</Text>
+          <Text style={styles.description}>Looking for 
+          <Text style={{ fontWeight: '700' }}> healthy options?</Text>
+          </Text>
         </View>
         <View style={styles.container2}>
         <Image

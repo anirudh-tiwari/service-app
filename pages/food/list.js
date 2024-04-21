@@ -9,11 +9,42 @@ import {
 import Header from "./header";
 import SearchComponent from "../../components/Search";
 import FilterIcon from "../../components/filter";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Cards from "./cards";
+import { cardData, tagsData } from "./utils";
 
 const FoodList = () => {
-  const [activeTag, setActiveTag] = useState("pizza");
+  const [activeTag, setActiveTag] = useState("");
+  const [pizzaList, setPizzaList] = useState([]);
+  const [creamList, setCreamList] = useState([]);
+  const [sweetsList, setSweetsList] = useState([]);
+  const [burgerList, setBurgerList] = useState([]);
+
+  useEffect(() => {
+    const pizzaData = cardData.filter((data) => data.tag === "pizza");
+    const creamData = cardData.filter((data) => data.tag === "cream");
+    const sweetsData = cardData.filter((data) => data.tag === "sweets");
+    const burgerData = cardData.filter((data) => data.tag === "burger");
+
+    setPizzaList(pizzaData);
+    setCreamList(creamData);
+    setSweetsList(sweetsData);
+    setBurgerList(burgerData);
+  }, []);
+
+  const handleData = () => {
+    if (activeTag === "pizza") {
+      return pizzaList;
+    } else if (activeTag === "cream") {
+      return creamList;
+    } else if (activeTag === "sweets") {
+      return sweetsList;
+    } else if (activeTag === "burger") {
+      return burgerList;
+    }
+    return cardData;
+  };
+
   return (
     <View style={styles.wrapper}>
       <Header />
@@ -75,7 +106,7 @@ const FoodList = () => {
         />
       </View>
       <FlatList
-        data={cardData}
+        data={handleData()}
         contentContainerStyle={{
           flexDirection: "row",
           flexWrap: "wrap",
@@ -111,74 +142,3 @@ const styles = StyleSheet.create({
     flex: 1, // Takes up 20% of the container width
   },
 });
-
-const tagsData = [
-  {
-    name: "Pizza",
-    key: "pizza",
-    icon: require("../../assets/pizza.png"),
-  },
-  {
-    name: "Burger",
-    key: "burger",
-    icon: require("../../assets/burger.png"),
-  },
-  {
-    name: "Drinks",
-    key: "drinks",
-    icon: require("../../assets/soda.png"),
-  },
-  {
-    name: "Pizza",
-    key: "pizza2",
-    icon: require("../../assets/pizza.png"),
-  },
-  {
-    name: "Burger",
-    key: "burger2",
-    icon: require("../../assets/burger.png"),
-  },
-  {
-    name: "Drinks",
-    key: "drinks2",
-    icon: require("../../assets/soda.png"),
-  },
-];
-
-const cardData = [
-  {
-    name: "Tshirt 1",
-    desc: "with cheese",
-    price: 300,
-    gender: "male",
-    image: require("../../assets/burger.jpeg"),
-  },
-  {
-    name: "t-shirt 2",
-    desc: "with cheese",
-    price: 349,
-    gender: "male",
-    image: require("../../assets/burger2.jpeg"),
-  },
-  {
-    name: "t-shirt 3",
-    desc: "with cheese",
-    price: 200,
-    gender: "male",
-    image: require("../../assets/burger3.jpeg"),
-  },
-  {
-    name: "t-shirt 4",
-    desc: "with cheese",
-    price: 299,
-    gender: "male",
-    image: require("../../assets/burger4.jpeg"),
-  },
-  {
-    name: "t-shirt 5",
-    desc: "with cheese",
-    price: 399,
-    gender: "male",
-    image: require("../../assets/burger5.jpeg"),
-  },
-];
