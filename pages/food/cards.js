@@ -22,6 +22,7 @@ const Cards = ({
       style={{
         borderRadius: 20,
         width: cardWidth,
+        marginRight: 14,
         // justifyContent: "center",
         // alignItems: "center",
         marginTop: marginTop,

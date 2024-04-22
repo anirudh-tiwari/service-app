@@ -113,11 +113,14 @@ const FoodList = () => {
         />
       </View>
       <FlatList
+        showsVerticalScrollIndicator={ false }
         data={handleData()}
+        numColumns={2}
         contentContainerStyle={{
-          flexDirection: "row",
-          flexWrap: "wrap",
-          columnGap: 16,
+          flexDirection: 'column',
+          justifyContent: "space-between",
+          // flexWrap: "wrap",
+          // columnGap: 16,
         }}
         renderItem={({ item, index }) => {
           return <Cards item={item} />;
