@@ -12,6 +12,7 @@ import Splash from "../components/splash";
 import Home from "../pages/home";
 import Food from "../pages/food";
 import FoodList from '../pages/food/list';
+import SingleMenu from '../pages/food/single';
 
 const Stack = createNativeStackNavigator();
 
@@ -47,6 +48,13 @@ const AppNavigator = () => {
           }}
           name="FoodList"
           component={FoodList}
+        />
+         <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="SingleMenu"
+          component={SingleMenu}
         />
       </Stack.Navigator>
     </NavigationContainer>

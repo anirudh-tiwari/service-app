@@ -1,5 +1,6 @@
 import { View, TouchableOpacity, Text, Image, Dimensions } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const Cards = ({
   item,
@@ -15,7 +16,7 @@ const Cards = ({
   const screenWidth = Dimensions.get("window").width;
   const cardWidth = (screenWidth - 16 - 32) / 2;
 
-  console.log("anicardWidth", screenWidth, cardWidth);
+  navigation = useNavigation();
 
   return (
     <TouchableOpacity
@@ -29,6 +30,7 @@ const Cards = ({
         backgroundColor: "#252A32",
         marginTop: 18,
       }}
+      onPress={()=> navigation.navigate("SingleMenu", { item: item })}
     >
       <View style={{ width: "100%", padding: 10 }}>
         <Image
