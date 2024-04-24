@@ -29,7 +29,7 @@ const Single = () => {
         />
         <TouchableOpacity
           style={[styles.navigation, { left: 24 }]}
-          onPress={() => navigation.navigate( "FoodList" )}
+          onPress={() => navigation.navigate("FoodList")}
         >
           <Ionicons name="chevron-back-outline" size={24} color="white" />
         </TouchableOpacity>
@@ -67,17 +67,38 @@ const Single = () => {
               <Text style={styles.ratingUser}>(6,879)</Text>
             </View>
           </View>
-          <View style={[styles.bannerContainer, { alignItems: "center" }]}>
-            <View style={{backgroundColor:"#141921", height:56, width:56, borderRadius:10, alignItems:"center" }}>
-            <Image
-            source={ require("../../assets/sugar.png") }
-            style={{
-              width: 30,
-              height: 30,
-              tintColor: "#D17842",
-            }}
-          />
-          </View>
+          <View
+            style={[
+              styles.bannerContainer,
+              { flexDirection: "row", gap: 16, justifyContent: "flex-end" },
+            ]}
+          >
+            <View
+              style={styles.tags}
+            >
+              <Image
+                source={require("../../assets/sugar.png")}
+                style={{
+                  width: 30,
+                  height: 30,
+                  tintColor: "#D17842",
+                }}
+              />
+              <Text style={{ color: "white" }}>Sugar</Text>
+            </View>
+            <View
+              style={styles.tags}
+            >
+              <Image
+                source={require("../../assets/maida.png")}
+                style={{
+                  width: 30,
+                  height: 30,
+                  tintColor: "#D17842",
+                }}
+              />
+              <Text style={{ color: "white" }}>Maida</Text>
+            </View>
           </View>
         </View>
       </View>
@@ -92,7 +113,8 @@ const Single = () => {
             marginTop: 2,
           }}
         >
-          Whole Wheat Flour, Besan, Turmeric Powder, Ghee, Oil, Whole Wheat Flour, Besan, Turmeric Powder, Ghee, Oil,
+          Whole Wheat Flour, Besan, Turmeric Powder, Ghee, Oil, Whole Wheat
+          Flour, Besan, Turmeric Powder, Ghee, Oil,
         </Text>
         <Text style={[styles.heading, { marginTop: 18 }]}>Customize</Text>
         <View style={styles.container}>
@@ -240,6 +262,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     lineHeight: 20,
     fontWeight: "600",
+    marginTop: 10
   },
   description: {
     color: "#AEAEAE",
@@ -273,5 +296,13 @@ const styles = StyleSheet.create({
     height: 30,
     position: "absolute",
     top: 24,
+  },
+  tags: {
+    backgroundColor: "#141921",
+    height: 56,
+    width: 56,
+    borderRadius: 10,
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
