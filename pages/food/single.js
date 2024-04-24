@@ -7,14 +7,27 @@ import {
   Button,
 } from "react-native";
 import { useRoute } from "@react-navigation/native";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
 
 const Single = () => {
   const category = useRoute();
-  const [activeBtn, setActiveBtn] = useState(0);
   const [favourite, setFavourite] = useState(false);
-  const { name, image, price } = category?.params?.item;
+  const [ingredientsList, setIngredientsList] = useState([]);
+  const { name, image, price, ingredients } = category?.params?.item;
+
+  useEffect(() => {
+    setIngredientsList(ingredients);
+  }, [ingredients]);
+
+  const customizeHandle = (data) => {
+    if (ingredientsList.includes(data)) {
+      const updatedList = ingredientsList.filter((list) => list !== data);
+      setIngredientsList(updatedList);
+    } else {
+      setIngredientsList([...ingredientsList, data]);
+    }
+  };
 
   return (
     <View style={{ width: "100%", flex: 1, backgroundColor: "black" }}>
@@ -73,9 +86,7 @@ const Single = () => {
               { flexDirection: "row", gap: 16, justifyContent: "flex-end" },
             ]}
           >
-            <View
-              style={styles.tags}
-            >
+            <View style={styles.tags}>
               <Image
                 source={require("../../assets/sugar.png")}
                 style={{
@@ -84,11 +95,9 @@ const Single = () => {
                   tintColor: "#D17842",
                 }}
               />
-              <Text style={{ color: "white" }}>Sugar</Text>
+              <Text style={{ color: "#AEAEAE" }}>Sugar</Text>
             </View>
-            <View
-              style={styles.tags}
-            >
+            <View style={styles.tags}>
               <Image
                 source={require("../../assets/maida.png")}
                 style={{
@@ -97,7 +106,7 @@ const Single = () => {
                   tintColor: "#D17842",
                 }}
               />
-              <Text style={{ color: "white" }}>Maida</Text>
+              <Text style={{ color: "#AEAEAE" }}>Maida</Text>
             </View>
           </View>
         </View>
@@ -113,19 +122,18 @@ const Single = () => {
             marginTop: 2,
           }}
         >
-          Whole Wheat Flour, Besan, Turmeric Powder, Ghee, Oil, Whole Wheat
-          Flour, Besan, Turmeric Powder, Ghee, Oil,
+          {ingredientsList.join(", ")}
         </Text>
         <Text style={[styles.heading, { marginTop: 18 }]}>Customize</Text>
-        <View style={styles.container}>
+        <View style={[styles.container, { marginTop: 6 }]}>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => setActiveBtn(0)}
+            onPress={() => customizeHandle("Onion")}
           >
             <Text
               style={[
                 styles.buttonText,
-                activeBtn === 0 ? { color: "#F37B2D" } : {},
+                ingredientsList.includes('Onion') ? { color: "#F37B2D" } : {},
               ]}
             >
               Onion
@@ -133,12 +141,12 @@ const Single = () => {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => setActiveBtn(1)}
+            onPress={() => customizeHandle("Garlic")}
           >
             <Text
               style={[
                 styles.buttonText,
-                activeBtn === 1 ? { color: "#F37B2D" } : {},
+                ingredientsList.includes('Garlic') ? { color: "#F37B2D" } : {},
               ]}
             >
               Garlic
@@ -146,12 +154,12 @@ const Single = () => {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => setActiveBtn(2)}
+            onPress={() => customizeHandle("Carrot")}
           >
             <Text
               style={[
                 styles.buttonText,
-                activeBtn === 2 ? { color: "#F37B2D" } : {},
+                ingredientsList.includes('Carrot') ? { color: "#F37B2D" } : {},
               ]}
             >
               Carrot
@@ -262,7 +270,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     lineHeight: 20,
     fontWeight: "600",
-    marginTop: 10
+    marginTop: 10,
   },
   description: {
     color: "#AEAEAE",

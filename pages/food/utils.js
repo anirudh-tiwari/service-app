@@ -1,3 +1,18 @@
+const ingredients = [
+  "Whole wheat buns",
+  "Tomatoes",
+  "Cucumbers",
+  "Onions",
+  "Mushrooms",
+  "Peppers",
+  "Paneer",
+  "Yogurt",
+  "Chutney",
+  "Sprouts",
+  "Spinach",
+  "Pickles",
+];
+
 export const cardData = [
   {
     name: "Pizza 1",
@@ -5,6 +20,7 @@ export const cardData = [
     price: 300,
     tag: "pizza",
     image: require("../../assets/pizza.jpeg"),
+    ingredients: ingredients,
   },
   {
     name: "Ice-cream",
@@ -12,6 +28,7 @@ export const cardData = [
     price: 530,
     tag: "cream",
     image: require("../../assets/cream3.jpeg"),
+    ingredients: ingredients,
   },
   {
     name: "Jalebi",
@@ -19,6 +36,7 @@ export const cardData = [
     price: 600,
     tag: "sweets",
     image: require("../../assets/sweet.jpeg"),
+    ingredients: ingredients,
   },
   {
     name: "Burger 1",
@@ -26,6 +44,7 @@ export const cardData = [
     price: 450,
     tag: "burger",
     image: require("../../assets/burger4.jpeg"),
+    ingredients: ingredients,
   },
   {
     name: "Mango Shake",
@@ -33,6 +52,7 @@ export const cardData = [
     price: 450,
     tag: "drinks",
     image: require("../../assets/drink.jpeg"),
+    ingredients: ingredients,
   },
   {
     name: "Ice-cream",
@@ -40,6 +60,7 @@ export const cardData = [
     price: 180,
     tag: "cream",
     image: require("../../assets/cream1.jpeg"),
+    ingredients: ingredients,
   },
   {
     name: "Pizza 2",
@@ -47,6 +68,7 @@ export const cardData = [
     price: 300,
     tag: "pizza",
     image: require("../../assets/pizza2.jpeg"),
+    ingredients: ingredients,
   },
   {
     name: "Burger 2",
@@ -54,6 +76,7 @@ export const cardData = [
     price: 349,
     tag: "burger",
     image: require("../../assets/burger2.jpeg"),
+    ingredients: ingredients,
   },
   {
     name: "Strawberry",
@@ -61,6 +84,7 @@ export const cardData = [
     price: 450,
     tag: "drinks",
     image: require("../../assets/drink2.jpeg"),
+    ingredients: ingredients,
   },
   {
     name: "Gajar Halwa",
@@ -68,6 +92,7 @@ export const cardData = [
     price: 520,
     tag: "sweets",
     image: require("../../assets/sweet7.jpeg"),
+    ingredients: ingredients,
   },
   {
     name: "Pizza 3",
@@ -75,6 +100,7 @@ export const cardData = [
     price: 550,
     tag: "pizza",
     image: require("../../assets/pizza3.jpeg"),
+    ingredients: ingredients,
   },
   {
     name: "Gulab Jamun",
@@ -82,6 +108,7 @@ export const cardData = [
     price: 80,
     tag: "sweets",
     image: require("../../assets/sweet2.jpeg"),
+    ingredients: ingredients,
   },
   {
     name: "Strawberry",
@@ -89,6 +116,7 @@ export const cardData = [
     price: 450,
     tag: "drinks",
     image: require("../../assets/drink3.jpeg"),
+    ingredients: ingredients,
   },
   {
     name: "Rasgulla",
@@ -96,6 +124,7 @@ export const cardData = [
     price: 100,
     tag: "sweets",
     image: require("../../assets/sweet3.jpeg"),
+    ingredients: ingredients,
   },
 
   {
@@ -104,6 +133,7 @@ export const cardData = [
     price: 60,
     tag: "cream",
     image: require("../../assets/cream.jpeg"),
+    ingredients: ingredients,
   },
   {
     name: "Pizza 4",
@@ -111,6 +141,7 @@ export const cardData = [
     price: 400,
     tag: "pizza",
     image: require("../../assets/pizza4.jpeg"),
+    ingredients: ingredients,
   },
   {
     name: "Burger 3",
@@ -118,6 +149,7 @@ export const cardData = [
     price: 200,
     tag: "burger",
     image: require("../../assets/burger3.jpeg"),
+    ingredients: ingredients,
   },
   {
     name: "Kaju Katli",
@@ -125,6 +157,7 @@ export const cardData = [
     price: 700,
     tag: "sweets",
     image: require("../../assets/sweet4.jpeg"),
+    ingredients: ingredients,
   },
   {
     name: "Ladoo",
@@ -132,6 +165,7 @@ export const cardData = [
     price: 250,
     tag: "sweets",
     image: require("../../assets/sweet5.jpeg"),
+    ingredients: ingredients,
   },
   {
     name: "Burger 5",
@@ -139,6 +173,7 @@ export const cardData = [
     price: 399,
     tag: "burger",
     image: require("../../assets/burger5.jpeg"),
+    ingredients: ingredients,
   },
   {
     name: "Ice-cream",
@@ -146,6 +181,7 @@ export const cardData = [
     price: 120,
     tag: "cream",
     image: require("../../assets/cream2.jpeg"),
+    ingredients: ingredients,
   },
   {
     name: "Besan Ladoo",
@@ -153,6 +189,7 @@ export const cardData = [
     price: 220,
     tag: "sweets",
     image: require("../../assets/sweet6.jpeg"),
+    ingredients: ingredients,
   },
   {
     name: "Ras Malai",
@@ -160,6 +197,7 @@ export const cardData = [
     price: 300,
     tag: "sweets",
     image: require("../../assets/sweet8.jpeg"),
+    ingredients: ingredients,
   },
   {
     name: "Burger 4",
@@ -167,6 +205,7 @@ export const cardData = [
     price: 299,
     tag: "burger",
     image: require("../../assets/burger.jpeg"),
+    ingredients: ingredients,
   },
 ];
 
