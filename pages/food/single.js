@@ -14,18 +14,24 @@ const Single = () => {
   const category = useRoute();
   const [favourite, setFavourite] = useState(false);
   const [ingredientsList, setIngredientsList] = useState([]);
+  const [customizeList, setCustomizeList] = useState(["Onion"]);
   const { name, image, price, ingredients } = category?.params?.item;
 
   useEffect(() => {
-    setIngredientsList(ingredients);
+    setIngredientsList( [...ingredients, "Onion"]);
   }, [ingredients]);
 
   const customizeHandle = (data) => {
-    if (ingredientsList.includes(data)) {
+    if (ingredientsList.includes(data) || customizeList.includes(data)) {
       const updatedList = ingredientsList.filter((list) => list !== data);
+      const updatedCustomizeList = customizeList.filter(
+        (list) => list !== data
+      );
       setIngredientsList(updatedList);
+      setCustomizeList(updatedCustomizeList);
     } else {
       setIngredientsList([...ingredientsList, data]);
+      setCustomizeList([...customizeList, data]);
     }
   };
 
@@ -113,16 +119,26 @@ const Single = () => {
       </View>
       <View style={{ paddingHorizontal: 12, paddingVertical: 16 }}>
         <Text style={styles.heading}>Ingredients</Text>
-        <Text
-          style={{
-            color: "#FFFFFF",
-            fontSize: 12,
-            lineHeight: 20,
-            fontWeight: "400",
-            marginTop: 2,
-          }}
-        >
-          {ingredientsList.join(", ")}
+        <Text style={{marginTop: 4}}>
+          {ingredientsList.map((ingredient, index) => {
+            console.log("aniani", ingredient, customizeList);
+            return (
+              <Text
+                key={index}
+                style={[
+                  styles.ingredients,
+                  {
+                    color: customizeList.includes(ingredient)
+                      ? "#D17842"
+                      : "#FFFFFF",
+                  },
+                ]}
+              >
+                {ingredient}
+                {index < ingredientsList.length - 1 ? ", " : "."}
+              </Text>
+            );
+          })}
         </Text>
         <Text style={[styles.heading, { marginTop: 18 }]}>Customize</Text>
         <View style={[styles.container, { marginTop: 6 }]}>
@@ -133,7 +149,7 @@ const Single = () => {
             <Text
               style={[
                 styles.buttonText,
-                ingredientsList.includes('Onion') ? { color: "#F37B2D" } : {},
+                ingredientsList.includes("Onion") ? { color: "#F37B2D" } : {},
               ]}
             >
               Onion
@@ -146,7 +162,7 @@ const Single = () => {
             <Text
               style={[
                 styles.buttonText,
-                ingredientsList.includes('Garlic') ? { color: "#F37B2D" } : {},
+                ingredientsList.includes("Garlic") ? { color: "#F37B2D" } : {},
               ]}
             >
               Garlic
@@ -154,15 +170,15 @@ const Single = () => {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => customizeHandle("Carrot")}
+            onPress={() => customizeHandle("Yogurt")}
           >
             <Text
               style={[
                 styles.buttonText,
-                ingredientsList.includes('Carrot') ? { color: "#F37B2D" } : {},
+                ingredientsList.includes("Yogurt") ? { color: "#F37B2D" } : {},
               ]}
             >
-              Carrot
+              Yogurt
             </Text>
           </TouchableOpacity>
         </View>
@@ -313,4 +329,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  ingredients: {
+    color: "#FFFFFF",
+    fontSize: 12,
+    lineHeight: 20,
+    fontWeight: "400",
+    marginTop: 6,
+  }
 });
