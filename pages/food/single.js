@@ -213,7 +213,7 @@ const Single = () => {
               {price}
             </Text>
           </View>
-          <TouchableOpacity style={styles.button2}>
+          <TouchableOpacity style={styles.button2} onPress={()=>navigation.navigate("Success")}>
             <Text style={[styles.buttonText2]}>Add to Cart</Text>
           </TouchableOpacity>
         </View>

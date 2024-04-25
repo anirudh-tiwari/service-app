@@ -13,6 +13,7 @@ import Home from "../pages/home";
 import Food from "../pages/food";
 import FoodList from '../pages/food/list';
 import SingleMenu from '../pages/food/single';
+import Success from '../pages/food/success';
 
 const Stack = createNativeStackNavigator();
 
@@ -55,6 +56,13 @@ const AppNavigator = () => {
           }}
           name="SingleMenu"
           component={SingleMenu}
+        />
+         <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="Success"
+          component={Success}
         />
       </Stack.Navigator>
     </NavigationContainer>
