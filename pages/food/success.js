@@ -36,15 +36,8 @@ const Success = () => {
             }}
           />
           <View style={styles.curve} />
-          {/* <TouchableOpacity
-            style={[styles.navigation, { left: 24 }]}
-            onPress={() => navigation.navigate("FoodList")}
-          >
-            <Ionicons name="chevron-back-outline" size={24} color="white" />
-          </TouchableOpacity> */}
           <TouchableOpacity
             style={[styles.navigation, { top: "50%", left: "44%" }]}
-            // onPress={() => {}}
           >
             <Image
               source={require("../../assets/play-circle.png")}
@@ -67,6 +60,19 @@ const Success = () => {
         onPress={() => navigation.navigate("FoodList")}
       >
         <Ionicons name="chevron-back-outline" size={24} color="white" />
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={[styles.navigation, { right: 24, backgroundColor: "unset" }]}
+        onPress={() => navigation.navigate("Home")}
+      >
+        <Image
+          source={require("../../assets/profilePic.png")}
+          style={{
+            width: 30,
+            height: 30,
+            borderRadius: 50,
+          }}
+        />
       </TouchableOpacity>
       {showVideo ? (
         <View style={{ paddingHorizontal: 24 }}>
