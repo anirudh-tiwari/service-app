@@ -18,7 +18,7 @@ const Single = () => {
   const { name, image, price, ingredients } = category?.params?.item;
 
   useEffect(() => {
-    setIngredientsList( [...ingredients, "Onion"]);
+    setIngredientsList([...ingredients, "Onion"]);
   }, [ingredients]);
 
   const customizeHandle = (data) => {
@@ -119,9 +119,8 @@ const Single = () => {
       </View>
       <View style={{ paddingHorizontal: 12, paddingVertical: 16 }}>
         <Text style={styles.heading}>Ingredients</Text>
-        <Text style={{marginTop: 4}}>
+        <Text style={{ marginTop: 4 }}>
           {ingredientsList.map((ingredient, index) => {
-            console.log("aniani", ingredient, customizeList);
             return (
               <Text
                 key={index}
@@ -213,7 +212,12 @@ const Single = () => {
               {price}
             </Text>
           </View>
-          <TouchableOpacity style={styles.button2} onPress={()=>navigation.navigate("Success")}>
+          <TouchableOpacity
+            style={styles.button2}
+            onPress={() =>
+              navigation.navigate("Success", { item: category?.params?.item })
+            }
+          >
             <Text style={[styles.buttonText2]}>Add to Cart</Text>
           </TouchableOpacity>
         </View>
@@ -335,5 +339,5 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     fontWeight: "400",
     marginTop: 6,
-  }
+  },
 });
