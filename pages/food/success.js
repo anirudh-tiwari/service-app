@@ -1,5 +1,12 @@
 import { useRoute } from "@react-navigation/native";
-import { View, Image, Text, StyleSheet, TouchableOpacity, FlatList } from "react-native";
+import {
+  View,
+  Image,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  FlatList,
+} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useEffect, useState } from "react";
 
@@ -7,7 +14,7 @@ const ListItem = ({ text }) => {
   return (
     <View style={styles.listItem}>
       <Text style={styles.bullet}>•</Text>
-      <Text style={{color: "white"}}>{text}</Text>
+      <Text style={{ color: "#AEAEAE", fontWeight: "500" }}>{text}</Text>
     </View>
   );
 };
@@ -62,7 +69,10 @@ const Success = () => {
         <Ionicons name="chevron-back-outline" size={24} color="white" />
       </TouchableOpacity>
       <TouchableOpacity
-        style={[styles.navigation, { right: 24, backgroundColor: "unset" }]}
+        style={[
+          styles.navigation,
+          { right: 24, backgroundColor: "unset", borderWidth: 0 },
+        ]}
         onPress={() => navigation.navigate("Home")}
       >
         <Image
@@ -76,15 +86,55 @@ const Success = () => {
       </TouchableOpacity>
       {showVideo ? (
         <View style={{ paddingHorizontal: 24 }}>
-          <Text
-            style={{
-              fontSize: 32,
-              color: "white",
-              fontWeight: "800",
-            }}
+          <View
+            style={[
+              {
+                flexDirection: "row",
+                justifyContent: "space-between",
+                marginTop: -14,
+              },
+            ]}
           >
-            {name}
-          </Text>
+            <Text
+              style={{
+                fontSize: 32,
+                color: "white",
+                fontWeight: "800",
+              }}
+            >
+              {name}
+            </Text>
+            <View
+              style={{
+                flexDirection: "row",
+                gap: 18,
+                justifyContent: "flex-end",
+              }}
+            >
+              <View style={styles.tags}>
+                <Image
+                  source={require("../../assets/sugar.png")}
+                  style={{
+                    width: 30,
+                    height: 30,
+                    tintColor: "#D17842",
+                  }}
+                />
+                <Text style={{ color: "#AEAEAE" }}>Sugar</Text>
+              </View>
+              <View style={styles.tags}>
+                <Image
+                  source={require("../../assets/maida.png")}
+                  style={{
+                    width: 30,
+                    height: 30,
+                    tintColor: "#D17842",
+                  }}
+                />
+                <Text style={{ color: "#AEAEAE" }}>Maida</Text>
+              </View>
+            </View>
+          </View>
           <View
             style={{
               borderWidth: 1,
@@ -97,7 +147,7 @@ const Success = () => {
               fontSize: 22,
               color: "white",
               fontWeight: "800",
-              marginBottom: 12
+              marginBottom: 12,
             }}
           >
             Ingredeints
@@ -152,7 +202,7 @@ const styles = StyleSheet.create({
   curve: {
     width: "100%",
     height: "10%",
-    backgroundColor: "#00000080",
+    backgroundColor: "black",
     opacity: 1,
     borderTopLeftRadius: 80,
     borderTopRightRadius: 80,
@@ -194,11 +244,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     flex: 1,
-    color: "#FFF"
+    color: "#FFF",
   },
   bullet: {
     marginRight: 10,
     fontSize: 20,
-    color: "white",
+    color: "#AEAEAE",
   },
 });
