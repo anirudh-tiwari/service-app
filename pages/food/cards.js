@@ -24,8 +24,6 @@ const Cards = ({
         borderRadius: 20,
         width: cardWidth,
         marginRight: 14,
-        // justifyContent: "center",
-        // alignItems: "center",
         marginTop: marginTop,
         backgroundColor: "#252A32",
         marginTop: 18,
@@ -106,27 +104,6 @@ const Cards = ({
           </TouchableOpacity>
           </View>
         </View>
-        {/* HEART  */}
-        {/* <TouchableOpacity
-          style={{
-            width: 40,
-            elevation: 5, // ADD BOX-SHADOW
-            height: 40,
-            backgroundColor: "#fff",
-            borderRadius: 20,
-            justifyContent: "center",
-            alignItems: "center",
-            position: "absolute",
-            top: 10,
-            right: 10,
-          }}
-          onPress={() => {}}
-        >
-          <Image
-            source={ heartIcon }
-            style={{ width: 24, height: 24, tintColor: hasWhishList ? 'red' : '#353030' }}
-          />
-        </TouchableOpacity> */}
       </View>
     </TouchableOpacity>
   );

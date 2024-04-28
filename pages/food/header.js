@@ -26,7 +26,6 @@ const Header = () => {
         />
         </View>
       </View>
-      {/* <Text style={styles.description2}>No sugar, no maida, high fiber, healthy fats & all organic ingredients.</Text> */}
     </View>
   );
 };
