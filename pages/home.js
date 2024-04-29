@@ -27,6 +27,7 @@ const Home = () => {
             image: require("../assets/HealthCare.png"),
             index: 1,
           }}
+          navigate={'Health'}
         />
         <Category
           item={{
