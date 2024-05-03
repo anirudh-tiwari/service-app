@@ -15,7 +15,7 @@ const Header = () => {
         </View>
         <View style={styles.container2}>
         <Image
-          source={require("../../assets/profilePic.png")}
+          source={require("../../assets/profilePicBlue.png")}
           style={{
             width: 40,
             height: 40,

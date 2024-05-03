@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     imageWrap: {
       height: 160,
       width: "100%",
+      marginBottom: 20
     },
     navigation: {
       padding: 1,

@@ -2,13 +2,14 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import Video from "./video";
 import Cards from "./cards";
 import Header from "./header";
-// import Carousel from '../../components/carousel';
+import Services from "./services";
 
 const Health = () => {
   return (
     <View style={styles.healthWrap}>
       <Header />
       <Video />
+      <Services />
     </View>
   );
 };
