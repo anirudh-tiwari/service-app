@@ -89,7 +89,7 @@ export const tagsData = [
   {
     name: "Checkup",
     key: "pizza",
-    icon: require("../../assets/hospital.png"),
+    icon: require("../../assets/checkUp.png"),
   },
   {
     name: "Generic",

@@ -22,7 +22,7 @@ const Cards = ({
         marginBottom: 30,
         height: 160,
       }}
-      onPress={()=> navigation.navigate("SingleMenu")}
+      onPress={()=> navigation.navigate("Doctor")}
     >
       <View style={{ width: "100%", padding: 5 }}>
         <Image

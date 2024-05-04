@@ -73,6 +73,13 @@ const AppNavigator = () => {
           name="Health"
           component={Health}
         />
+         <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="Doctor"
+          component={Doctor}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
