@@ -1,15 +1,18 @@
-import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView, FlatList } from "react-native";
 import Video from "./video";
 import Cards from "./cards";
 import Header from "./header";
 import Services from "./services";
+import { cardData } from "./utils";
 
 const Health = () => {
   return (
     <View style={styles.healthWrap}
     >
       <Header />
-      <ScrollView stickyHeaderIndices={[2]}>
+      <ScrollView stickyHeaderIndices={[2]}
+      showsVerticalScrollIndicator={false}
+      >
       <Video />
       <View style={styles.container}>
         <Text style={[styles.tag, { fontWeight: "600" }]}>
@@ -18,49 +21,19 @@ const Health = () => {
         <Text style={[styles.tag, { color: "#0096FF" }]}>See All</Text>
       </View>
       <Services />
-      <View>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        <Text style={{color: "white", marginBottom: 40}}>sdcsdc1</Text>
-        </View>
+      <FlatList
+        showsVerticalScrollIndicator={ false }
+        data={cardData}
+        numColumns={2}
+        contentContainerStyle={{
+          flexDirection: 'column',
+          justifyContent: "space-between",
+        }}
+        renderItem={({ item, index }) => {
+          return <Cards item={item} />;
+        }}
+      />
+
       </ScrollView>
     </View>
   );
