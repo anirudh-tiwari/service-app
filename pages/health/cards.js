@@ -24,13 +24,13 @@ const Cards = ({
       }}
       onPress={()=> navigation.navigate("SingleMenu")}
     >
-      <View style={{ width: "100%", padding: 6 }}>
+      <View style={{ width: "100%", padding: 5 }}>
         <Image
-          source={require("../../assets/burger2.jpeg")}
+          source={item.image}
           style={{
             width: "100%",
             height: 110,
-            borderRadius: 24,
+            borderRadius: 20,
             objectFit: "cover",
           }}
         />
@@ -43,7 +43,7 @@ const Cards = ({
             marginVertical: 6
           }}
         >
-          {"AIMIS"}
+          {item.name}
         </Text>
         <TouchableOpacity
             style={{
@@ -51,13 +51,13 @@ const Cards = ({
               padding: 1,
               justifyContent: "center",
               alignItems: "center",
-              borderRadius: 10,
+              borderRadius: 18,
               backgroundColor: "#0096FF",
               position: "absolute",
               height: 24,
               bottom: -16,
               width: 100,
-              left: 26,
+              left: 28,
               zIndex: 99999999999
             }}
             onPress={() => {}}

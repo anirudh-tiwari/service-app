@@ -15,7 +15,7 @@ const Health = () => {
       >
       <Video />
       <View style={styles.container}>
-        <Text style={[styles.tag, { fontWeight: "600" }]}>
+        <Text style={[styles.tag, { fontWeight: "600", marginBottom: 6 }]}>
           Service Category
         </Text>
         <Text style={[styles.tag, { color: "#0096FF" }]}>See All</Text>
@@ -28,6 +28,7 @@ const Health = () => {
         contentContainerStyle={{
           flexDirection: 'column',
           justifyContent: "space-between",
+          marginTop: 4
         }}
         renderItem={({ item, index }) => {
           return <Cards item={item} />;

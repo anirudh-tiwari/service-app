@@ -15,7 +15,7 @@ const Services = () => {
 
   return (
     <ScrollView style={{backgroundColor: "black"}}>
-      <View style={{ marginVertical: 10 }}>
+      <View style={{ marginBottom: 16 }}>
         <FlatList
           data={tagsData}
           horizontal
