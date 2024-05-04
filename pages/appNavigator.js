@@ -15,6 +15,7 @@ import Health from '../pages/health'
 import FoodList from '../pages/food/list';
 import SingleMenu from '../pages/food/single';
 import Success from '../pages/food/success';
+import Doctor from '../pages/health/doctor';
 
 
 const Stack = createNativeStackNavigator();

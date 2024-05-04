@@ -112,3 +112,60 @@ export const tagsData = [
     icon: require("../../assets/healthyVideo.png"),
   },
 ];
+
+export const departmentList = [
+  {
+    name: "General",
+    desc: "Infections, chronic diseases, and preventive care.",
+    tag: "pizza",
+    image: require("../../assets/checkup.jpg"),
+  },
+  {
+    name: "Gynecology",
+    desc: "Pregnancy, childbirth, and women's reproductive health.",
+    tag: "cream",
+    image: require("../../assets/gynecology.png"),
+  },
+  {
+    name: "Pediatrics",
+    desc: "Health and medical care of children",
+    tag: "cream",
+    image: require("../../assets/Pediatrics.jpeg"),
+  },
+  {
+    name: "Surgery",
+    desc: "General surgery, orthopedic surgery, cardiovascular surgery, neurosurgery, and more.",
+    tag: "cream",
+    image: require("../../assets/surgery.png"),
+  },
+  {
+    name: "Anesthesiology",
+    desc: "Managing pain during surgical procedures or medical interventions.",
+    tag: "cream",
+    image: require("../../assets/anesthesiology.jpeg"),
+  },
+  {
+    name: "Radiology",
+    desc: "X-rays, CT scans, MRI scans, ultrasound, and other imaging modalities.",
+    tag: "cream",
+    image: require("../../assets/radiology.jpg"),
+  },
+  {
+    name: "Ophthalmology",
+    desc: "Health of the eye",
+    tag: "cream",
+    image: require("../../assets/ophthalmology.jpeg"),
+  },
+  {
+    name: "Dermatology",
+    desc: "Skin, hair, and nails, including acne, psoriasis, and skin cancer.",
+    tag: "cream",
+    image: require("../../assets/skin.jpeg"),
+  },
+  {
+    name: "Cardiology",
+    desc: "Heart diseases and conditions",
+    tag: "cream",
+    image: require("../../assets/cardiology.jpeg"),
+  },
+];
