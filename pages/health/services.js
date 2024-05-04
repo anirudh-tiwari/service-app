@@ -5,6 +5,7 @@ import {
   Image,
   FlatList,
   TouchableOpacity,
+  ScrollView,
 } from "react-native";
 import { tagsData } from "./utils";
 import { useState } from "react";
@@ -13,17 +14,12 @@ const Services = () => {
   const [activeTag, setActiveTag] = useState("all");
 
   return (
-    <View>
-      <View style={styles.container}>
-        <Text style={[styles.tag, { fontWeight: "600" }]}>
-          Service Category
-        </Text>
-        <Text style={[styles.tag, { color: "#0096FF" }]}>See All</Text>
-      </View>
+    <ScrollView style={{backgroundColor: "black"}}>
       <View style={{ marginVertical: 10 }}>
         <FlatList
           data={tagsData}
           horizontal
+          stickyHeaderIndices={[1]}
           showsHorizontalScrollIndicator={false}
           renderItem={({ item, index }) => {
             return (
@@ -48,7 +44,7 @@ const Services = () => {
                   width: 66,
                   height: 66,
                   backgroundColor: "#252A32",
-                  marginTop: 4,
+                  marginTop: 0,
                   justifyContent: "center",
                   alignItems: "center",
                   borderRadius: 12,
@@ -73,35 +69,9 @@ const Services = () => {
           }}
         />
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
 export default Services;
 
-const styles = StyleSheet.create({
-  imgWrapper: {
-    height: 30,
-    width: 30,
-    backgroundColor: "white",
-    borderRadius: 50,
-    display: "flex",
-    justifyContent: "center",
-    alignContent: "center",
-  },
-  container: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-  image: {
-    // width: "100%",
-    // height: "100%",
-    width: 24,
-    height: 24,
-  },
-  tag: {
-    fontSize: 16,
-    color: "white",
-  },
-});
