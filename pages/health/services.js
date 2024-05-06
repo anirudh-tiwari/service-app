@@ -8,10 +8,8 @@ import {
   ScrollView,
 } from "react-native";
 import { tagsData } from "./utils";
-import { useState } from "react";
 
-const Services = () => {
-  const [activeTag, setActiveTag] = useState("Checkup");
+const Services = ({activeTag,setActiveTag}) => {
 
   return (
     <View style={{backgroundColor: "black"}}>

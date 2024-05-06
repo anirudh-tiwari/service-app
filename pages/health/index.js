@@ -12,8 +12,11 @@ import Cards from "./cards";
 import Header from "./header";
 import Services from "./services";
 import { cardData } from "./utils";
+import { useState } from "react";
 
 const Health = () => {
+  const [activeTag, setActiveTag] = useState("Checkup");
+
   return (
     <View style={styles.healthWrap}>
       <Header />
@@ -21,17 +24,17 @@ const Health = () => {
         stickyHeaderIndices={[2]}
         showsVerticalScrollIndicator={false}
       >
-        <Video />
+        <Video url={cardData[activeTag].image} isVideo={cardData[activeTag].isVideo} />
         <View style={styles.container}>
           <Text style={[styles.tag, { fontWeight: "600", marginBottom: 6 }]}>
             Service Category
           </Text>
           <Text style={[styles.tag, { color: "#0096FF" }]}>See All</Text>
         </View>
-        <Services />
+        <Services activeTag={activeTag} setActiveTag={setActiveTag} />
         <FlatList
           showsVerticalScrollIndicator={false}
-          data={cardData}
+          data={cardData[activeTag].data}
           numColumns={2}
           contentContainerStyle={{
             flexDirection: "column",
