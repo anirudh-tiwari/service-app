@@ -11,10 +11,10 @@ import { tagsData } from "./utils";
 import { useState } from "react";
 
 const Services = () => {
-  const [activeTag, setActiveTag] = useState("all");
+  const [activeTag, setActiveTag] = useState("Checkup");
 
   return (
-    <ScrollView style={{backgroundColor: "black"}}>
+    <View style={{backgroundColor: "black"}}>
       <View style={{ marginBottom: 16 }}>
         <FlatList
           data={tagsData}
@@ -69,7 +69,7 @@ const Services = () => {
           }}
         />
       </View>
-    </ScrollView>
+    </View>
   );
 };
 

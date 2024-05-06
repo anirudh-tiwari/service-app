@@ -88,12 +88,12 @@ export const cardData = [
 export const tagsData = [
   {
     name: "Checkup",
-    key: "pizza",
+    key: "Checkup",
     icon: require("../../assets/checkUp.png"),
   },
   {
     name: "Generic",
-    key: "all",
+    key: "genericMedicine",
     icon: require("../../assets/genericMedicine.png"),
   },
   {
