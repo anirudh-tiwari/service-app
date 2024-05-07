@@ -16,7 +16,7 @@ const Cards = ({
       style={{
         borderRadius: 20,
         width: cardWidth,
-        marginRight: 14,
+        marginRight: 0,
         marginTop: marginTop,
         backgroundColor: "#252A32",
         marginBottom: 30,

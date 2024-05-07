@@ -24,7 +24,10 @@ const Health = () => {
         stickyHeaderIndices={[2]}
         showsVerticalScrollIndicator={false}
       >
-        <Video url={cardData[activeTag].image} isVideo={cardData[activeTag].isVideo} />
+        <Video
+          url={cardData[activeTag].image}
+          isVideo={cardData[activeTag].isVideo}
+        />
         <View style={styles.container}>
           <Text style={[styles.tag, { fontWeight: "600", marginBottom: 6 }]}>
             Service Category
@@ -32,19 +35,19 @@ const Health = () => {
           <Text style={[styles.tag, { color: "#0096FF" }]}>See All</Text>
         </View>
         <Services activeTag={activeTag} setActiveTag={setActiveTag} />
-        <FlatList
-          showsVerticalScrollIndicator={false}
-          data={cardData[activeTag].data}
-          numColumns={2}
-          contentContainerStyle={{
-            flexDirection: "column",
+        <View
+          style={{
+            flexDirection: "row",
             justifyContent: "space-between",
             marginTop: 4,
+            columnGap: 16,
+            flexWrap: "wrap",
           }}
-          renderItem={({ item, index }) => {
-            return <Cards item={item} />;
-          }}
-        />
+        >
+          {cardData[activeTag].data.map((item, index) => {
+            return <Cards item={item} key={index} />;
+          })}
+        </View>
       </ScrollView>
     </View>
   );
