@@ -37,9 +37,7 @@ const Health = () => {
         </View>
         <Services activeTag={activeTag} setActiveTag={setActiveTag} />
         {activeTag === "Video" ? (
-          cardData[activeTag].data.map((item, index) => {
-            return <VideoHistory item={item} key={index} />;
-          })
+          <VideoHistory />
         ) : (
           <View
             style={{

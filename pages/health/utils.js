@@ -189,27 +189,27 @@ export const cardData = {
       },
       {
         name: "How to Cleanse Your Liver Naturally?",
-        views: "403K",
+        views: "1M",
         image: require("../../assets/thumbnail2.jpg"),
       },
       {
         name: "28 Signs Your Body is Deficient in Vital Nutrients (With Solution)",
-        views: "403K",
+        views: "273K",
         image: require("../../assets/thumbnail3.jpg"),
       },
       {
         name: "How to Purify Your Blood Naturally?",
-        views: "403K",
+        views: "700K",
         image: require("../../assets/thumbnail4.jpg"),
       },
       {
         name: "Cure Thyroid Problem Permanently in 4 Steps",
-        views: "403K",
+        views: "4M",
         image: require("../../assets/thumbnail5.jpg"),
       },
       {
         name: "5 Daily Foods You are Eating the Wrong Way",
-        views: "403K",
+        views: "2.5M",
         image: require("../../assets/thumbnail6.jpg"),
       },
       {
@@ -219,17 +219,17 @@ export const cardData = {
       },
       {
         name: "Milk in India Ranked from Worst to Best",
-        views: "403K",
+        views: "740K",
         image: require("../../assets/thumbnail8.jpg"),
       },
       {
         name: "20 Soaps in India Ranked from Worst to Best",
-        views: "403K",
+        views: "428K",
         image: require("../../assets/thumbnail9.jpg"),
       },
       {
         name: "Ayurvedic Diet Plan for Extreme Fat Loss (Healthy & Effective)",
-        views: "403K",
+        views: "6M",
         image: require("../../assets/thumbnail10.jpg"),
       },
     ],

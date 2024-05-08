@@ -46,58 +46,55 @@ const Cards = ({ item }) => {
     <TouchableOpacity
       style={{
         flexDirection: "row",
-        gap: 6,
+        gap: 8,
+        marginBottom: 16,
+        // flexWrap: 'wrap',
       }}
       onPress={() => navigation.navigate("")}
     >
-      <View style={{
-            width: "50%",
-            height: 120,
-            backgroundColor:"red"
-            // objectFit: "contain",
-            // borderRadius: 50,
-          }}>
+      <View
+        style={{
+          width: "50%",
+          height: 100,
+        }}
+      >
         <Image
           source={item.image}
           style={{
             width: "100%",
             height: "100%",
-            objectFit: "contain",
-            borderRadius: 20,
+            objectFit: "fill",
+            borderRadius: 12,
           }}
         />
-        </View>
-        <Text
-          style={{
-            fontSize: 16,
-            fontWeight: "600",
-            color: "white",
-            marginBottom: 4,
-          }}
-        >
-          {item.name}
-        </Text>
-      {/* <View style={{ flexShrink: 1 }}>
-        <Text
-          style={{
-            fontSize: 16,
-            fontWeight: "600",
-            color: "white",
-            marginBottom: 4,
-          }}
-        >
-          {item.name}
-        </Text>
-        <Text
-          style={{
-            fontSize: 12,
-            fontWeight: "500",
-            color: "#AEAEAE",
-          }}
-        >
-          {item.desc}
-        </Text>
-      </View> */}
+      </View>
+      <View style={{
+         width: '47%',
+      }}>
+      <Text
+        style={{
+          fontSize: 13,
+          fontWeight: "400",
+          lineHeight: 18,
+          color: "white",
+          marginBottom: 2,
+        }}
+      >
+        {item.name}
+      </Text>
+      <Text
+        style={{
+          fontSize: 11,
+          fontWeight: "600",
+          lineHeight: 18,
+          color: "#858585",
+          marginBottom: 4,
+          width: '47%',
+        }}
+      >
+        {item.views} views
+      </Text>
+      </View>
     </TouchableOpacity>
   );
 };
