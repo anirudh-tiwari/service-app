@@ -178,6 +178,62 @@ export const cardData = {
       },
     ],
   },
+  Video: {
+    image: require("../../assets/thumbnil.png"),
+    isVideo: true,
+    data: [
+      {
+        name: "5 Reasons You Are Drinking Water the Wrong Way",
+        views: "403K",
+        image: require("../../assets/thumbnail1.jpg"),
+      },
+      {
+        name: "How to Cleanse Your Liver Naturally?",
+        views: "403K",
+        image: require("../../assets/thumbnail2.jpg"),
+      },
+      {
+        name: "28 Signs Your Body is Deficient in Vital Nutrients (With Solution)",
+        views: "403K",
+        image: require("../../assets/thumbnail3.jpg"),
+      },
+      {
+        name: "How to Purify Your Blood Naturally?",
+        views: "403K",
+        image: require("../../assets/thumbnail4.jpg"),
+      },
+      {
+        name: "Cure Thyroid Problem Permanently in 4 Steps",
+        views: "403K",
+        image: require("../../assets/thumbnail5.jpg"),
+      },
+      {
+        name: "5 Daily Foods You are Eating the Wrong Way",
+        views: "403K",
+        image: require("../../assets/thumbnail6.jpg"),
+      },
+      {
+        name: "What Will Happen if You Quit Sugar for 21 Days (6 Healthy Alternatives)",
+        views: "403K",
+        image: require("../../assets/thumbnail7.jpg"),
+      },
+      {
+        name: "Milk in India Ranked from Worst to Best",
+        views: "403K",
+        image: require("../../assets/thumbnail8.jpg"),
+      },
+      {
+        name: "20 Soaps in India Ranked from Worst to Best",
+        views: "403K",
+        image: require("../../assets/thumbnail9.jpg"),
+      },
+      {
+        name: "Ayurvedic Diet Plan for Extreme Fat Loss (Healthy & Effective)",
+        views: "403K",
+        image: require("../../assets/thumbnail10.jpg"),
+      },
+    ],
+  }
 };
 
 export const tagsData = [
