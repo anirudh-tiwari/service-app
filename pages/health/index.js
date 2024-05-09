@@ -14,6 +14,7 @@ import Services from "./services";
 import { cardData } from "./utils";
 import { useState } from "react";
 import VideoHistory from "./videoHistory";
+import Products from "./products";
 
 const Health = () => {
   const [activeTag, setActiveTag] = useState("Checkup");
@@ -36,10 +37,9 @@ const Health = () => {
           <Text style={[styles.tag, { color: "#0096FF" }]}>See All</Text>
         </View>
         <Services activeTag={activeTag} setActiveTag={setActiveTag} />
-        {activeTag === "Video" ? (
-          <VideoHistory />
-        ) : (
-          <View
+        { activeTag === "Video" &&  <VideoHistory /> }
+        { activeTag === "generic" &&  <Products /> }
+        { activeTag === "Checkup" &&  <View
             style={{
               flexDirection: "row",
               justifyContent: "space-between",
@@ -51,8 +51,7 @@ const Health = () => {
             {cardData[activeTag].data.map((item, index) => {
               return <Cards item={item} key={index} />;
             })}
-          </View>
-        )}
+          </View> }
       </ScrollView>
     </View>
   );
