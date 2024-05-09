@@ -252,11 +252,11 @@ export const tagsData = [
     key: "labTest",
     icon: require("../../assets/labTest.png"),
   },
-  {
-    name: "Care",
-    key: "careTaker",
-    icon: require("../../assets/careTaker.png"),
-  },
+  // {
+  //   name: "Care",
+  //   key: "careTaker",
+  //   icon: require("../../assets/careTaker.png"),
+  // },
   {
     name: "Video",
     key: "Video",

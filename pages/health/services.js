@@ -1,16 +1,13 @@
 import {
   View,
   Text,
-  StyleSheet,
   Image,
   FlatList,
   TouchableOpacity,
-  ScrollView,
 } from "react-native";
 import { tagsData } from "./utils";
 
 const Services = ({activeTag,setActiveTag}) => {
-
   return (
     <View style={{backgroundColor: "black"}}>
       <View style={{ marginBottom: 16 }}>
@@ -19,27 +16,12 @@ const Services = ({activeTag,setActiveTag}) => {
           horizontal
           stickyHeaderIndices={[1]}
           showsHorizontalScrollIndicator={false}
-          renderItem={({ item, index }) => {
+          renderItem={({ item }) => {
             return (
               <TouchableOpacity
-                // style={{
-                //   height: 36,
-                //   // width: 88,
-                //   borderRadius: 20,
-                //   borderWidth: 1,
-                //   // justifyContent: "center",
-                //   alignItems: "center",
-                //   marginLeft: index ? 10 : 0,
-                //   backgroundColor:
-                //     activeTag === item.key ? "#0F67FE" : "#FEDAD1",
-                //   flexDirection: "row",
-                //   gap: 3,
-                //   padding: 3,
-                //   paddingRight: 8
-                // }}
                 style={{
-                  marginRight: 14,
-                  width: 66,
+                  marginRight: 18,
+                  width: 68,
                   height: 66,
                   backgroundColor: "#252A32",
                   marginTop: 0,
@@ -47,7 +29,6 @@ const Services = ({activeTag,setActiveTag}) => {
                   alignItems: "center",
                   borderRadius: 12,
                   borderWidth: 1,
-                  // borderColor: activeTag === item.key ?  "#5CE1E6" : "#252A32",
                   borderColor: activeTag === item.key ? "#0096FF" : "#252A32",
                 }}
                 onPress={() => setActiveTag(item.key)}
