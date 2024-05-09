@@ -272,3 +272,34 @@ export const departmentList = [
     image: require("../../assets/cardiology.jpeg"),
   },
 ];
+
+export const categoryList = {
+  Checkup: {
+    data: [
+      {
+        name: "",
+        image: require("../../assets/vitamin1.jpeg"),
+      },
+      {
+        name: "",
+        image: require("../../assets/vitamin2.jpeg"),
+      },
+      {
+        name: "",
+        image: require("../../assets/vitamin3.jpeg"),
+      },
+      {
+        name: "",
+        image: require("../../assets/vitamin4.jpeg"),
+      },
+      {
+        name: "",
+        image: require("../../assets/vitamin5.jpeg"),
+      },
+      {
+        name: "",
+        image: require("../../assets/vitamin6.jpeg"),
+      },
+    ],
+  },
+};
