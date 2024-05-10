@@ -8,12 +8,14 @@ import {
   } from "react-native";
   import { Ionicons } from "@expo/vector-icons";
   import { categoryList } from "../utils";
+import Header from "./header";
   
   const HealthProduct = () => {
     return (
       <>
+      <Header />
         <View style={styles.container}>
-          <Text style={{ fontWeight: "600", marginBottom: 8, fontSize: 18, color: "white",paddingHorizontal: 16 }}>
+          <Text style={{ fontWeight: "600", marginBottom: 8, fontSize: 18, color: "white" }}>
             Popular Category
           </Text>
         <View style={styles.wrapper}>
@@ -32,23 +34,22 @@ import {
     container: {
       backgroundColor: "black",
       flex: 1,
-
+      paddingHorizontal: 16
     },
     wrapper: {
       backgroundColor: "black",
       flexDirection: "row",
       justifyContent: "space-between",
       marginTop: 4,
-      columnGap: 8,
+      columnGap: 10,
       flexWrap: "wrap",
-      paddingHorizontal: 16,
       flex: 1
     },
   });
   
   const Cards = ({ item }) => {
     const screenWidth = Dimensions.get("window").width;
-    const cardWidth = (screenWidth - 32 - 32) / 3; // 32 for column gap | 32 for padding
+    const cardWidth = (screenWidth - 32 - 20) / 3; // 32 for column gap | 32 for padding
     return (
       <TouchableOpacity
         style={{
