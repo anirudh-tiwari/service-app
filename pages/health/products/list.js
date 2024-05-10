@@ -12,25 +12,29 @@ import { categoryList } from "../utils";
 import Header from "./header";
 import Spotlight from "./spotlight";
 import Category from "./category";
+import Filters from "./filters";
 
 const screenWidth = Dimensions.get("window").width;
 const headerWidth = (screenWidth - 32) / 2;
 
 const HealthProduct = () => {
   return (
+    <View>
+    <Header />
     <ScrollView
-    stickyHeaderIndices={[0]}
+    stickyHeaderIndices={[2]}
     showsVerticalScrollIndicator={false}
     style={styles.container}
     >
-        <Header />
         <Image
           source={require("../../../assets/vitaminBanner.jpeg")}
           style={{ height: 160, objectFit: "cover", width: "100%" }}
         />
         <Category />
+        <Filters />
       <Spotlight />
     </ScrollView>
+    </View>
   );
 };
 
