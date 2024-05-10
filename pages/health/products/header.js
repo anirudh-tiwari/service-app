@@ -6,7 +6,9 @@ const cardWidth = (screenWidth - 32) / 2;
 
 const Header = () => {
   return (
-    <View style={styles.wrapper}>
+    <View 
+    style={styles.wrapper}
+    >
       <View style={{position: "relative", paddingHorizontal: 12}}>
         <View style={styles.container1}>
           <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>
@@ -37,7 +39,7 @@ const Header = () => {
         </View>
         <View style={styles.border}></View>
       </View>
-      <View>
+      {/* <View>
       <View style={styles.container1}>
         <View style={[styles.filter]}>
           <Ionicons
@@ -70,7 +72,7 @@ const Header = () => {
         </View>
       </View>
       <View style={styles.border}></View>
-      </View>
+      </View> */}
     </View>
   );
 };
@@ -82,7 +84,7 @@ const styles = StyleSheet.create({
     paddingTop: 6,
     backgroundColor: "black",
     elevation: 80,
-    paddingBottom: 16,
+    // paddingBottom: 16,
   },
   container1: {
     flexDirection: "row",
@@ -108,7 +110,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0,
-    borderBottomWidth: 0.6,
+    borderBottomWidth: 0.4,
     borderColor: 'white',
   },
   filter: {
