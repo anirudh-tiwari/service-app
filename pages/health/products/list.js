@@ -20,20 +20,35 @@ const headerWidth = (screenWidth - 32) / 2;
 const HealthProduct = () => {
   return (
     <View>
-    <Header />
-    <ScrollView
-    stickyHeaderIndices={[2]}
-    showsVerticalScrollIndicator={false}
-    style={styles.container}
-    >
+      <Header />
+      <ScrollView
+        stickyHeaderIndices={[3]}
+        showsVerticalScrollIndicator={false}
+        style={styles.container}
+      >
         <Image
           source={require("../../../assets/vitaminBanner.jpeg")}
           style={{ height: 160, objectFit: "cover", width: "100%" }}
         />
         <Category />
+        <View style={{ paddingHorizontal: 16 }}>
+          <Text style={{ fontWeight: "600", fontSize: 18, color: "white" }}>
+            Trending Near You
+          </Text>
+          <Text
+            style={{
+              fontWeight: "400",
+              marginBottom: 10,
+              fontSize: 14,
+              color: "#858585",
+            }}
+          >
+            Popular in your city
+          </Text>
+        </View>
         <Filters />
-      <Spotlight />
-    </ScrollView>
+        <Spotlight />
+      </ScrollView>
     </View>
   );
 };

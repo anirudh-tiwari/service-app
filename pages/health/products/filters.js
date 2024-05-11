@@ -7,7 +7,7 @@ const cardWidth = (screenWidth - 32) / 2;
 const Filters = () => {
   return (
     <View style={styles.wrapper}>
-      <View style={styles.container1}>
+      <View style={styles.container}>
         <View style={[styles.filter]}>
           <Ionicons
             name="funnel-outline"
@@ -38,7 +38,6 @@ const Filters = () => {
           <Text style={styles.filterText1}>Filters</Text>
         </View>
       </View>
-      <View style={styles.border}></View>
     </View>
   );
 };
@@ -47,14 +46,16 @@ export default Filters;
 
 const styles = StyleSheet.create({
   wrapper: {
-    paddingTop: 6,
     backgroundColor: "black",
     elevation: 80,
   },
-  container1: {
+  container: {
     flexDirection: "row",
     justifyContent: "space-between",
     height: 44,
+    borderTopWidth: 0.4,
+    borderBottomWidth: 0.4,
+    borderColor: "white",
   },
   icon: {
     alignSelf: "center",

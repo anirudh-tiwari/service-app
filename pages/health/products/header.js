@@ -9,7 +9,7 @@ const Header = () => {
     <View style={styles.wrapper}>
       <View style={{ position: "relative", paddingHorizontal: 12 }}>
         <View style={styles.container1}>
-          <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>
+          <View style={{ flexDirection: "row", alignItems: "center", gap: 12 }}>
             <Ionicons
               name="arrow-back-outline"
               size={24}
@@ -17,7 +17,7 @@ const Header = () => {
               style={styles.icon}
             />
             <Text style={{ fontWeight: "600", fontSize: 18, color: "white" }}>
-              Vitamins & Supplements
+              Supplements
             </Text>
           </View>
           <View style={{ flexDirection: "row", gap: 14 }}>
@@ -53,7 +53,8 @@ const styles = StyleSheet.create({
   container1: {
     flexDirection: "row",
     justifyContent: "space-between",
-    height: 44,
+    // height: 44,
+    height: 54
   },
   icon: {
     alignSelf: "center",

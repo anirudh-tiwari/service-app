@@ -303,3 +303,91 @@ export const categoryList = {
     ],
   },
 };
+
+
+export const productsList = {
+  supplement: {
+    data: [
+      {
+        name: "HealthCart Calcium + Vitamin D3",
+        image: require("../../assets/supplement1.png"),
+        rating: 5,
+        review: 1563,
+        price: 399.00,
+        discountedPrice: 207.48
+      },
+      {
+        name: "ZInga Vita MUlti Vitamins",
+        image: require("../../assets/supplement3.png"),
+        rating: 4,
+        review: 863,
+        price: 230.00,
+        discountedPrice: 140.48
+      },
+      {
+        name: "1mg Advanced Calcium + Vitamin D3",
+        image: require("../../assets/supplement4.png"),
+        rating: 5,
+        review: 1023,
+        price: 420.00,
+        discountedPrice: 400.00
+      },
+      {
+        name: "ENO Powder | Regular Flavour",
+        image: require("../../assets/supplement5.png"),
+        rating: 4,
+        review: 763,
+        price: 120.00,
+        discountedPrice: 102.22
+      },
+      {
+        name: "NutraBay Gold L-ARGININE",
+        image: require("../../assets/supplement6.png"),
+        rating: 4,
+        review: 438,
+        price: 399.00,
+        discountedPrice: 207.48
+      },
+      {
+        name: "Shelcal 500",
+        image: require("../../assets/supplement7.png"),
+        rating: 3,
+        review: 1523,
+        price: 343.00,
+        discountedPrice: 248.00
+      },
+      {
+        name: "ENO Powder | Lemon Flavour",
+        image: require("../../assets/supplement8.png"),
+        rating: 4,
+        review: 1341,
+        price: 1200.00,
+        discountedPrice: 1240.20
+      },
+      {
+        name: "1mg Calcium 500mg & Vitamin D3",
+        image: require("../../assets/supplement2.png"),
+        rating: 5,
+        review: 1063,
+        price: 1023.00,
+        discountedPrice: 954.48
+      },
+      {
+        name: "Supradyn immunity",
+        image: require("../../assets/supplement9.png"),
+        rating: 5,
+        review: 1029,
+        price: 400.00,
+        discountedPrice: 320.20
+      },
+      {
+        name: "Centrum Men",
+        image: require("../../assets/supplement10.png"),
+        rating: 4,
+        review: 843,
+        price: 670.48,
+        discountedPrice: 530.00
+      },
+    ],
+  },
+};
