@@ -8,16 +8,19 @@ import {
   ScrollView,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { categoryList } from "../utils";
+import { categoryList, productsList } from "../utils";
 import Header from "./header";
 import Spotlight from "./spotlight";
 import Category from "./category";
 import Filters from "./filters";
+import { useRoute } from "@react-navigation/native";
 
 const screenWidth = Dimensions.get("window").width;
 const headerWidth = (screenWidth - 32) / 2;
 
 const HealthProduct = () => {
+  const list = useRoute();
+  const { type } = list?.params?.item;
   return (
     <View>
       <Header />
@@ -27,10 +30,10 @@ const HealthProduct = () => {
         style={styles.container}
       >
         <Image
-          source={require("../../../assets/vitaminBanner.jpeg")}
+          source={productsList[type].banner}
           style={{ height: 160, objectFit: "cover", width: "100%" }}
         />
-        <Category />
+        <Category type={type} />
         <View style={{ paddingHorizontal: 16 }}>
           <Text style={{ fontWeight: "600", fontSize: 18, color: "white" }}>
             Trending Near You
@@ -47,7 +50,7 @@ const HealthProduct = () => {
           </Text>
         </View>
         <Filters />
-        <Spotlight />
+        <Spotlight type={type} />
       </ScrollView>
     </View>
   );

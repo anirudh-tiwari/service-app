@@ -6,11 +6,11 @@ import {
     Dimensions,
     StyleSheet,
   } from "react-native";
-  import { categoryList } from "../utils";
+  import { productsList } from "../utils";
   
 const screenWidth = Dimensions.get("window").width;
 
-const Category = () => {
+const Category = ({type}) => {
   return (
     <View style={{paddingHorizontal: 16, marginTop:16 }}>
       <Text
@@ -24,7 +24,7 @@ const Category = () => {
         Popular Category
       </Text>
       <View style={styles.wrapper}>
-        {categoryList.Checkup.data.map((item, index) => {
+        {productsList[type].category.map((item, index) => {
           return <Cards item={item} key={index} />;
         })}
       </View>

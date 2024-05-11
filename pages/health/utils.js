@@ -94,39 +94,51 @@ export const cardData = {
     data: [
       {
         image: require("../../assets/category1.jpeg"),
+        type: "supplement"
       },
       {
         image: require("../../assets/category2.jpeg"),
+        type: "facewash"
       },
       {
         image: require("../../assets/category3.jpeg"),
+        type: "supplement"
       },
       {
         image: require("../../assets/category4.jpeg"),
+        type: "supplement"
       },
       {
         image: require("../../assets/category5.jpeg"),
+        type: "supplement"
       },
       {
         image: require("../../assets/category6.jpeg"),
+        type: "supplement"
       },
       {
         image: require("../../assets/category7.jpeg"),
+        type: "supplement"
       },
       {
         image: require("../../assets/category8.jpeg"),
+        type: "supplement"
       },
       {
         image: require("../../assets/category9.jpeg"),
+        type: "supplement"
       },
       {
         image: require("../../assets/category10.jpeg"),
+        type: "supplement"
       },
       {
         image: require("../../assets/category11.jpeg"),
+        type: "supplement"
       },
       {
         image: require("../../assets/category12.jpeg"),
+        type: "supplement"
       },
     ],
   },
@@ -273,9 +285,9 @@ export const departmentList = [
   },
 ];
 
-export const categoryList = {
-  Checkup: {
-    data: [
+export const productsList = {
+  supplement: {
+    category: [
       {
         name: "",
         image: require("../../assets/vitamin1.jpeg"),
@@ -301,11 +313,6 @@ export const categoryList = {
         image: require("../../assets/vitamin6.jpeg"),
       },
     ],
-  },
-};
-
-export const productsList = {
-  supplement: {
     data: [
       {
         name: "HealthCart Calcium + Vitamin D3",
@@ -317,7 +324,7 @@ export const productsList = {
         discountedPrice: 207.48,
       },
       {
-        name: "ZInga Vita MUlti Vitamins",
+        name: "ZInga Vita MUlti supplement",
         image: require("../../assets/supplement3.png"),
         rating: 4,
         discountPercent: 30,
@@ -398,5 +405,127 @@ export const productsList = {
         discountedPrice: 530.0,
       },
     ],
+    banner: require('../../assets/vitaminBanner.jpeg')
+  },
+  facewash: {
+    category: [
+      {
+        name: "",
+        image: require("../../assets/vitamin1.jpeg"),
+      },
+      {
+        name: "",
+        image: require("../../assets/vitamin2.jpeg"),
+      },
+      {
+        name: "",
+        image: require("../../assets/vitamin3.jpeg"),
+      },
+      {
+        name: "",
+        image: require("../../assets/vitamin4.jpeg"),
+      },
+      {
+        name: "",
+        image: require("../../assets/vitamin5.jpeg"),
+      },
+      {
+        name: "",
+        image: require("../../assets/vitamin6.jpeg"),
+      },
+    ],
+    data: [
+      {
+        name: "Khadi Herbal",
+        image: require("../../assets/facewash1.png"),
+        rating: 5,
+        discountPercent: 20,
+        review: 1563,
+        price: 399.0,
+        discountedPrice: 207.48,
+      },
+      {
+        name: "Salijic Face Wash",
+        image: require("../../assets/facewash3.png"),
+        rating: 4,
+        discountPercent: 30,
+        review: 863,
+        price: 230.0,
+        discountedPrice: 140.48,
+      },
+      {
+        name: "1mg Advanced Calcium + Vitamin D3",
+        image: require("../../assets/facewash4.png"),
+        rating: 5,
+        discountPercent: 26,
+        review: 1023,
+        price: 420.0,
+        discountedPrice: 400.0,
+      },
+      {
+        name: "ENO Powder | Regular Flavour",
+        image: require("../../assets/facewash5.png"),
+        rating: 4,
+        discountPercent: 40,
+        review: 763,
+        price: 120.0,
+        discountedPrice: 102.22,
+      },
+      {
+        name: "NutraBay Gold L-ARGININE",
+        image: require("../../assets/facewash6.png"),
+        rating: 4,
+        discountPercent: 24,
+        review: 438,
+        price: 399.0,
+        discountedPrice: 207.48,
+      },
+      {
+        name: "Shelcal 500 Calcium + Vitamin D3",
+        image: require("../../assets/facewash7.png"),
+        rating: 3,
+        discountPercent: 25,
+        review: 1523,
+        price: 343.0,
+        discountedPrice: 248.0,
+      },
+      {
+        name: "ENO Powder | Lemon Flavour",
+        image: require("../../assets/facewash8.png"),
+        rating: 4,
+        discountPercent: 15,
+        review: 1341,
+        price: 1200.0,
+        discountedPrice: 1240.2,
+      },
+      {
+        name: "1mg Calcium 500mg & Vitamin D3",
+        image: require("../../assets/facewash2.png"),
+        rating: 5,
+        discountPercent: 10,
+        review: 1063,
+        price: 1023.0,
+        discountedPrice: 954.48,
+      },
+      {
+        name: "Supradyn immunity",
+        image: require("../../assets/facewash9.png"),
+        rating: 5,
+        discountPercent: 10,
+        review: 1029,
+        price: 400.0,
+        discountedPrice: 320.2,
+      },
+      {
+        name: "Centrum Men",
+        image: require("../../assets/facewash10.png"),
+        rating: 4,
+        discountPercent: 20,
+        review: 843,
+        price: 670.48,
+        discountedPrice: 530.0,
+      },
+    ],
+    banner: require('../../assets/vitaminBanner.jpeg')
   },
 };

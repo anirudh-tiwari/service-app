@@ -10,11 +10,11 @@ import { productsList } from "../utils";
 import StarRating from "../../../components/Rating";
 import { useState } from "react";
 
-const Spotlight = () => {
+const Spotlight = ({type}) => {
   return (
     <View style={styles.container}>
       <View style={styles.wrapper}>
-        {productsList.supplement.data.map((item, index) => {
+        {productsList[type].data.map((item, index) => {
           return <Cards item={item} key={index} />;
         })}
       </View>
@@ -91,9 +91,9 @@ const styles = StyleSheet.create({
     borderColor: "white",
   },
   cardContainer: {
-    width: "42%",
+    width: "32%",
     // height: "44%",
-    height: 130,
+    height: 146,
     alignSelf: "center",
     paddingTop: 20,
   },

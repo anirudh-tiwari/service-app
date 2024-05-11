@@ -62,7 +62,7 @@ const Cards = ({ item }) => {
         backgroundColor: "#252A32",
         marginBottom: 18,
       }}
-      onPress={() => navigation.navigate("HealthProduct")}
+      onPress={() => navigation.navigate("HealthProduct", { item: item.type } )}
     >
       <Image
         source={item.image}
