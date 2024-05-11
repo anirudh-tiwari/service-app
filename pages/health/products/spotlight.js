@@ -24,6 +24,56 @@ const Spotlight = () => {
 
 export default Spotlight;
 
+const screenWidth = Dimensions.get("window").width;
+const cardWidth = screenWidth / 2; // 32 for column gap | 32 for padding
+
+const Cards = ({ item }) => {
+  const [rating, setRating] = useState(item.rating);
+
+  const handleStarPress = (selectedRating) => {
+    setRating(selectedRating);
+  };
+
+  return (
+    <TouchableOpacity style={styles.cardWrapper} onPress={() => {}}>
+      <View style={styles.cardContainer}>
+        <Image source={item.image} style={styles.image} />
+      </View>
+      <View style={{ padding: 16, width: "100%", flexWrap: "nowrap" }}>
+        <Text style={{ color: "white" }}>{item.name}</Text>
+        <View style={styles.block}>
+          <StarRating
+            rating={rating}
+            totalStars={5}
+            onStarPress={handleStarPress}
+          />
+          <Text style={{ color: "#858585", fontSize: 12, fontWeight: "500" }}>
+            ({item.review})
+          </Text>
+        </View>
+        <View style={styles.block}>
+          <Text style={{ color: "#858585", marginRight: 4 }}>MRP</Text>
+          <Text
+            style={{
+              color: "#858585",
+              textDecorationLine: "line-through",
+              marginRight: 8,
+            }}
+          >
+            ₹{item.price}
+          </Text>
+          <Text style={styles.tag}>{item.discountPercent}% OFF</Text>
+        </View>
+        <View>
+          <Text style={{ color: "white", fontSize: 16, marginTop: 4 }}>
+            ₹{item.discountedPrice}
+          </Text>
+        </View>
+      </View>
+    </TouchableOpacity>
+  );
+};
+
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "black",
@@ -34,57 +84,34 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     flexWrap: "wrap",
   },
+  cardWrapper: {
+    width: cardWidth,
+    height: "auto",
+    borderWidth: 0.2,
+    borderColor: "white",
+  },
+  cardContainer: {
+    width: "42%",
+    // height: "44%",
+    height: 130,
+    alignSelf: "center",
+    paddingTop: 20,
+  },
+  image: {
+    width: "100%",
+    height: "100%",
+    borderRadius: 6,
+    objectFit: "fill",
+  },
+  block: { flexDirection: "row", marginTop: 6 },
+  tag: {
+    backgroundColor: "#0096FF",
+    color: "white",
+    fontWeight: "600",
+    paddingHorizontal: 4,
+    borderRadius: 2,
+    fontSize: 10,
+    height: 16,
+    alignSelf: "center",
+  },
 });
-
-const Cards = ({ item }) => {
-  const screenWidth = Dimensions.get("window").width;
-  const cardWidth = screenWidth / 2; // 32 for column gap | 32 for padding
-
-  const [rating, setRating] = useState(item.rating);
-
-  const handleStarPress = (selectedRating) => {
-    setRating(selectedRating);
-  };
-
-  return (
-    <TouchableOpacity
-      style={{
-        width: cardWidth,
-        height: 300,
-        borderWidth: 0.2,
-        borderColor: "white",
-      }}
-      onPress={() => {}}
-    >
-      <View
-        style={{
-          width: "42%",
-          height: "44%",
-          alignSelf: "center",
-          paddingTop: 20,
-        }}
-      >
-        <Image
-          source={item.image}
-          style={{
-            width: "100%",
-            height: "100%",
-            borderRadius: 6,
-            objectFit: "fill",
-          }}
-        />
-      </View>
-      <View style={{padding: 16, width: "100%", flexWrap: "nowrap" }}>
-      <Text style={{color: "white"}}>{item.name}</Text>
-      <View style={{flexDirection:"row", marginTop:8 }}>
-      <StarRating
-        rating={rating}
-        totalStars={5}
-        onStarPress={handleStarPress}
-      />
-      <Text style={{color: "#858585", fontSize:12, fontWeight: "500" }}>({item.review})</Text>
-      </View>
-      </View>
-    </TouchableOpacity>
-  );
-};
