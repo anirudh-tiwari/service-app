@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
   cardContainer: {
     width: "32%",
     // height: "44%",
-    height: 146,
+    height: 136,
     alignSelf: "center",
     paddingTop: 20,
   },

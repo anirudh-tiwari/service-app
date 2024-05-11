@@ -20,20 +20,21 @@ const headerWidth = (screenWidth - 32) / 2;
 
 const HealthProduct = () => {
   const list = useRoute();
-  const { type } = list?.params?.item;
+  const { item } = list?.params;
+
   return (
     <View>
-      <Header />
+      <Header title={productsList[item].label} />
       <ScrollView
         stickyHeaderIndices={[3]}
         showsVerticalScrollIndicator={false}
         style={styles.container}
       >
         <Image
-          source={productsList[type].banner}
+          source={productsList[item].banner}
           style={{ height: 160, objectFit: "cover", width: "100%" }}
         />
-        <Category type={type} />
+        <Category type={item} />
         <View style={{ paddingHorizontal: 16 }}>
           <Text style={{ fontWeight: "600", fontSize: 18, color: "white" }}>
             Trending Near You
@@ -50,7 +51,7 @@ const HealthProduct = () => {
           </Text>
         </View>
         <Filters />
-        <Spotlight type={type} />
+        <Spotlight type={item} />
       </ScrollView>
     </View>
   );

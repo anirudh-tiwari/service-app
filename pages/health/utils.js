@@ -405,33 +405,34 @@ export const productsList = {
         discountedPrice: 530.0,
       },
     ],
-    banner: require('../../assets/vitaminBanner.jpeg')
+    banner: require('../../assets/vitaminBanner.jpeg'),
+    label: "Supplement"
   },
   facewash: {
     category: [
       {
         name: "",
-        image: require("../../assets/vitamin1.jpeg"),
+        image: require("../../assets/faceCategory1.jpeg"),
       },
       {
         name: "",
-        image: require("../../assets/vitamin2.jpeg"),
+        image: require("../../assets/faceCategory2.jpeg"),
       },
       {
         name: "",
-        image: require("../../assets/vitamin3.jpeg"),
+        image: require("../../assets/faceCategory3.jpeg"),
       },
       {
         name: "",
-        image: require("../../assets/vitamin4.jpeg"),
+        image: require("../../assets/faceCategory4.jpeg"),
       },
       {
         name: "",
-        image: require("../../assets/vitamin5.jpeg"),
+        image: require("../../assets/faceCategory5.jpeg"),
       },
       {
         name: "",
-        image: require("../../assets/vitamin6.jpeg"),
+        image: require("../../assets/faceCategory6.jpeg"),
       },
     ],
     data: [
@@ -526,6 +527,7 @@ export const productsList = {
         discountedPrice: 530.0,
       },
     ],
-    banner: require('../../assets/vitaminBanner.jpeg')
+    banner: require('../../assets/faceWashBanner.jpeg'),
+    label: "Personal Care"
   },
 };

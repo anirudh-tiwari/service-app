@@ -4,7 +4,7 @@ import { Ionicons } from "@expo/vector-icons";
 const screenWidth = Dimensions.get("window").width;
 const cardWidth = (screenWidth - 32) / 2;
 
-const Header = () => {
+const Header = ({title}) => {
   return (
     <View style={styles.wrapper}>
       <View style={{ position: "relative", paddingHorizontal: 12 }}>
@@ -17,7 +17,7 @@ const Header = () => {
               style={styles.icon}
             />
             <Text style={{ fontWeight: "600", fontSize: 18, color: "white" }}>
-              Supplements
+              { title }
             </Text>
           </View>
           <View style={{ flexDirection: "row", gap: 14 }}>
