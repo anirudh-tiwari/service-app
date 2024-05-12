@@ -1,5 +1,5 @@
 import { useRoute } from "@react-navigation/native";
-import { View, Image, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Image, Text, StyleSheet, TouchableOpacity, ToastAndroid } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import Services from "./services";
 import { useState } from "react";
@@ -10,6 +10,10 @@ const SingleDoctor = () => {
   const daysList = getNextDays();
   const [activeTag, setActiveTag] = useState(daysList[0].key);
   const [timeTag, setTimeTag] = useState(timeList[0].key);
+
+  const handleBook = () => {
+    ToastAndroid.show("Booked Successfully", ToastAndroid.SHORT)
+  }
 
   return (
     <View style={{ flex: 1, backgroundColor: "black" }}>
@@ -167,9 +171,7 @@ const SingleDoctor = () => {
           </View>
           <TouchableOpacity
             style={styles.button}
-            onPress={() =>
-              navigation.navigate("Success", { item: category?.params?.item })
-            }
+            onPress={() => handleBook()}
           >
             <Text style={[styles.buttonText]}>Book Appointment</Text>
           </TouchableOpacity>

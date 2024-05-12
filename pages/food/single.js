@@ -5,6 +5,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   Button,
+  ToastAndroid,
 } from "react-native";
 import { useRoute } from "@react-navigation/native";
 import { useEffect, useState } from "react";
@@ -34,6 +35,11 @@ const Single = () => {
       setCustomizeList([...customizeList, data]);
     }
   };
+
+  const handleCart = () => {
+    ToastAndroid.show("Added Successfully", ToastAndroid.SHORT)
+    navigation.navigate("Success", { item: category?.params?.item })
+  }
 
   return (
     <View style={{ width: "100%", flex: 1, backgroundColor: "black" }}>
@@ -214,9 +220,7 @@ const Single = () => {
           </View>
           <TouchableOpacity
             style={styles.button2}
-            onPress={() =>
-              navigation.navigate("Success", { item: category?.params?.item })
-            }
+            onPress={() => handleCart()}
           >
             <Text style={[styles.buttonText2]}>Add to Cart</Text>
           </TouchableOpacity>
