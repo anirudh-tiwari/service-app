@@ -67,7 +67,7 @@ const Cards = ({ item, marginTop = 0 }) => {
         marginBottom: 20,
         height: 140,
       }}
-      onPress={() => navigation.navigate("Doctor")}
+      onPress={() => navigation.navigate("SingleDoctor", item)}
     >
       <View
         style={{

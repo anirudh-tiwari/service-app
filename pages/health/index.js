@@ -15,6 +15,7 @@ import { cardData } from "./utils";
 import { useState } from "react";
 import VideoHistory from "./videoHistory";
 import Products from "./products";
+import { tagsData } from "./utils";
 
 const Health = () => {
   const [activeTag, setActiveTag] = useState("Checkup");
@@ -36,7 +37,7 @@ const Health = () => {
           </Text>
           <Text style={[styles.tag, { color: "#0096FF" }]}>See All</Text>
         </View>
-        <Services activeTag={activeTag} setActiveTag={setActiveTag} />
+        <Services listData={tagsData} activeTag={activeTag} setActiveTag={setActiveTag} />
         { activeTag === "Video" &&  <VideoHistory /> }
         { activeTag === "generic" &&  <Products /> }
         { activeTag === "Checkup" &&  <View

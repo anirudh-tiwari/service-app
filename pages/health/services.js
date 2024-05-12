@@ -1,18 +1,11 @@
-import {
-  View,
-  Text,
-  Image,
-  FlatList,
-  TouchableOpacity,
-} from "react-native";
-import { tagsData } from "./utils";
+import { View, Text, Image, FlatList, TouchableOpacity } from "react-native";
 
-const Services = ({activeTag,setActiveTag}) => {
+const Services = ({ listData, activeTag, setActiveTag }) => {
   return (
-    <View style={{backgroundColor: "black"}}>
+    <View style={{ backgroundColor: "black" }}>
       <View style={{ marginBottom: 16 }}>
         <FlatList
-          data={tagsData}
+          data={listData}
           horizontal
           stickyHeaderIndices={[1]}
           showsHorizontalScrollIndicator={false}
@@ -20,9 +13,11 @@ const Services = ({activeTag,setActiveTag}) => {
             return (
               <TouchableOpacity
                 style={{
-                  marginRight: 18,
-                  width: 68,
-                  height: 66,
+                  marginRight: item.time ? 10 : 18,
+                  width: item.time ? "auto" : 68,
+                  height: item.time ? "auto" : 66,
+                  paddingVertical: item.time ? 6 : 0,
+                  paddingHorizontal: item.time ? 8 : 0,
                   backgroundColor: "#252A32",
                   marginTop: 0,
                   justifyContent: "center",
@@ -33,15 +28,29 @@ const Services = ({activeTag,setActiveTag}) => {
                 }}
                 onPress={() => setActiveTag(item.key)}
               >
-                <Image source={item.icon} style={{ width: 30, height: 30 }} />
+                {item.date ? (
+                  <Text
+                    style={{
+                      color: activeTag === item.key ? "#0096FF" : "gray",
+                      fontWeight: "500",
+                      fontSize: 24,
+                      lineHeight: 24,
+                    }}
+                  >
+                    {item.date}
+                  </Text>
+                ) : (
+                  item.icon ? 
+                  <Image source={item.icon} style={{ width: 30, height: 30 }} /> : null
+                )}
                 <Text
                   style={{
                     color: activeTag === item.key ? "#0096FF" : "gray",
                     fontWeight: "500",
-                    marginTop: 8,
+                    marginTop: item.date || item.time ? 0 : 8,
                   }}
                 >
-                  {item.name}
+                  { item.time ? item.time : item.name}
                 </Text>
               </TouchableOpacity>
             );
