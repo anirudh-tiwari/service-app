@@ -6,28 +6,27 @@ import {
   FlatList,
   StyleSheet,
 } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import { departmentList } from "./utils";
-import { Ionicons } from "@expo/vector-icons";
+import Header from "./products/header";
+import Filters from "./products/filters";
 
 const Doctor = () => {
+  const category = useRoute();
+  const { name } = category?.params;
+
   navigation = useNavigation();
 
   return (
     <>
+
       <View style={styles.wrapper}>
-        <View style={styles.HeaderWrapper}>
-          <Ionicons
-            name="arrow-back-outline"
-            size={24}
-            color="white"
-            style={{ alignSelf: "center", marginTop: 4 }}
-          />
-          <Text style={styles.header}>Departments (Aiims)</Text>
-        </View>
+        <Header title={`${ name }`} />
+        <Filters />
         <FlatList
           showsVerticalScrollIndicator={false}
           data={departmentList}
+          contentContainerStyle={{marginVertical: 24}}
           renderItem={({ item, index }) => {
             return <Cards item={item} />;
           }}
@@ -43,6 +42,7 @@ const styles = StyleSheet.create({
   wrapper: {
     backgroundColor: "black",
     paddingHorizontal: 14,
+    flex: 1
   },
   HeaderWrapper: {
     flexDirection: "row",
