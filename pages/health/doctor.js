@@ -28,7 +28,7 @@ const Doctor = () => {
           data={departmentList}
           contentContainerStyle={{marginVertical: 24}}
           renderItem={({ item, index }) => {
-            return <Cards item={item} />;
+            return <Cards item={item} name={name} />;
           }}
         />
       </View>
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const Cards = ({ item, marginTop = 0 }) => {
+const Cards = ({ item, marginTop = 0, name }) => {
   return (
     <TouchableOpacity
       style={{
@@ -67,7 +67,7 @@ const Cards = ({ item, marginTop = 0 }) => {
         marginBottom: 20,
         height: 140,
       }}
-      onPress={() => navigation.navigate("SingleDoctor", item)}
+      onPress={() => navigation.navigate("SingleDoctor", { hospitalName: name, item})}
     >
       <View
         style={{

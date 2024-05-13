@@ -6,12 +6,15 @@ import { useState } from "react";
 
 const SingleDoctor = () => {
   const category = useRoute();
-  const { name, doctorImg, desc } = category?.params;
+  const { item, hospitalName } = category?.params;
+  const { name, doctorImg, desc } = item;
+  console.log('anicategory',category?.params)
   const daysList = getNextDays();
   const [activeTag, setActiveTag] = useState(daysList[0].key);
   const [timeTag, setTimeTag] = useState(timeList[0].key);
 
   const handleBook = () => {
+    navigation.navigate("Appointment", {name, doctorImg, hospitalName} )
     ToastAndroid.show("Booked Successfully", ToastAndroid.SHORT)
   }
 
@@ -67,7 +70,7 @@ const SingleDoctor = () => {
               fontWeight: "800",
             }}
           >
-            Dr. Anirudh
+            Dr. Anirudh Tiwari
           </Text>
           <Text
             style={{

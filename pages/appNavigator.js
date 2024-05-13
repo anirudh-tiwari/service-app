@@ -18,6 +18,7 @@ import Success from '../pages/food/success';
 import Doctor from '../pages/health/doctor';
 import HealthProduct from '../pages/health/products/list';
 import SingleDoctor from '../pages/health/singleDoctor';
+import Appointment from '../pages/health/appointment';
 
 
 const Stack = createNativeStackNavigator();
@@ -96,6 +97,13 @@ const AppNavigator = () => {
           }}
           name="SingleDoctor"
           component={SingleDoctor}
+        />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="Appointment"
+          component={Appointment}
         />
       </Stack.Navigator>
     </NavigationContainer>
