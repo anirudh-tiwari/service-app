@@ -198,6 +198,11 @@ export const cardData = {
       },
     ],
   },
+  labTest: {
+    image: require("../../assets/thumbnil.png"),
+    isVideo: true,
+    bgImage: require("../../assets/comingSoon.jpg"),
+  },
 };
 
 export const tagsData = [

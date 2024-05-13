@@ -37,10 +37,23 @@ const Health = () => {
           </Text>
           <Text style={[styles.tag, { color: "#0096FF" }]}>See All</Text>
         </View>
-        <Services listData={tagsData} activeTag={activeTag} setActiveTag={setActiveTag} />
-        { activeTag === "Video" &&  <VideoHistory /> }
-        { activeTag === "generic" &&  <Products /> }
-        { activeTag === "Checkup" &&  <View
+        <Services
+          listData={tagsData}
+          activeTag={activeTag}
+          setActiveTag={setActiveTag}
+        />
+        {activeTag === "Video" && <VideoHistory />}
+        {activeTag === "generic" && <Products />}
+        {activeTag === "labTest" && (
+          <View style={{width:"100%", height: 300}}>
+          <Image
+            source={cardData[activeTag].bgImage}
+            style={{ height: "100%", width: "100%",objectFit: "cover" }}
+          />
+          </View>
+        )}
+        {activeTag === "Checkup" && (
+          <View
             style={{
               flexDirection: "row",
               justifyContent: "space-between",
@@ -52,7 +65,8 @@ const Health = () => {
             {cardData[activeTag].data.map((item, index) => {
               return <Cards item={item} key={index} />;
             })}
-          </View> }
+          </View>
+        )}
       </ScrollView>
     </View>
   );
