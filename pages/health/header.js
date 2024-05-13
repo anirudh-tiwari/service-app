@@ -1,8 +1,11 @@
-import { View, Text, Image, StyleSheet } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 
 const Header = () => {
+  navigation = useNavigation();
+
   return (
-    <View style={{marginBottom:18}}>
+    <View style={{ marginBottom: 18 }}>
       <View
         style={{
           flexDirection: "row",
@@ -14,14 +17,16 @@ const Header = () => {
           <Text style={styles.description}>Anirudh Tiwari</Text>
         </View>
         <View style={styles.container2}>
-        <Image
-          source={require("../../assets/profilePicBlue.png")}
-          style={{
-            width: 40,
-            height: 40,
-            borderRadius: 50,
-          }}
-        />
+          <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+            <Image
+              source={require("../../assets/profilePicBlue.png")}
+              style={{
+                width: 40,
+                height: 40,
+                borderRadius: 50,
+              }}
+            />
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -31,7 +36,7 @@ const Header = () => {
 export default Header;
 
 const styles = StyleSheet.create({
-    header: {
+  header: {
     fontSize: 28,
     color: "white",
     fontWeight: "500",
@@ -40,7 +45,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: "#858585",
     fontWeight: "400",
-    marginTop: 2
+    marginTop: 2,
   },
   description2: {
     fontSize: 18,
@@ -49,6 +54,6 @@ const styles = StyleSheet.create({
     marginTop: 2,
   },
   container1: {
-    flex: 10
-  }
+    flex: 10,
+  },
 });
