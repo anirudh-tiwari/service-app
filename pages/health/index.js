@@ -16,6 +16,7 @@ import { useState } from "react";
 import VideoHistory from "./videoHistory";
 import Products from "./products";
 import { tagsData } from "./utils";
+import Insurance from "./insurance";
 
 const Health = () => {
   const [activeTag, setActiveTag] = useState("Checkup");
@@ -43,6 +44,7 @@ const Health = () => {
           setActiveTag={setActiveTag}
         />
         {activeTag === "Video" && <VideoHistory />}
+        {activeTag === "insurance" && <Insurance />}
         {activeTag === "generic" && <Products />}
         {activeTag === "labTest" && (
           <View style={{width:"100%", height: 300}}>

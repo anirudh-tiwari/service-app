@@ -203,6 +203,11 @@ export const cardData = {
     isVideo: true,
     bgImage: require("../../assets/comingSoon.jpg"),
   },
+  insurance: {
+    image: require("../../assets/thumbnil.png"),
+    isVideo: true,
+    bgImage: require("../../assets/comingSoon.jpg"),
+  },
 };
 
 export const tagsData = [
@@ -221,15 +226,15 @@ export const tagsData = [
     key: "labTest",
     icon: require("../../assets/labTest.png"),
   },
-  // {
-  //   name: "Care",
-  //   key: "careTaker",
-  //   icon: require("../../assets/careTaker.png"),
-  // },
   {
     name: "Video",
     key: "Video",
     icon: require("../../assets/healthyVideo.png"),
+  },
+  {
+    name: "insurance",
+    key: "insurance",
+    icon: require("../../assets/insurance.png"),
   },
 ];
 

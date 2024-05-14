@@ -13,8 +13,8 @@ const Services = ({ listData, activeTag, setActiveTag }) => {
             return (
               <TouchableOpacity
                 style={{
-                  marginRight: item.time ? 10 : 18,
-                  width: item.time ? "auto" : 68,
+                  marginRight: item.time ? 10 : 9,
+                  width: item.time ? "auto" : 72,
                   height: item.time ? "auto" : 66,
                   paddingVertical: item.time ? 6 : 0,
                   paddingHorizontal: item.time ? 8 : 0,
