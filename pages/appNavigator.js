@@ -19,6 +19,7 @@ import Doctor from '../pages/health/doctor';
 import HealthProduct from '../pages/health/products/list';
 import SingleDoctor from '../pages/health/singleDoctor';
 import Appointment from '../pages/health/appointment';
+import Security from "../pages/security";
 
 
 const Stack = createNativeStackNavigator();

@@ -42,6 +42,7 @@ const Home = () => {
             image: require("../assets/family.png"),
             index: 2,
           }}
+          navigate={'Security'}
         />
         <Category
           item={{
