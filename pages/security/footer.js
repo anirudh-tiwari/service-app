@@ -22,8 +22,8 @@ const Footer = () => {
           flexDirection: "row",
           position: "absolute",
           bottom: 0,
-          height: 50,
-          backgroundColor: "white",
+          height: 60,
+          backgroundColor: "#1D1F24",
         }}
       >
         <TouchableOpacity
@@ -35,8 +35,8 @@ const Footer = () => {
           onPress={() => setSelectedTab(0)}
         >
           <Image
-            source={require("../../assets/pizza.png")}
-            style={{ width: 24, height: 24, tintColor: selectedTab === 0 ? 'green' : 'black' }}
+            source={require("../../assets/shield.png")}
+            style={{ width: 34, height: 34, tintColor: selectedTab === 0 ? '#19A519' : '#676D75' }}
           />
         </TouchableOpacity>
         <TouchableOpacity
@@ -48,26 +48,28 @@ const Footer = () => {
           onPress={() => setSelectedTab(1)}
         >
           <Image
-            source={require("../../assets/pizza.png")}
-            style={{ width: 24, height: 24,tintColor: selectedTab === 1 ? 'green' : 'black' }}
+            source={require("../../assets/addGroup.png")}
+            style={{ width: 30, height: 30,tintColor: selectedTab === 1 ? 'green' : '#676D75' }}
           />
         </TouchableOpacity>
         <View style={{ width: "20%" }}>
           <TouchableOpacity
             style={{
-              width: 50,
               alignItems: "center",
               justifyContent: "center",
-              backgroundColor: selectedTab === 2 ? 'green' : 'black',
+              backgroundColor: selectedTab === 2 ? '#C7F6C7' : '#C7F6C7',
               borderRadius: 50,
-              height: 50,
+              height: 70,
+              width: 70,
               alignSelf: "center",
+              position: "absolute",
+              bottom: 0
             }}
             onPress={() => setSelectedTab(2)}
           >
             <Image
-              source={require("../../assets/pizza.png")}
-              style={{ width: 24, height: 24, tintColor: "white" }}
+              source={require("../../assets/sos.png")}
+              style={{ width: 38, height: 38, tintColor: "#19A519" }}
             />
           </TouchableOpacity>
         </View>
@@ -84,8 +86,8 @@ const Footer = () => {
             onPress={() => setSelectedTab(3)}
           >
             <Image
-              source={require("../../assets/pizza.png")}
-              style={{ width: 24, height: 24,tintColor: selectedTab === 3 ? 'green' : 'black' }}
+              source={require("../../assets/add.png")}
+              style={{ width: 34, height: 34,tintColor: selectedTab === 3 ? 'green' : '#676D75' }}
             />
           </TouchableOpacity>
         </View>
@@ -98,9 +100,10 @@ const Footer = () => {
           onPress={() => setSelectedTab(4)}
         >
           <Image
-            source={require("../../assets/pizza.png")}
-            style={{ width: 24, height: 24,tintColor: selectedTab === 4 ? 'green' : 'black' }}
+            source={require("../../assets/helpline.png")}
+            style={{ width: 34, height: 34,tintColor: selectedTab === 4 ? 'green' : '#676D75' }}
           />
+          <Text style={{color: selectedTab === 4 ? 'green' : '#676D75'}}>HelpLine</Text>
         </TouchableOpacity>
       </View>
     </View>

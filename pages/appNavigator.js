@@ -106,6 +106,13 @@ const AppNavigator = () => {
           name="Appointment"
           component={Appointment}
         />
+         <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="Security"
+          component={Security}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
