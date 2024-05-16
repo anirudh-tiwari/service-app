@@ -1,10 +1,12 @@
 import { View, Text, StyleSheet } from 'react-native'
 import Footer from './footer'
+import Header from './header'
 
 const Security = () => {
   return (
     <View style={styles.Wrapper}>
-      <Text>Security</Text>
+      <Header />
+      <View style={styles.bodyRadius}></View>
       <Footer />
     </View>
   )
@@ -17,6 +19,14 @@ const styles = StyleSheet.create({
         backgroundColor: "black",
         flex: 1,
         justifyConttent: "center",
-        paddingTop: 24,
+        // position: "relative"
       },
+      bodyRadius: {
+        borderRadius: 40,
+        backgroundColor: "black",
+        height: 66,
+        position: "relative",
+        top: -40,
+        zIndex:0,
+      }
 })
