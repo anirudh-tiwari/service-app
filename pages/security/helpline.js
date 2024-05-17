@@ -1,4 +1,5 @@
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity, Image } from "react-native";
+import { helpLine } from './utils';
 
 const Helpline = () => {
   return (
@@ -21,18 +22,19 @@ const Cards = ({ item }) => {
         flexDirection: "row",
         gap: 8,
         marginBottom: 16,
+        backgroundColor: item.bgColor,
         // flexWrap: 'wrap',
       }}
       onPress={() => navigation.navigate("")}
     >
       <View
         style={{
-          width: "50%",
-          height: 100,
+          width: 44,
+          height: 44,
         }}
       >
         <Image
-          source={item.image}
+          source={item.icon}
           style={{
             width: "100%",
             height: "100%",
@@ -65,7 +67,7 @@ const Cards = ({ item }) => {
           width: '47%',
         }}
       >
-        {item.views} views
+        {item.number}
       </Text>
       </View>
     </TouchableOpacity>
