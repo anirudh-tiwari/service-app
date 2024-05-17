@@ -1,12 +1,14 @@
 import { View, Text, StyleSheet } from 'react-native'
 import Footer from './footer'
 import Header from './header'
+import Helpline from './helpline'
 
 const Security = () => {
   return (
     <View style={styles.Wrapper}>
       <Header />
       <View style={styles.bodyRadius}></View>
+      <Helpline />
       <Footer />
     </View>
   )

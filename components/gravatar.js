@@ -1,6 +1,6 @@
 import { View, Text, Image, StyleSheet } from 'react-native';
 
-const Gravatar = ({ title, size = 30, count = 0 }) => {
+const Gravatar = ({ title, size = 26, count = 0 }) => {
   const avatarURL =
     'https://www.gravatar.com/avatar/b7b8bf00b9618e1bac0693a10a4d7349?s=24&d=blank';
 
@@ -34,8 +34,8 @@ const styles = StyleSheet.create({
   },
   gravatarCount: {
     backgroundColor: "#676D75",
-    height: 30,
-    width: 30,
+    height: 26,
+    width: 26,
 		position: "absolute",
 		left: "60%",
 		padding: "4px 2px",
