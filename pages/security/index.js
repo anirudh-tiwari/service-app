@@ -2,14 +2,17 @@ import { View, Text, StyleSheet } from 'react-native'
 import Footer from './footer'
 import Header from './header'
 import Helpline from './helpline'
+import { useState } from 'react'
+import { heading } from './utils'
 
 const Security = () => {
+  const [selectedTab, setSelectedTab] = useState(0);
+
   return (
     <View style={styles.Wrapper}>
-      <Header />
-      {/* <View style={styles.bodyRadius}></View> */}
+      <Header list={heading[selectedTab]} />
       <Helpline />
-      <Footer />
+      <Footer selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
     </View>
   )
 }
@@ -21,7 +24,6 @@ const styles = StyleSheet.create({
         backgroundColor: "black",
         flex: 1,
         justifyConttent: "center",
-        // position: "relative"
       },
       bodyRadius: {
         borderRadius: 40,

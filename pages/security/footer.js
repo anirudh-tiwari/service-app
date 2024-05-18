@@ -1,22 +1,8 @@
 import { View, TouchableOpacity, Image, Text } from "react-native";
-import { useState } from "react";
 
-const Footer = () => {
-  const [selectedTab, setSelectedTab] = useState(0);
-
+const Footer = ({selectedTab, setSelectedTab}) => {
   return (
     <View style={{height: 64}}>
-      {selectedTab == 0 ? (
-        <Text>0</Text>
-      ) : selectedTab == 1 ? (
-        <Text>0</Text>
-      ) : selectedTab == 2 ? (
-        <Text>0</Text>
-      ) : selectedTab == 3 ? (
-        <Text>0</Text>
-      ) : (
-        <Text>0</Text>
-      )}
       <View
         style={{
           flexDirection: "row",

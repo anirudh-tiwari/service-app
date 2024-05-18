@@ -72,3 +72,22 @@ export const helpLine = [
         safeWord: "Railway"
     },
 ]
+
+export const heading = {
+    0 : {
+        name: "Teack me",
+        desc: "Share live location with your loved ones.",
+    },
+    1 : {
+        name: "Safety Check",
+        desc: "Set a Safety Check. If not dismissed, SOS will sent.",
+    },
+    3 : {
+        name: "Add Friends/ Safe Word",
+        desc: "Add SOS friends & set a Safe Word to trigger SOS.",
+    },
+    4 : {
+        name: "HelpLine",
+        desc: "You can say 'Your Safeword + Type' to call anytime.",
+    },
+}
