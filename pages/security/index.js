@@ -7,7 +7,7 @@ const Security = () => {
   return (
     <View style={styles.Wrapper}>
       <Header />
-      <View style={styles.bodyRadius}></View>
+      {/* <View style={styles.bodyRadius}></View> */}
       <Helpline />
       <Footer />
     </View>

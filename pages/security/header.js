@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#1D1F24",
     flexDirection: "row",
     justifyContent: "space-between",
+    marginBottom: 12,
   },
   container: {
     flexDirection: "row",

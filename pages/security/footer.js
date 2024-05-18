@@ -5,7 +5,7 @@ const Footer = () => {
   const [selectedTab, setSelectedTab] = useState(0);
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{height: 64}}>
       {selectedTab == 0 ? (
         <Text>0</Text>
       ) : selectedTab == 1 ? (
@@ -21,8 +21,8 @@ const Footer = () => {
         style={{
           flexDirection: "row",
           position: "absolute",
+          height: "100%",
           bottom: 0,
-          height: 64,
           backgroundColor: "#1D1F24",
         }}
       >
@@ -91,6 +91,7 @@ const Footer = () => {
               position: "absolute",
               bottom: 12,
             }}
+            activeOpacity={1}
             onPress={() => {}}
           >
             <Image

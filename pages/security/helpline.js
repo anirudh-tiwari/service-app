@@ -1,21 +1,51 @@
-import { View, Text, TouchableOpacity, Image } from "react-native";
-import { helpLine } from './utils';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Image,
+  ScrollView,
+  Linking,
+} from "react-native";
+import { helpLine } from "./utils";
 
 const Helpline = () => {
   return (
-    <View>
-      <View style={{ height: 60, backgroundColor: "#EAFFF4" }}>
+    <>
+      <View
+        style={{
+          padding: 0,
+          backgroundColor: "#1D1F24",
+          height: 16,
+          width: "100%",
+        }}
+      ></View>
+      <ScrollView
+        style={{
+          flexGrow: 1,
+          padding: 16,
+          paddingVertical: 0,
+          backgroundColor: "#1D1F24",
+        }}
+      >
         {helpLine.map((item, index) => {
           return <Cards item={item} key={index} />;
         })}
-      </View>
-    </View>
+      </ScrollView>
+      <View
+        style={{
+          padding: 0,
+          backgroundColor: "black",
+          height: 12,
+          width: "100%",
+        }}
+      ></View>
+    </>
   );
 };
 
 export default Helpline;
 
-const Cards = ({ item }) => {
+const Cards = ({ item, index }) => {
   return (
     <TouchableOpacity
       style={{
@@ -23,52 +53,75 @@ const Cards = ({ item }) => {
         gap: 8,
         marginBottom: 16,
         backgroundColor: item.bgColor,
-        // flexWrap: 'wrap',
+        height: 100,
+        padding: 12,
+        borderRadius: 20,
       }}
-      onPress={() => navigation.navigate("")}
+      activeOpacity={1}
+      onPress={() => Linking.openURL(`tel:${item.number}`)}
     >
       <View
         style={{
-          width: 44,
-          height: 44,
+          height: 40,
+          flex: 2,
+          alignSelf: "center",
         }}
       >
         <Image
           source={item.icon}
           style={{
-            width: "100%",
+            width: 46,
             height: "100%",
             objectFit: "fill",
             borderRadius: 12,
           }}
         />
       </View>
-      <View style={{
-         width: '47%',
-      }}>
-      <Text
+      <View
         style={{
-          fontSize: 13,
-          fontWeight: "400",
-          lineHeight: 18,
-          color: "white",
-          marginBottom: 2,
+          flex: 6,
+          alignSelf: "center",
         }}
       >
-        {item.name}
-      </Text>
-      <Text
+        <Text
+          style={{
+            fontSize: 22,
+            fontWeight: "500",
+            lineHeight: 22,
+            color: item.color,
+            marginBottom: 2,
+          }}
+        >
+          {item.name}
+        </Text>
+        <Text
+          style={{
+            fontSize: 13,
+            fontWeight: "400",
+            lineHeight: 18,
+            color: item.color,
+            marginBottom: 2,
+          }}
+        >
+          Safe Word: {item.safeWord}
+        </Text>
+      </View>
+      <View
         style={{
-          fontSize: 11,
-          fontWeight: "600",
-          lineHeight: 18,
-          color: "#858585",
-          marginBottom: 4,
-          width: '47%',
+          flex: 2,
+          marginTop: 14,
         }}
       >
-        {item.number}
-      </Text>
+        <Image
+          source={require("../../assets/call.png")}
+          style={{
+            width: 34,
+            height: 34,
+            objectFit: "fill",
+            alignSelf: "center",
+            borderRadius: 12,
+          }}
+        />
       </View>
     </TouchableOpacity>
   );
