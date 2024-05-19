@@ -4,6 +4,7 @@ import Header from './header'
 import Helpline from './helpline'
 import { useState } from 'react'
 import { heading } from './utils'
+import SafetyCheck from './safety-check'
 
 const Security = () => {
   const [selectedTab, setSelectedTab] = useState(0);
@@ -11,7 +12,8 @@ const Security = () => {
   return (
     <View style={styles.Wrapper}>
       <Header list={heading[selectedTab]} />
-      <Helpline />
+      { selectedTab === 1 && <SafetyCheck /> }
+      { selectedTab === 4 && <Helpline /> }
       <Footer selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
     </View>
   )
