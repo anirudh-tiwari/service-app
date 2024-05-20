@@ -1,25 +1,37 @@
-import { View, Image } from "react-native";
+import { useEffect, useState } from "react";
+import { View, Image, TouchableOpacity } from "react-native";
+import AddContacts from "./add-contacts";
+import { useNavigation } from "@react-navigation/native";
 
 const Friends = () => {
+  navigation = useNavigation();
 
   return (
     <>
-      <View
-        style={{
-          marginTop: 64,
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Image
-          source={require("../../../assets/addUser.png")}
+        <TouchableOpacity
           style={{
-            height: 360,
-            objectFit: "contain",
+            marginTop: 64,
+            alignItems: "center",
+            justifyContent: "center",
           }}
-        />
-      </View>
-      {/* <View style={{ position: "absolute", right: 20, bottom: 20, width: 60 }}>
+          onPress={() => navigation.navigate("AddContacts") }
+        >
+          <Image
+            source={require("../../../assets/addUser.png")}
+            style={{
+              height: 360,
+              objectFit: "contain",
+            }}
+          />
+        </TouchableOpacity>
+    </>
+  );
+};
+
+export default Friends;
+
+{
+  /* <View style={{ position: "absolute", right: 20, bottom: 20, width: 60 }}>
         <Image
           source={require("../../../assets/plus.png")}
           style={{
@@ -28,9 +40,5 @@ const Friends = () => {
             objectFit: "contain",
           }}
         />
-      </View> */}
-    </>
-  );
-};
-
-export default Friends;
+      </View> */
+}

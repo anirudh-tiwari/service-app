@@ -20,6 +20,7 @@ import HealthProduct from '../pages/health/products/list';
 import SingleDoctor from '../pages/health/singleDoctor';
 import Appointment from '../pages/health/appointment';
 import Security from "../pages/security";
+import AddContacts from "../pages/security/create/add-contacts";
 
 
 const Stack = createNativeStackNavigator();
@@ -112,6 +113,13 @@ const AppNavigator = () => {
           }}
           name="Security"
           component={Security}
+        />
+         <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="AddContacts"
+          component={AddContacts}
         />
       </Stack.Navigator>
     </NavigationContainer>
