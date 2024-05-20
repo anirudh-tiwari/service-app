@@ -1,7 +1,9 @@
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const FullPage = ({ label, children }) => {
+  navigation = useNavigation();
   return (
     <View style={{ backgroundColor: "#1D1F24", flex: 1 }}>
       <View style={styles.headerWrapper}>
@@ -9,16 +11,21 @@ const FullPage = ({ label, children }) => {
           <View style={styles.container1}>
             <Text style={styles.heading}>{label}</Text>
           </View>
+          <TouchableOpacity onPress={()=>navigation.goBack()}
+          style={{
+            position: 'absolute',
+            top: 20,
+            right: 20,
+          }}
+          >
           <Image
             source={require("../../assets/circle.png")}
             style={{
               width: 32,
-              height: 32,
-              position: "absolute",
-              top: 1,
-              right: 24,
+              height: 32
             }}
           />
+          </TouchableOpacity>
         </View>
       </View>
       <View style={styles.bodyRadius}></View>

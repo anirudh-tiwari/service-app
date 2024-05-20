@@ -7,6 +7,8 @@ import FullPage from "../full-page";
 
 const AddContacts = () => {
   const [text, onChangeText] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
   const [selectedContact, setSelectedContact] = useState(null);
 
   const requestContactsPermission = async () => {
@@ -19,14 +21,14 @@ const AddContacts = () => {
         console.log("Permission: ", res);
         console.log("aniContacts", Contacts);
 
-        // Contacts.getAll()
-        //     .then((contacts) => {
-        //         // work with contacts
-        //         console.log(contacts);
-        //     })
-        //     .catch((e) => {
-        //         console.log(e);
-        //     });
+        Contacts.openContactForm()
+            .then((contacts) => {
+                // work with contacts
+                console.log(contacts);
+            })
+            .catch((e) => {
+                console.log(e);
+            });
       })
       .catch((error) => {
         console.error("Permission error: ", error);
@@ -88,19 +90,22 @@ const AddContacts = () => {
           logo={require("../../../assets/user.png")}
         />
         <CommonText
-          value={text}
-          onChange={onChangeText}
+          value={phone}
+          type="numeric"
+          onChange={setPhone}
           placeholder="Enter Phone Number"
           logo={require("../../../assets/phone.png")}
         />
         <CommonText
-          value={text}
-          onChange={onChangeText}
+          value={email}
+          type="email"
+          onChange={setEmail}
           placeholder="Enter Email Id"
           logo={require("../../../assets/email.png")}
         />
         <View
-          style={{ position: "absolute", bottom: 20, width: "100%", left: 16 }}
+        style={{marginTop: 250}}
+          // style={{ position: "absolute", bottom: 20, width: "100%", left: 16, zIndex:0 }}
         >
           <Button
             color={"green"}

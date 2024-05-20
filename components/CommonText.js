@@ -21,7 +21,7 @@ const CommonText = ({
         keyboardType={type}
         secureTextEntry={ secureTextEntry }
         placeholderTextColor="#676D75"
-        style={{color:"white"}}
+        style={{color:"white", width:"100%"}}
       />
     </View>
   );

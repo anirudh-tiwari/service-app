@@ -14,6 +14,7 @@ const Friends = () => {
             alignItems: "center",
             justifyContent: "center",
           }}
+          activeOpacity={0.8}
           onPress={() => navigation.navigate("AddContacts") }
         >
           <Image
