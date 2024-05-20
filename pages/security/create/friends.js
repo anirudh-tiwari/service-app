@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { View, Image, TouchableOpacity } from "react-native";
-import AddContacts from "./add-contacts";
 import { useNavigation } from "@react-navigation/native";
 
 const Friends = () => {
