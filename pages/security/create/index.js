@@ -1,40 +1,43 @@
 import { View, Text, Image } from "react-native";
 import Button from "../../../components/button";
 import { useState } from "react";
-import Freinds from './friends';
+import Freinds from "./friends";
+import SafeWord from "./safe-word";
 
 const Create = () => {
-    const [activeState, setActiveState] = useState("friend");
+  const [activeState, setActiveState] = useState("friend");
   return (
     <>
-      <View style={{ backgroundColor: "#1D1F24", flex: 1, paddingHorizontal:16 }}>
-        <View style={{flexDirection: "row", gap: 16, marginTop: 16 }}>
+      <View
+        style={{ backgroundColor: "#1D1F24", flex: 1, paddingHorizontal: 16 }}
+      >
+        <View style={{ flexDirection: "row", gap: 16, marginTop: 16 }}>
           <Button
             text="Add Friend"
-            color={ activeState === "friend" ? "green" : "#676D75" }
-            backgroundColor={ activeState === "friend" ? "#C7F6C7" : "#1D1F24"}
+            color={activeState === "friend" ? "green" : "#676D75"}
+            backgroundColor={activeState === "friend" ? "#C7F6C7" : "#1D1F24"}
             borderRadius={12}
-            borderColor={ activeState === "friend" ? "#C7F6C7" : "#1D1F24"}
+            borderColor={activeState === "friend" ? "#C7F6C7" : "#1D1F24"}
             height={40}
-            fontWeight={ activeState === "friend" ? "800" : "500"}
+            fontWeight={activeState === "friend" ? "800" : "500"}
             fontSize={16}
             width="48%"
-            onPress={()=>setActiveState("friend")}
+            onPress={() => setActiveState("friend")}
           />
           <Button
             text="Add Safe Word"
-            color={ activeState === "safeWord" ? "green" : "#676D75" }
-            backgroundColor={ activeState === "safeWord" ? "#C7F6C7" : "#1D1F24"}
+            color={activeState === "safeWord" ? "green" : "#676D75"}
+            backgroundColor={activeState === "safeWord" ? "#C7F6C7" : "#1D1F24"}
             borderRadius={12}
-            borderColor={ activeState === "safeWord" ? "#C7F6C7" : "#1D1F24"}
+            borderColor={activeState === "safeWord" ? "#C7F6C7" : "#1D1F24"}
             height={40}
-            fontWeight={ activeState === "safeWord" ? "700" : "600"}
+            fontWeight={activeState === "safeWord" ? "700" : "600"}
             fontSize={16}
             width="48%"
-            onPress={()=>setActiveState("safeWord")}
+            onPress={() => setActiveState("safeWord")}
           />
         </View>
-        <Freinds />
+        {activeState === "friend" ? <Freinds /> : <SafeWord />}
       </View>
       <View
         style={{
