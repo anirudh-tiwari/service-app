@@ -24,7 +24,7 @@ const Button = ({
         backgroundColor: backgroundColor,
         borderRadius: borderRadius,
         paddingHorizontal: 8,
-        borderColor: borderColor,
+        borderColor: borderColor ? borderColor :  backgroundColor,
         borderWidth: 1
       }}
     >

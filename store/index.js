@@ -1,12 +1,8 @@
 import { createStore, combineReducers } from 'redux';
-import menuReducer from './features/menu';
-import cartReducer from './features/cart';
-import whishlistReducer from './features/whishlist';
+import contactReducer from './features/contact';
 
 const rootReducer = combineReducers({
-	menu: menuReducer,
-	cart: cartReducer,
-	whishlist: whishlistReducer,
+	contact: contactReducer,
 });
 
 const store = createStore(
