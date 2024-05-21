@@ -11,17 +11,17 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Splash from "../components/splash";
 import Home from "../pages/home";
 import Food from "../pages/food";
-import Health from '../pages/health'
-import FoodList from '../pages/food/list';
-import SingleMenu from '../pages/food/single';
-import Success from '../pages/food/success';
-import Doctor from '../pages/health/doctor';
-import HealthProduct from '../pages/health/products/list';
-import SingleDoctor from '../pages/health/singleDoctor';
-import Appointment from '../pages/health/appointment';
+import Health from "../pages/health";
+import FoodList from "../pages/food/list";
+import SingleMenu from "../pages/food/single";
+import Success from "../pages/food/success";
+import Doctor from "../pages/health/doctor";
+import HealthProduct from "../pages/health/products/list";
+import SingleDoctor from "../pages/health/singleDoctor";
+import Appointment from "../pages/health/appointment";
 import Security from "../pages/security";
 import AddContacts from "../pages/security/create/add-contacts";
-
+import Recognition from "../pages/security/create/recognition";
 
 const Stack = createNativeStackNavigator();
 
@@ -58,14 +58,14 @@ const AppNavigator = () => {
           name="FoodList"
           component={FoodList}
         />
-         <Stack.Screen
+        <Stack.Screen
           options={{
             headerShown: false,
           }}
           name="SingleMenu"
           component={SingleMenu}
         />
-         <Stack.Screen
+        <Stack.Screen
           options={{
             headerShown: false,
           }}
@@ -79,7 +79,7 @@ const AppNavigator = () => {
           name="Health"
           component={Health}
         />
-         <Stack.Screen
+        <Stack.Screen
           options={{
             headerShown: false,
           }}
@@ -107,19 +107,26 @@ const AppNavigator = () => {
           name="Appointment"
           component={Appointment}
         />
-         <Stack.Screen
+        <Stack.Screen
           options={{
             headerShown: false,
           }}
           name="Security"
           component={Security}
         />
-         <Stack.Screen
+        <Stack.Screen
           options={{
             headerShown: false,
           }}
           name="AddContacts"
           component={AddContacts}
+        />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="Recognition"
+          component={Recognition}
         />
       </Stack.Navigator>
     </NavigationContainer>

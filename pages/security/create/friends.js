@@ -9,10 +9,6 @@ const Friends = () => {
   navigation = useNavigation();
   const { contactList } = ContactSelectors();
 
-  useEffect(() => {
-    console.log("anicontactList", contactList);
-  }, [contactList]);
-
   return (
     <>
       {size(contactList) ? (

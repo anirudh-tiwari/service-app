@@ -3,12 +3,14 @@ import { View, Text, Switch, StyleSheet, TextInput } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import Button from "../../../components/button";
 import { size } from "lodash";
+import { useNavigation } from "@react-navigation/native";
 
 const SafeWord = () => {
   const [isEnabled, setIsEnabled] = useState(true);
   const [text, setText] = useState("");
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
-
+  navigation = useNavigation();
+  
   return (
     <View>
       <View style={styles.banner}>
@@ -32,15 +34,21 @@ const SafeWord = () => {
         />
       </View>
       <View style={styles.checkStyle}>
+        <View style={{width:20}}>
         <Ionicons name="checkmark-outline" size={20} style={{marginTop:2}} color="white" />
+        </View>
         <Text style={styles.checkLabel}>Your Safe Word should have at least 4 syllables.</Text>
       </View>
       <View style={styles.checkStyle}>
+      <View style={{width:20}}>
         <Ionicons name="checkmark-outline" size={20} style={{marginTop:2}} color="white" />
+        </View>
         <Text style={styles.checkLabel}>It should be distinctive, and not heard in common conversation.</Text>
       </View>
       <View style={styles.checkStyle}>
+      <View style={{width:20}}>
         <Ionicons name="checkmark-outline" size={20} style={{marginTop:2}} color="white" />
+        </View>
         <Text style={styles.checkLabel}>Safe Word should not contain Spaces.</Text>
       </View>
       <View style={{marginTop: 84}}></View>
@@ -53,7 +61,7 @@ const SafeWord = () => {
             fontWeight="600"
             fontSize={18}
             borderColor={size(text) ? "" : "#C7F6C7"}
-            onPress={() => saveContacts()}
+            onPress={() => navigation.navigate("Recognition")}
           />
     </View>
   );

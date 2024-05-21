@@ -8,7 +8,6 @@ const SingleDoctor = () => {
   const category = useRoute();
   const { item, hospitalName } = category?.params;
   const { name, doctorImg, desc } = item;
-  console.log('anicategory',category?.params)
   const daysList = getNextDays();
   const [activeTag, setActiveTag] = useState(daysList[0].key);
   const [timeTag, setTimeTag] = useState(timeList[0].key);
