@@ -4,12 +4,14 @@ import { Ionicons } from "@expo/vector-icons";
 import Button from "../../../components/button";
 import { size } from "lodash";
 import { useNavigation } from "@react-navigation/native";
+import { ContactDispatchers, ContactSelectors } from "../../../store/features/contact";
 
 const SafeWord = () => {
   const [isEnabled, setIsEnabled] = useState(true);
-  const [text, setText] = useState("");
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
   navigation = useNavigation();
+  const { safeWord } = ContactSelectors();
+  const { setSafeWord } = ContactDispatchers();
   
   return (
     <View>
@@ -26,8 +28,8 @@ const SafeWord = () => {
       <View style={[styles.banner, styles.inputContainer]}>
         <Text style={styles.heading2}>Type your Safe Word</Text>
         <TextInput
-          onChangeText={setText}
-          value={text}
+          onChangeText={setSafeWord}
+          value={safeWord}
           style={styles.input}
           placeholder="Type Here..."
           placeholderTextColor="white"
@@ -53,14 +55,14 @@ const SafeWord = () => {
       </View>
       <View style={{marginTop: 84}}></View>
       <Button
-            color={size(text) ? "green" : "#C7F6C7"}
-            backgroundColor={size(text) ? "#C7F6C7" : "#1D1F24"}
+            color={size(safeWord) ? "green" : "#C7F6C7"}
+            backgroundColor={size(safeWord) ? "#C7F6C7" : "#1D1F24"}
             text={"Train, Voice Recognition"}
             width={"100%"}
             height={44}
             fontWeight="600"
             fontSize={18}
-            borderColor={size(text) ? "" : "#C7F6C7"}
+            borderColor={size(safeWord) ? "" : "#C7F6C7"}
             onPress={() => navigation.navigate("Recognition")}
           />
     </View>

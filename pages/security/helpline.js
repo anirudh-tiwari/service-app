@@ -7,6 +7,7 @@ import {
   Linking,
 } from "react-native";
 import { helpLine } from "./utils";
+import { ContactSelectors } from "../../store/features/contact";
 
 const Helpline = () => {
   return (
@@ -46,6 +47,7 @@ const Helpline = () => {
 export default Helpline;
 
 const Cards = ({ item, index }) => {
+  const { safeWord } = ContactSelectors();
   return (
     <TouchableOpacity
       style={{
@@ -103,7 +105,7 @@ const Cards = ({ item, index }) => {
             marginBottom: 2,
           }}
         >
-          Safe Word: {item.safeWord}
+          {safeWord} + {item.safeWord}
         </Text>
       </View>
       <View

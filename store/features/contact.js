@@ -6,6 +6,7 @@ const feature = "contact";
 
 const contactReducer = createApiReducer(feature, [], {
   contactList: [],
+  safeWord: "",
 });
 
 export default contactReducer;
@@ -14,6 +15,7 @@ export const ContactSelectors = () => {
   const { getStateProp } = GetSelectors(feature);
   return {
     contactList: getStateProp("contactList"),
+    safeWord: getStateProp("safeWord"),
   };
 };
 
@@ -27,5 +29,6 @@ export const ContactDispatchers = () => {
 
   return {
     setAddtoContact: (value) => addtoContact(value),
+    setSafeWord: (value) => setStateProp("safeWord", value),
   };
 };
