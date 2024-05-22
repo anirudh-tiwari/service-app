@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import { helpLine } from "./utils";
 import { ContactSelectors } from "../../store/features/contact";
+import { size } from "lodash";
 
 const Helpline = () => {
   return (
@@ -105,7 +106,7 @@ const Cards = ({ item, index }) => {
             marginBottom: 2,
           }}
         >
-          {safeWord} + {item.safeWord}
+          { size( safeWord ) ? `${safeWord} + ` : ""}{item.safeWord}
         </Text>
       </View>
       <View

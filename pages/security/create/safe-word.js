@@ -85,6 +85,7 @@ const styles = StyleSheet.create({
   },
   heading: {
     fontSize: 18,
+    fontWeight: "600",
     color: "white",
   },
   inputContainer: {
