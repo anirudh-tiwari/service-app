@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
     gap: 10
   },
   picker: {
-    height: 200,
+    height: 180,
     width: 50,
   },
   item: {
@@ -113,6 +113,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 24,
+    color: "#1D1F24"
   },
   selectedText: {
     color: 'white',

@@ -42,7 +42,7 @@ const Safety = () => {
     </View> */}
     {/* TIME  */}
     <SafeAreaView style={[styles.banner, styles.inputContainer]}>
-      <Text style={styles.header}>Select Time</Text>
+      <Text style={styles.heading}>Select Time</Text>
       <TimePicker 
         onHourChange={handleHourChange} 
         onMinuteChange={handleMinuteChange} 
@@ -50,7 +50,7 @@ const Safety = () => {
       />
     </SafeAreaView>
     {/* TIME END  */}
-    <View style={{marginTop: 74}}></View>
+    <View style={{marginTop: 116}}></View>
     <Button
           color={size(safeWord) ? "green" : "#C7F6C7"}
           backgroundColor={size(safeWord) ? "#C7F6C7" : "#1D1F24"}
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
       alignItems: "flex-start",
       padding: 14,
       paddingVertical: 10,
-      height: 290,
+      height: 248,
       gap: 10,
       marginBottom:34,
     },
