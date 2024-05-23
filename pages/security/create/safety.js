@@ -3,6 +3,7 @@ import Button from "../../../components/button";
 import { size } from "lodash";
 import { useState } from "react";
 import TimePicker from "../../../components/timePicker";
+import FullPage from "../full-page";
 
 const Safety = () => {
   const [isEnabled, setIsEnabled] = useState(true);
@@ -26,6 +27,7 @@ const Safety = () => {
   const safeWord = [1,2];
 
   return (
+    <FullPage label="Set Safety Check">
     <View>
     <View style={styles.banner}>
       <Text style={styles.heading}>Repeat</Text>
@@ -50,7 +52,7 @@ const Safety = () => {
       />
     </SafeAreaView>
     {/* TIME END  */}
-    <View style={{marginTop: 116}}></View>
+    <View style={{marginTop: 200}}></View>
     <Button
           color={size(safeWord) ? "green" : "#C7F6C7"}
           backgroundColor={size(safeWord) ? "#C7F6C7" : "#1D1F24"}
@@ -63,6 +65,7 @@ const Safety = () => {
           onPress={() => navigation.navigate("Recognition")}
         />
   </View>
+  </FullPage>
   )
 }
 

@@ -22,6 +22,7 @@ import Appointment from "../pages/health/appointment";
 import Security from "../pages/security";
 import AddContacts from "../pages/security/create/add-contacts";
 import Recognition from "../pages/security/create/recognition";
+import Safety from "../pages/security/create/safety";
 
 const Stack = createNativeStackNavigator();
 
@@ -127,6 +128,13 @@ const AppNavigator = () => {
           }}
           name="Recognition"
           component={Recognition}
+        />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="Safety"
+          component={Safety}
         />
       </Stack.Navigator>
     </NavigationContainer>
