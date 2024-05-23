@@ -7,6 +7,7 @@ const feature = "contact";
 const contactReducer = createApiReducer(feature, [], {
   contactList: [],
   safeWord: "",
+  safetyCheckList: [],
 });
 
 export default contactReducer;
@@ -16,6 +17,7 @@ export const ContactSelectors = () => {
   return {
     contactList: getStateProp("contactList"),
     safeWord: getStateProp("safeWord"),
+    safetyCheckList: getStateProp("safetyCheckList"),
   };
 };
 
@@ -27,8 +29,15 @@ export const ContactDispatchers = () => {
     setStateProp("contactList", newList);
   };
 
+  const addtoSafetyCheck = (body) => {
+    const newList = [...state.safetyCheckList, body];
+    setStateProp("safetyCheckList", newList);
+  };
+
   return {
     setAddtoContact: (value) => addtoContact(value),
     setSafeWord: (value) => setStateProp("safeWord", value),
+    setSafetyCheck: (value) => addtoSafetyCheck(value),
+    updateSafetyCheck: (value) => setStateProp("safetyCheckList", value),
   };
 };

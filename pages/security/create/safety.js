@@ -4,6 +4,8 @@ import { size } from "lodash";
 import { useState } from "react";
 import TimePicker from "../../../components/timePicker";
 import FullPage from "../full-page";
+import { useNavigation } from "@react-navigation/native";
+import { ContactDispatchers } from "../../../store/features/contact";
 
 const Safety = () => {
   const [isEnabled, setIsEnabled] = useState(true);
@@ -11,6 +13,19 @@ const Safety = () => {
   const [selectedHour, setSelectedHour] = useState(1);
   const [selectedMinute, setSelectedMinute] = useState('00');
   const [selectedPeriod, setSelectedPeriod] = useState('AM');
+  const { setSafetyCheck } = ContactDispatchers();
+  navigation = useNavigation();
+
+  const saveChecks = () => {
+    const payload = {
+      isEnabled,
+      selectedHour,
+      selectedMinute,
+      selectedPeriod
+    };
+    setSafetyCheck(payload);
+    navigation.goBack()
+  };
 
   const handleHourChange = (hour) => {
     setSelectedHour(hour);
@@ -56,13 +71,13 @@ const Safety = () => {
     <Button
           color={size(safeWord) ? "green" : "#C7F6C7"}
           backgroundColor={size(safeWord) ? "#C7F6C7" : "#1D1F24"}
-          text={"Add"}
+          text={"Save"}
           width={"100%"}
           height={44}
           fontWeight="600"
           fontSize={18}
           borderColor={size(safeWord) ? "" : "#C7F6C7"}
-          onPress={() => navigation.navigate("Recognition")}
+          onPress={() => saveChecks()}
         />
   </View>
   </FullPage>
