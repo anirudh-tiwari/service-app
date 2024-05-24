@@ -1,5 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
-import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { Ionicons } from '@expo/vector-icons';
 
 const Header = () => {
   navigation = useNavigation();
@@ -13,19 +14,12 @@ const Header = () => {
         }}
       >
         <View style={styles.container1}>
-          <Text style={styles.header}>Stay Fit 👋</Text>
-          <Text style={styles.description}>Anirudh Tiwari</Text>
+          <Text style={styles.header}>Local Voice,</Text>
+          <Text style={styles.description}>North East, Delhi</Text>
         </View>
         <View style={styles.container2}>
           <TouchableOpacity onPress={() => navigation.navigate("Home")}>
-            <Image
-              source={require("../../assets/profilePicBlue.png")}
-              style={{
-                width: 40,
-                height: 40,
-                borderRadius: 50,
-              }}
-            />
+            <Ionicons name="notifications" size={28} color="#E23288" />
           </TouchableOpacity>
         </View>
       </View>
@@ -44,12 +38,6 @@ const styles = StyleSheet.create({
   description: {
     fontSize: 18,
     color: "#858585",
-    fontWeight: "400",
-    marginTop: 2,
-  },
-  description2: {
-    fontSize: 18,
-    color: "green",
     fontWeight: "400",
     marginTop: 2,
   },
