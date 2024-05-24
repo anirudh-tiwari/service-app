@@ -72,6 +72,7 @@ const Home = () => {
             image: require("../assets/problem.png"),
             index: 6,
           }}
+          navigate={'Locality'}
         />
       </View>
     </View>
