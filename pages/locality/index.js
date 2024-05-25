@@ -1,6 +1,9 @@
 import { View, Text, StyleSheet } from "react-native";
 import Header from "./header";
 import { useState } from "react";
+import Priority from "./priority";
+import Issues from "./issues";
+import SingleCard from "./single-card";
 
 const Locality = () => {
   const [selectedTab, setSelectedTab] = useState(0);
@@ -8,6 +11,9 @@ const Locality = () => {
   return (
     <View style={styles.Wrapper}>
       <Header />
+      <Priority />
+      {/* <Issues /> */}
+      <SingleCard />
     </View>
   );
 };
