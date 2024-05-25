@@ -12,10 +12,11 @@ const SingleCard = ({ item, marginTop = 0, width = "100%" }) => {
         marginTop: marginTop,
         backgroundColor: "#252A32",
         marginBottom: 20,
-        height: 344,
+        height: 386,
         padding: 12,
       }}
-      onPress={() => navigation.navigate("SingleDoctor")}
+      // onPress={() => navigation.navigate("SingleDoctor")}
+      onPress={() => {}}
     >
       <View
         style={{
@@ -57,6 +58,10 @@ const SingleCard = ({ item, marginTop = 0, width = "100%" }) => {
         the intersection with 2nd Avenue. It's causing | | significant traffic
         issues and needs immediate | | attention.
       </Text>
+      <View style={[styles.iconWrapper,{marginTop:12}]}>
+        <Image source={require("../../assets/map3.png")} style={[styles.icon ]} />
+        <Text style={[styles.iconText, {fontWeight: "600"}]}>Khajoori Chowk</Text>
+      </View>
       <View style={styles.iconContainer}>
         <View style={styles.iconWrapper}>
           <Image
@@ -87,7 +92,7 @@ const SingleCard = ({ item, marginTop = 0, width = "100%" }) => {
 export default SingleCard;
 
 const styles = StyleSheet.create({
-  iconContainer: { flexDirection: "row", marginTop: 16, gap: 30 },
+  iconContainer: { flexDirection: "row", marginTop: 18, gap: 30 },
   iconWrapper: { flexDirection: "row", gap: 6 },
   icon: {
     width: 26,
