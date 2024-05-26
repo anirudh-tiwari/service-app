@@ -24,13 +24,12 @@ const SingleCard = ({ item, marginTop = 0, width = "100%" }) => {
         }}
       >
         <Image
-          //   source={item.image}
-          source={require("../../assets/pathole.jpg")}
+          source={item.image}
           style={{
             width: "100%",
             height: "100%",
             borderRadius: 0,
-            objectFit: "cover",
+            objectFit: "fill",
             borderRadius: 20,
           }}
         />
@@ -44,8 +43,7 @@ const SingleCard = ({ item, marginTop = 0, width = "100%" }) => {
           marginTop: 12,
         }}
       >
-        {/* {item.name} */}
-        Pothole
+        {item.name}
       </Text>
       <Text
         style={{
@@ -54,13 +52,16 @@ const SingleCard = ({ item, marginTop = 0, width = "100%" }) => {
           color: "#AEAEAE",
         }}
       >
-        {/* {item.desc} */}A large pothole has formed on Main Street near | |
-        the intersection with 2nd Avenue. It's causing | | significant traffic
-        issues and needs immediate | | attention.
+        {item.description}
       </Text>
-      <View style={[styles.iconWrapper,{marginTop:12}]}>
-        <Image source={require("../../assets/map3.png")} style={[styles.icon ]} />
-        <Text style={[styles.iconText, {fontWeight: "600"}]}>Khajoori Chowk</Text>
+      <View style={[styles.iconWrapper, { marginTop: 12 }]}>
+        <Image
+          source={require("../../assets/map3.png")}
+          style={[styles.icon]}
+        />
+        <Text style={[styles.iconText, { fontWeight: "600" }]}>
+          {item.location}
+        </Text>
       </View>
       <View style={styles.iconContainer}>
         <View style={styles.iconWrapper}>
@@ -68,7 +69,7 @@ const SingleCard = ({ item, marginTop = 0, width = "100%" }) => {
             source={require("../../assets/vote2.png")}
             style={styles.icon}
           />
-          <Text style={styles.iconText}>1200</Text>
+          <Text style={styles.iconText}>{item.vote}</Text>
         </View>
         <View style={styles.iconWrapper}>
           <Image

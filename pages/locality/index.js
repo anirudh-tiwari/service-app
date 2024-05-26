@@ -8,7 +8,7 @@ import Tags from "./tags";
 import { tagsData } from "./utils";
 
 const Locality = () => {
-  const [activeTag, setActiveTag] = useState("reported");
+  const [activeTag, setActiveTag] = useState("inProgress");
 
   return (
     <View style={styles.Wrapper}>
@@ -26,7 +26,7 @@ const Locality = () => {
         activeTag={activeTag}
         setActiveTag={setActiveTag}
       />
-        <Issues />
+        <Issues  activeTag={activeTag} />
       </ScrollView>
     </View>
   );
