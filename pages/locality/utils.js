@@ -24,7 +24,7 @@ export const issueList = {
     {
       name: "Pothole",
       description: `A large pothole has formed on Main Street near the intersection with 2nd Avenue. It's causing significant traffic issues and needs immediate attention.`,
-      vote: 1200,
+      vote: 1220,
       location: "Chandini chowk",
       isPending: true,
       image: require("../../assets/pathole.jpg"),
@@ -32,7 +32,7 @@ export const issueList = {
     {
       name: "Blocked Drain",
       description: `The drain on Oak Street is blocked, causing water to accumulate and flood the sidewalk. `,
-      vote: 1200,
+      vote: 1198,
       isPending: true,
       location: "Shahdara Metro Station",
       image: require("../../assets/Drain.jpg"),
@@ -40,7 +40,7 @@ export const issueList = {
     {
       name: "Graffiti",
       description: `There is graffiti on the wall of the central park, which needs to be cleaned up.`,
-      vote: 1200,
+      vote: 1800,
       location: "Central Park (C.P)",
       isPending: true,
       image: require("../../assets/Graffiti.jpg"),
@@ -48,7 +48,7 @@ export const issueList = {
     {
       name: "Water Supply",
       description: `Residents on Maple Street are experiencing low water pressure, affecting daily activities.`,
-      vote: 1200,
+      vote: 1740,
       location: "Central Park (C.P)",
       isPending: true,
       image: require("../../assets/waterSupply.jpg"),
@@ -56,7 +56,7 @@ export const issueList = {
     {
       name: "Road Damage",
       description: `A large tree has fallen due to heavy rain on Shahdara Road, blocking traffic and causing potential safety hazards.`,
-      vote: 1200,
+      vote: 1580,
       location: "Shahdara Road",
       isPending: true,
       image: require("../../assets/tree.jpg"),

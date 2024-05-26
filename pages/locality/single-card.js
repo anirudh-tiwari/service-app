@@ -1,7 +1,7 @@
 import { View, TouchableOpacity, Text, Image, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-const SingleCard = ({ item, marginTop = 0, width = "100%" }) => {
+const SingleCard = ({ item, marginTop = 0, width = "100%", activeTag }) => {
   navigation = useNavigation();
   return (
     <TouchableOpacity
@@ -12,8 +12,10 @@ const SingleCard = ({ item, marginTop = 0, width = "100%" }) => {
         marginTop: marginTop,
         backgroundColor: "#252A32",
         marginBottom: 20,
-        height: 386,
+        // height: activeTag !== "completed" ? 386 : 346,
+        height: "auto",
         padding: 12,
+        paddingBottom: 16
       }}
       // onPress={() => navigation.navigate("SingleDoctor")}
       onPress={() => {}}
@@ -41,6 +43,7 @@ const SingleCard = ({ item, marginTop = 0, width = "100%" }) => {
           color: "white",
           marginBottom: 2,
           marginTop: 12,
+          textDecorationLine: activeTag === "completed" ? "line-through" : "",
         }}
       >
         {item.name}
@@ -50,6 +53,7 @@ const SingleCard = ({ item, marginTop = 0, width = "100%" }) => {
           fontSize: 12,
           fontWeight: "500",
           color: "#AEAEAE",
+          textDecorationLine: activeTag === "completed" ? "line-through" : "",
         }}
       >
         {item.description}
@@ -63,29 +67,31 @@ const SingleCard = ({ item, marginTop = 0, width = "100%" }) => {
           {item.location}
         </Text>
       </View>
-      <View style={styles.iconContainer}>
-        <View style={styles.iconWrapper}>
-          <Image
-            source={require("../../assets/vote2.png")}
-            style={styles.icon}
-          />
-          <Text style={styles.iconText}>{item.vote}</Text>
+      {activeTag !== "completed" ? (
+        <View style={styles.iconContainer}>
+          <View style={styles.iconWrapper}>
+            <Image
+              source={require("../../assets/vote2.png")}
+              style={styles.icon}
+            />
+            <Text style={styles.iconText}>{item.vote}</Text>
+          </View>
+          <View style={styles.iconWrapper}>
+            <Image
+              source={require("../../assets/discussion2.png")}
+              style={styles.icon}
+            />
+            <Text style={styles.iconText}>Debate</Text>
+          </View>
+          <View style={styles.iconWrapper}>
+            <Image
+              source={require("../../assets/workers.png")}
+              style={styles.icon}
+            />
+            <Text style={styles.iconText}>Pending</Text>
+          </View>
         </View>
-        <View style={styles.iconWrapper}>
-          <Image
-            source={require("../../assets/discussion2.png")}
-            style={styles.icon}
-          />
-          <Text style={styles.iconText}>Debate</Text>
-        </View>
-        <View style={styles.iconWrapper}>
-          <Image
-            source={require("../../assets/workers.png")}
-            style={styles.icon}
-          />
-          <Text style={styles.iconText}>Pending</Text>
-        </View>
-      </View>
+      ) : null}
     </TouchableOpacity>
   );
 };

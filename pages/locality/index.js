@@ -8,7 +8,7 @@ import Tags from "./tags";
 import { tagsData } from "./utils";
 
 const Locality = () => {
-  const [activeTag, setActiveTag] = useState("inProgress");
+  const [activeTag, setActiveTag] = useState("reported");
 
   return (
     <View style={styles.Wrapper}>

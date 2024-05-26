@@ -1,32 +1,73 @@
-import { View, Text, StyleSheet, ScrollView, FlatList, Image } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  FlatList,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 import React, { useState } from "react";
 import SingleCard from "./single-card";
 import { issueList, NoSearch } from "./utils";
 import { isEmpty } from "lodash";
+import {
+  ContactDispatchers,
+  ContactSelectors,
+} from "../../store/features/contact";
 
 const Issues = ({ activeTag }) => {
+  const { updateLocalBanner } = ContactDispatchers();
+  const { localBanner } = ContactSelectors();
+
   return (
-    <View style={{ marginTop: 42 }}>
+    <View style={{ marginTop: 6 }}>
       {isEmpty(issueList[activeTag]) ? (
-       <View style={{marginTop:0, flexDirection: "column", gap:2,alignItems: "center"}}>
-          <Image
-          source={require('../../assets/no-data.png')}
+        <View
           style={{
-            width: 130,
-            height: 130,
-            objectFit: "cover",
+            marginTop: 40,
+            flexDirection: "column",
+            gap: 2,
+            alignItems: "center",
           }}
-        />
-          <Text style={{
-            fontSize:18,
-            color: "white",
-            fontWeight: "600"
-          }}>No Issue Found</Text>
+        >
+          <Image
+            source={require("../../assets/no-data.png")}
+            style={{
+              width: 130,
+              height: 130,
+              objectFit: "cover",
+            }}
+          />
+          <Text
+            style={{
+              fontSize: 18,
+              color: "white",
+              fontWeight: "600",
+            }}
+          >
+            No Issue Found
+          </Text>
         </View>
       ) : (
-        issueList[activeTag].map((data, index) => {
-          return <SingleCard item={data} key={index} />;
-        })
+        <>
+          {activeTag === "completed" && localBanner && (
+            <View style={styles.banner}>
+              <Text style={styles.bannerText}>
+                Click on the card to view the resolved issue
+              </Text>
+              <TouchableOpacity onPress={() => updateLocalBanner(false)}>
+                <Image
+                  source={require("../../assets/cross.png")}
+                  style={{ width: 22, height: 22 }}
+                />
+              </TouchableOpacity>
+            </View>
+          )}
+          {issueList[activeTag].map((data, index) => {
+            return <SingleCard activeTag={activeTag} item={data} key={index} />;
+          })}
+        </>
       )}
     </View>
   );
@@ -52,5 +93,18 @@ const styles = StyleSheet.create({
     color: "#676D75",
     fontWeight: "600",
     marginBottom: 6,
+  },
+  banner: {
+    padding: 10,
+    backgroundColor: "#CBF0C7",
+    borderRadius: 12,
+    color: "#09b29c",
+    marginBottom: 16,
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  bannerText: {
+    color: "#256C1D",
+    fontWeight: "700",
   },
 });

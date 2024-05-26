@@ -8,6 +8,7 @@ const contactReducer = createApiReducer(feature, [], {
   contactList: [],
   safeWord: "",
   safetyCheckList: [],
+  localBanner: true,
 });
 
 export default contactReducer;
@@ -18,6 +19,7 @@ export const ContactSelectors = () => {
     contactList: getStateProp("contactList"),
     safeWord: getStateProp("safeWord"),
     safetyCheckList: getStateProp("safetyCheckList"),
+    localBanner: getStateProp("localBanner"),
   };
 };
 
@@ -39,5 +41,6 @@ export const ContactDispatchers = () => {
     setSafeWord: (value) => setStateProp("safeWord", value),
     setSafetyCheck: (value) => addtoSafetyCheck(value),
     updateSafetyCheck: (value) => setStateProp("safetyCheckList", value),
+    updateLocalBanner: (value) => setStateProp("localBanner", value),
   };
 };
