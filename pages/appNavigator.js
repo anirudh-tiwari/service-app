@@ -24,6 +24,7 @@ import AddContacts from "../pages/security/create/add-contacts";
 import Recognition from "../pages/security/create/recognition";
 import Safety from "../pages/security/create/safety";
 import Locality from "../pages/locality";
+import CreateIssue from '../pages/locality/create';
 
 const Stack = createNativeStackNavigator();
 
@@ -143,6 +144,13 @@ const AppNavigator = () => {
           }}
           name="Locality"
           component={Locality}
+        />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="CreateIssue"
+          component={CreateIssue}
         />
       </Stack.Navigator>
     </NavigationContainer>
