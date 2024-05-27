@@ -1,16 +1,24 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, FlatList, ScrollView } from "react-native";
 import React from "react";
 import Cards from "./card";
+import { priorityList } from "./utils";
 
 const Priority = () => {
   return (
     <>
       <View style={styles.container}>
         <Text style={[styles.heading]}>Priority Voting Issues</Text>
-        <Text style={[styles.heading2]}>5 Most-voted issues get priority. Vote accordingly.</Text>
+        <Text style={[styles.heading2]}>
+          5 Most-voted issues get priority. Vote accordingly.
+        </Text>
       </View>
-      {/* <View style={styles.card}></View> */}
-      <Cards width={"90%"} />
+      <FlatList
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        data={priorityList}
+        renderItem={({ item }) => <Cards width={284} item={item} />}
+        keyExtractor={(item, index) => index.toString()}
+      />
     </>
   );
 };
@@ -40,6 +48,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFE5B4",
     height: 140,
     width: "86%",
-    borderRadius: 16
+    borderRadius: 16,
   },
 });

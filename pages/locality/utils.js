@@ -33,7 +33,7 @@ export const issueList = {
       name: "Blocked Drain",
       description: `The drain on Oak Street is blocked, causing water to accumulate and flood the sidewalk. `,
       vote: 1198,
-      isPending: true,
+      isPending: false,
       location: "Shahdara Metro Station",
       image: require("../../assets/Drain.jpg"),
     },
@@ -42,7 +42,7 @@ export const issueList = {
       description: `There is graffiti on the wall of the central park, which needs to be cleaned up.`,
       vote: 1800,
       location: "Central Park (C.P)",
-      isPending: true,
+      isPending: false,
       image: require("../../assets/Graffiti.jpg"),
     },
     {
@@ -58,7 +58,7 @@ export const issueList = {
       description: `A large tree has fallen due to heavy rain on Shahdara Road, blocking traffic and causing potential safety hazards.`,
       vote: 1580,
       location: "Shahdara Road",
-      isPending: true,
+      isPending: false,
       image: require("../../assets/tree.jpg"),
     },
     {
@@ -107,3 +107,31 @@ export const issueList = {
     },
   ],
 };
+
+
+export const priorityList = [
+    {
+      name: "Large pothole on Main Street",
+      vote: 1520,
+      isPending: false,
+      image: require("../../assets/pathole2.jpg"),
+    },
+    {
+      name: "Pothole",
+      vote: 1220,
+      isPending: true,
+      image: require("../../assets/pathole.jpg"),
+    },
+    {
+      name: "Pothole",
+      vote: 1220,
+      isPending: true,
+      image: require("../../assets/pathole.jpg"),
+    },
+    {
+      name: "Pothole",
+      vote: 1220,
+      isPending: false,
+      image: require("../../assets/pathole.jpg"),
+    },
+  ];

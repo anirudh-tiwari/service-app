@@ -18,6 +18,7 @@ const SingleCard = ({ item, marginTop = 0, width = "100%", activeTag }) => {
         paddingBottom: 16
       }}
       // onPress={() => navigation.navigate("SingleDoctor")}
+      activeOpacity={0.7}
       onPress={() => {}}
     >
       <View
@@ -88,7 +89,7 @@ const SingleCard = ({ item, marginTop = 0, width = "100%", activeTag }) => {
               source={require("../../assets/workers.png")}
               style={styles.icon}
             />
-            <Text style={styles.iconText}>Pending</Text>
+            <Text style={[styles.iconText, {marginTop:1}]}>{ item.isPending ? "Pending" : "Assigned" }</Text>
           </View>
         </View>
       ) : null}
