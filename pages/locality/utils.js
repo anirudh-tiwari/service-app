@@ -22,12 +22,20 @@ export const tagsData = [
 export const issueList = {
   reported: [
     {
+      name: "Road Damage",
+      description: `A large tree has fallen due to heavy rain on Shahdara Road, blocking traffic and causing potential safety hazards.`,
+      vote: 1580,
+      location: "Shahdara Road",
+      isPending: false,
+      image: require("../../assets/tree.jpg"),
+    },
+    {
       name: "Pothole",
       description: `A large pothole has formed on Main Street near the intersection with 2nd Avenue. It's causing significant traffic issues and needs immediate attention.`,
       vote: 1220,
       location: "Chandini chowk",
       isPending: true,
-      image: require("../../assets/pathole.jpg"),
+      image: require("../../assets/pathole2.jpg"),
     },
     {
       name: "Blocked Drain",
@@ -35,7 +43,7 @@ export const issueList = {
       vote: 1198,
       isPending: false,
       location: "Shahdara Metro Station",
-      image: require("../../assets/Drain.jpg"),
+      image: require("../../assets/Drain2.jpg"),
     },
     {
       name: "Graffiti",
@@ -52,14 +60,6 @@ export const issueList = {
       location: "Central Park (C.P)",
       isPending: true,
       image: require("../../assets/waterSupply.jpg"),
-    },
-    {
-      name: "Road Damage",
-      description: `A large tree has fallen due to heavy rain on Shahdara Road, blocking traffic and causing potential safety hazards.`,
-      vote: 1580,
-      location: "Shahdara Road",
-      isPending: false,
-      image: require("../../assets/tree.jpg"),
     },
     {
       name: "Broken Streetlight",
@@ -111,27 +111,27 @@ export const issueList = {
 
 export const priorityList = [
     {
-      name: "Large pothole on Main Street",
+      name: "Large pothole on Krishna Nagar",
       vote: 1520,
       isPending: false,
-      image: require("../../assets/pathole2.jpg"),
-    },
-    {
-      name: "Pothole",
-      vote: 1220,
-      isPending: true,
       image: require("../../assets/pathole.jpg"),
     },
     {
-      name: "Pothole",
-      vote: 1220,
+      name: "Blocked drain on Shahdara",
+      vote: 1500,
       isPending: true,
-      image: require("../../assets/pathole.jpg"),
+      image: require("../../assets/Drain.jpg"),
     },
     {
-      name: "Pothole",
-      vote: 1220,
+      name: "Water Supply on Chandni chowk",
+      vote: 1480,
       isPending: false,
-      image: require("../../assets/pathole.jpg"),
+      image: require("../../assets/waterSupply2.jpg"),
+    },
+    {
+      name: "Large Garbage on Dilshad Garden",
+      vote: 1320,
+      isPending: true,
+      image: require("../../assets/garbage2.jpeg"),
     },
   ];
