@@ -39,7 +39,7 @@ const Dropdown = ({ options, placeHolder = 'Select...', selected, onChange }) =>
             width: '100%',
             height: 50,
             borderRadius: 10,
-            borderWidth: 0.5,
+            borderWidth: 1,
             alignSelf: 'center',
             marginTop: 24,
             flexDirection: 'row',
@@ -47,18 +47,18 @@ const Dropdown = ({ options, placeHolder = 'Select...', selected, onChange }) =>
             alignItems: 'center',
             paddingLeft: 15,
             paddingRight: 15,
-            borderColor: 'white',
+            borderColor: '#676D75',
           }}
           activeOpacity={1}
           onPress={() => {
             setClicked(!clicked);
           }}>
-          <Text style={{ fontWeight: '600', color: 'white', zIndex: 0 }}>
+          <Text style={{ fontWeight: '400', color: selected? 'white' : "#676D75", zIndex: 0 }}>
             {selected ? selected.label : placeHolder}
           </Text>
           <Image
             source={clicked ? require('../assets/upload.png') : require('../assets/dropdown.png')}
-            style={{ width: 20, height: 20, tintColor: 'white' }}
+            style={{ width: 20, height: 20, tintColor: selected? 'white' : "#676D75" }}
           />
         </TouchableOpacity>
         {clicked && (

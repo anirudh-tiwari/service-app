@@ -8,20 +8,31 @@ const CommonText = ({
   logo,
   secureTextEntry = false,
   onBlur,
+  hasLogoColor = false,
 }) => {
   return (
     <View style={styles.textStyle}>
-      {logo ? <Image source={logo} style={{ width: 24,height: 24, marginRight: 8, tintColor:"#676D75" }} /> : null}
+      {logo ? (
+        <Image
+          source={logo}
+          style={{
+            width: 24,
+            height: 24,
+            marginRight: 8,
+            tintColor: hasLogoColor ? "" : "#676D75",
+          }}
+        />
+      ) : null}
       <TextInput
         // style={styles.input}
         onChangeText={onChange}
-        onBlur={ onBlur }
+        onBlur={onBlur}
         value={value}
         placeholder={placeholder}
         keyboardType={type}
-        secureTextEntry={ secureTextEntry }
+        secureTextEntry={secureTextEntry}
         placeholderTextColor="#676D75"
-        style={{color:"white", width:"100%"}}
+        style={{ color: "white", width: "100%" }}
       />
     </View>
   );
@@ -39,7 +50,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     width: "100%",
     marginTop: 24,
-    flexDirection: 'row',
-    alignItems: 'center',  // Center from vertical position
+    flexDirection: "row",
+    alignItems: "center", // Center from vertical position
   },
 });

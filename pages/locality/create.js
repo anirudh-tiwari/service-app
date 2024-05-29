@@ -3,12 +3,14 @@ import React, { useState } from "react";
 import { useRoute } from "@react-navigation/native";
 import Dropdown from "../../components/dropDown";
 import { Ionicons } from "@expo/vector-icons";
+import CommonText from "../../components/CommonText";
 
 const Create = () => {
   const image = useRoute();
   const { img } = image?.params;
   const [type, setType] = useState(null);
   const [list, setList] = useState(null);
+  const [text, onChangeText] = useState("");
 
   const handleTypeChange = (selectedType) => {
     console.log('aniselectedType',selectedType);
@@ -50,6 +52,13 @@ const Create = () => {
               onChange={(value) => setList(value)}
             />
           )}
+          <CommonText
+          value={text}
+          onChange={onChangeText}
+          placeholder="Enter Famous Location Name"
+          logo={require("../../assets/map3.png")}
+          hasLogoColor={true}
+        />
         </View>
       </View>
     </>
