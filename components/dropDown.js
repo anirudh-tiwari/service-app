@@ -4,12 +4,11 @@ import {
   Text,
   TouchableOpacity,
   Image,
-  FlatList,
   TouchableWithoutFeedback,
+  ScrollView,
 } from 'react-native';
 
 const Dropdown = ({ options, placeHolder = 'Select...', selected, onChange }) => {
-  console.log('anioptions',options);
   const [search, setSearch] = useState('');
   const [clicked, setClicked] = useState(false);
   const [data, setData] = useState(options);
@@ -29,7 +28,6 @@ const Dropdown = ({ options, placeHolder = 'Select...', selected, onChange }) =>
   useEffect(() => {
     setData(options);
   }, [options]);
-
 
   const handleOutsidePress = () => {
     if (clicked) {
@@ -59,12 +57,12 @@ const Dropdown = ({ options, placeHolder = 'Select...', selected, onChange }) =>
           onPress={() => {
             setClicked(!clicked);
           }}>
-          <Text style={{ fontWeight: '400', color: selected? 'white' : "#676D75", zIndex: 0 }}>
+          <Text style={{ fontWeight: '400', color: selected ? 'white' : "#676D75", zIndex: 0 }}>
             {selected ? selected.label : placeHolder}
           </Text>
           <Image
             source={clicked ? require('../assets/upload.png') : require('../assets/dropdown.png')}
-            style={{ width: 20, height: 20, tintColor: selected? 'white' : "#676D75" }}
+            style={{ width: 20, height: 20, tintColor: selected ? 'white' : "#676D75" }}
           />
         </TouchableOpacity>
         {clicked && (
@@ -73,17 +71,17 @@ const Dropdown = ({ options, placeHolder = 'Select...', selected, onChange }) =>
               elevation: 5,
               position: 'absolute',
               top: 80,
-              height: 'auto',
+              maxHeight: 200, // Set a max height for the dropdown list
               alignSelf: 'center',
               width: '100%',
               backgroundColor: '#1D1F24',
               borderRadius: 10,
               zIndex: 9999999,
             }}>
-            <FlatList
-              data={data}
-              renderItem={({ item }) => (
+            <ScrollView>
+              {data.map((item, index) => (
                 <TouchableOpacity
+                  key={index}
                   style={{
                     width: '85%',
                     alignSelf: 'center',
@@ -101,8 +99,8 @@ const Dropdown = ({ options, placeHolder = 'Select...', selected, onChange }) =>
                   }}>
                   <Text style={{ fontWeight: '600', color: 'white' }}>{item.label}</Text>
                 </TouchableOpacity>
-              )}
-            />
+              ))}
+            </ScrollView>
           </View>
         )}
       </View>

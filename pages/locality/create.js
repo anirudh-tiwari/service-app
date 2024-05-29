@@ -1,9 +1,16 @@
-import { View, Text, Image, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  KeyboardAvoidingView,
+} from "react-native";
 import React, { useEffect, useState } from "react";
 import { useRoute } from "@react-navigation/native";
 import Dropdown from "../../components/dropDown";
 import { Ionicons } from "@expo/vector-icons";
 import CommonText from "../../components/CommonText";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 const Create = () => {
   const image = useRoute();
@@ -11,17 +18,13 @@ const Create = () => {
   const [type, setType] = useState(null);
   const [list, setList] = useState(null);
   const [text, onChangeText] = useState("");
-  const [specificList, setSpecificList ] = useState(null);
+  const [specificList, setSpecificList] = useState(null);
 
   const handleTypeChange = (selectedType) => {
     setType(selectedType);
     setList(null);
     setSpecificList(issuesList[selectedType.key]);
   };
-
-  useEffect(()=>{
-   console.log('anispecificList', specificList);
-  },[specificList])
 
   return (
     <>
@@ -30,7 +33,7 @@ const Create = () => {
         <Text style={styles.issueText}>New Issue</Text>
         <Text style={styles.shareText}>Share</Text>
       </View>
-      <View style={styles.createWrapper}>
+      <KeyboardAwareScrollView behavior={"height"} style={styles.createWrapper}>
         <View style={styles.cardContainer}>
           <Image
             source={{ uri: img }}
@@ -57,14 +60,20 @@ const Create = () => {
             />
           )}
           <CommonText
-          value={text}
-          onChange={onChangeText}
-          placeholder="Enter Famous Location Name"
-          logo={require("../../assets/map3.png")}
-          hasLogoColor={true}
-        />
+            value={text}
+            onChange={onChangeText}
+            placeholder="Enter Famous Location Name"
+            logo={require("../../assets/map3.png")}
+            hasLogoColor={true}
+          />
+          <CommonText
+            value={text}
+            onChange={onChangeText}
+            placeholder="Describe your problem"
+            isTextArea={true}
+          />
         </View>
-      </View>
+      </KeyboardAwareScrollView>
     </>
   );
 };

@@ -9,6 +9,7 @@ const CommonText = ({
   secureTextEntry = false,
   onBlur,
   hasLogoColor = false,
+  isTextArea = false,
 }) => {
   return (
     <View style={styles.textStyle}>
@@ -32,7 +33,12 @@ const CommonText = ({
         keyboardType={type}
         secureTextEntry={secureTextEntry}
         placeholderTextColor="#676D75"
-        style={{ color: "white", width: "100%" }}
+        style={{
+          color: "white",
+          width: "100%",
+          height: isTextArea ? 120 : "auto",
+          verticalAlign: isTextArea ? "top" : "auto",
+        }}
       />
     </View>
   );
