@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {
   View,
   Text,
@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 
 const Dropdown = ({ options, placeHolder = 'Select...', selected, onChange }) => {
+  console.log('anioptions',options);
   const [search, setSearch] = useState('');
   const [clicked, setClicked] = useState(false);
   const [data, setData] = useState(options);
@@ -24,6 +25,11 @@ const Dropdown = ({ options, placeHolder = 'Select...', selected, onChange }) =>
       setData(options);
     }
   };
+
+  useEffect(() => {
+    setData(options);
+  }, [options]);
+
 
   const handleOutsidePress = () => {
     if (clicked) {

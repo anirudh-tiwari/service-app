@@ -1,5 +1,5 @@
 import { View, Text, Image, StyleSheet } from "react-native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRoute } from "@react-navigation/native";
 import Dropdown from "../../components/dropDown";
 import { Ionicons } from "@expo/vector-icons";
@@ -11,13 +11,17 @@ const Create = () => {
   const [type, setType] = useState(null);
   const [list, setList] = useState(null);
   const [text, onChangeText] = useState("");
+  const [specificList, setSpecificList ] = useState(null);
 
   const handleTypeChange = (selectedType) => {
-    console.log('aniselectedType',selectedType);
     setType(selectedType);
-    setList(null); // Reset the second dropdown
+    setList(null);
+    setSpecificList(issuesList[selectedType.key]);
   };
 
+  useEffect(()=>{
+   console.log('anispecificList', specificList);
+  },[specificList])
 
   return (
     <>
@@ -42,13 +46,13 @@ const Create = () => {
             options={issueType}
             selected={type}
             onChange={(value) => handleTypeChange(value)}
-            placeholder="Select Issue Type"
+            placeHolder="Select Issue Type"
           />
           {type && (
             <Dropdown
-              options={issuesList[type.key]}
+              options={specificList}
               selected={list}
-              placeholder="Select Specific Issue"
+              placeHolder="Select Specific Issue"
               onChange={(value) => setList(value)}
             />
           )}
