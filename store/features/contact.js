@@ -9,6 +9,7 @@ const contactReducer = createApiReducer(feature, [], {
   safeWord: "",
   safetyCheckList: [],
   localBanner: true,
+  issueList: [],
 });
 
 export default contactReducer;
@@ -20,6 +21,7 @@ export const ContactSelectors = () => {
     safeWord: getStateProp("safeWord"),
     safetyCheckList: getStateProp("safetyCheckList"),
     localBanner: getStateProp("localBanner"),
+    issueList: getStateProp("issueList"),
   };
 };
 
@@ -36,11 +38,21 @@ export const ContactDispatchers = () => {
     setStateProp("safetyCheckList", newList);
   };
 
+  const updateIssue = (body) => {
+    const newList = {
+      ...state.issueList,
+      reported: [...state.issueList.reported, body],
+    };
+    setStateProp("issueList", newList);
+  };
+
   return {
     setAddtoContact: (value) => addtoContact(value),
     setSafeWord: (value) => setStateProp("safeWord", value),
     setSafetyCheck: (value) => addtoSafetyCheck(value),
     updateSafetyCheck: (value) => setStateProp("safetyCheckList", value),
     updateLocalBanner: (value) => setStateProp("localBanner", value),
+    setIssueList: (value) => setStateProp("issueList", value),
+    updateIssueList: (value) => updateIssue(value),
   };
 };

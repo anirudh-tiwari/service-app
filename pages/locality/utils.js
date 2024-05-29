@@ -19,7 +19,7 @@ export const tagsData = [
   },
 ];
 
-export const issueList = {
+export const issueData = {
   reported: [
     {
       name: "Road Damage",
@@ -63,8 +63,7 @@ export const issueList = {
     },
     {
       name: "Broken Streetlight",
-      description: `The streetlight on Yamuna Vihar near the bus stop
-      is not working, creating a safety hazard at night. `,
+      description: `The streetlight on Yamuna Vihar near the bus stop is not working, creating a safety hazard at night. `,
       vote: 1160,
       location: "Yamuna Vihar Bus Stop",
       isPending: true,

@@ -7,27 +7,43 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React, { useState } from "react";
-import { useNavigation, useRoute } from "@react-navigation/native";
+import { useRoute } from "@react-navigation/native";
 import Dropdown from "../../components/dropDown";
 import { Ionicons } from "@expo/vector-icons";
 import CommonText from "../../components/CommonText";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import { ContactDispatchers, ContactSelectors } from "../../store/features/contact";
+import { useNavigation } from "@react-navigation/native";
 
 const Create = () => {
   const image = useRoute();
+  navigation = useNavigation();
   const { img } = image?.params;
   const [type, setType] = useState(null);
   const [list, setList] = useState(null);
   const [text, onChangeText] = useState("");
   const [specificList, setSpecificList] = useState(null);
   const [problem, setProblem] = useState(null);
-  navigation = useNavigation();
+  const { updateIssueList } = ContactDispatchers();
 
   const handleTypeChange = (selectedType) => {
     setType(selectedType);
     setList(null);
     setSpecificList(issuesList[selectedType.key]);
   };
+
+  const handleCreate = () => {
+    const payload = {
+      name: list.label,
+      description: problem,
+      vote: 1,
+      location: text,
+      isPending: false,
+      image: { uri: img },
+    }
+    updateIssueList(payload);
+    navigation.goBack();
+  }
 
   return (
     <>
@@ -36,7 +52,7 @@ const Create = () => {
           <Ionicons name="chevron-back-outline" size={24} color="white" />
         </TouchableOpacity>
         <Text style={styles.issueText}>New Issue</Text>
-        <Text style={styles.shareText}>Share</Text>
+        <Text style={styles.shareText} onPress={()=>handleCreate()}>Share</Text>
       </View>
       <KeyboardAwareScrollView behavior={"height"} style={styles.createWrapper}>
         <View style={styles.cardContainer}>

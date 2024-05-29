@@ -7,9 +7,9 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SingleCard from "./single-card";
-import { issueList, NoSearch } from "./utils";
+import { issueData } from "./utils";
 import { isEmpty } from "lodash";
 import {
   ContactDispatchers,
@@ -17,8 +17,12 @@ import {
 } from "../../store/features/contact";
 
 const Issues = ({ activeTag }) => {
-  const { updateLocalBanner } = ContactDispatchers();
-  const { localBanner } = ContactSelectors();
+  const { updateLocalBanner, setIssueList } = ContactDispatchers();
+  const { localBanner, issueList } = ContactSelectors();
+
+  useEffect(()=>{
+   setIssueList(issueData)
+  },[])
 
   return (
     <View style={{ marginTop: 6 }}>
