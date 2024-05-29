@@ -4,9 +4,10 @@ import {
   Image,
   StyleSheet,
   KeyboardAvoidingView,
+  TouchableOpacity,
 } from "react-native";
-import React, { useEffect, useState } from "react";
-import { useRoute } from "@react-navigation/native";
+import React, { useState } from "react";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import Dropdown from "../../components/dropDown";
 import { Ionicons } from "@expo/vector-icons";
 import CommonText from "../../components/CommonText";
@@ -19,6 +20,8 @@ const Create = () => {
   const [list, setList] = useState(null);
   const [text, onChangeText] = useState("");
   const [specificList, setSpecificList] = useState(null);
+  const [problem, setProblem] = useState(null);
+  navigation = useNavigation();
 
   const handleTypeChange = (selectedType) => {
     setType(selectedType);
@@ -29,7 +32,9 @@ const Create = () => {
   return (
     <>
       <View style={styles.header}>
-        <Ionicons name="chevron-back-outline" size={24} color="white" />
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Ionicons name="chevron-back-outline" size={24} color="white" />
+        </TouchableOpacity>
         <Text style={styles.issueText}>New Issue</Text>
         <Text style={styles.shareText}>Share</Text>
       </View>
@@ -67,8 +72,8 @@ const Create = () => {
             hasLogoColor={true}
           />
           <CommonText
-            value={text}
-            onChange={onChangeText}
+            value={problem}
+            onChange={setProblem}
             placeholder="Describe your problem"
             isTextArea={true}
           />
