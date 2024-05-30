@@ -1,16 +1,9 @@
-import { View, Text, Image, StyleSheet, Animated } from "react-native";
-import { useNavigation } from "@react-navigation/native";
-import { useState, useRef } from "react";
-import { TapGestureHandler, State } from "react-native-gesture-handler";
-import { ContactDispatchers } from "../../store/features/contact";
+import React, { useState, useRef } from 'react';
+import { View, Text, Image, StyleSheet, Animated } from 'react-native';
+import { TapGestureHandler, State } from 'react-native-gesture-handler';
+import { ContactDispatchers } from '../../store/features/contact';
 
-const SingleCard = ({
-  item,
-  marginTop = 0,
-  width = "100%",
-  activeTag,
-  itemIdx,
-}) => {
+const SingleCard = ({ item, marginTop = 0, width = "100%", activeTag, itemIdx }) => {
   const [liked, setLiked] = useState(false);
   const scale = useRef(new Animated.Value(0)).current;
   const doubleTapRef = useRef(null);
@@ -18,7 +11,8 @@ const SingleCard = ({
 
   const handleDoubleTap = ({ nativeEvent }) => {
     if (nativeEvent.state === State.ACTIVE) {
-      setLiked(!liked);
+      console.log("Double tap detected");
+      setLiked((prevLiked) => !prevLiked);
       updateIssueVote(itemIdx);
       Animated.spring(scale, {
         toValue: 1,
@@ -49,8 +43,6 @@ const SingleCard = ({
               marginTop: marginTop,
             },
           ]}
-          activeOpacity={1}
-          onPress={() => {}}
         >
           <View style={styles.imageContainer}>
             <Image source={item.image} style={styles.image} />
@@ -113,7 +105,7 @@ const SingleCard = ({
               </View>
             </View>
           )}
-          {liked && (
+          {true && (
             <Animated.View
               style={[styles.likeIcon, { transform: [{ scale }] }]}
             >
