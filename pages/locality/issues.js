@@ -69,7 +69,7 @@ const Issues = ({ activeTag }) => {
             </View>
           )}
           {issueList[activeTag].map((data, index) => {
-            return <SingleCard activeTag={activeTag} item={data} key={index} />;
+            return <SingleCard activeTag={activeTag} item={data} itemIdx={index} key={index} />;
           })}
         </>
       )}

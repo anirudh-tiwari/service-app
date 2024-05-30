@@ -46,6 +46,18 @@ export const ContactDispatchers = () => {
     setStateProp("issueList", newList);
   };
 
+  const updateIssueVote = (body) => {
+    const newList = {
+      ...state.issueList,
+      reported: state.issueList.reported.map((issue, index) =>
+        index == body
+          ? { ...issue, vote: issue.vote + 1 }
+          : issue
+      ),
+    };
+    setStateProp("issueList", newList);
+  };
+
   return {
     setAddtoContact: (value) => addtoContact(value),
     setSafeWord: (value) => setStateProp("safeWord", value),
@@ -54,5 +66,6 @@ export const ContactDispatchers = () => {
     updateLocalBanner: (value) => setStateProp("localBanner", value),
     setIssueList: (value) => setStateProp("issueList", value),
     updateIssueList: (value) => updateIssue(value),
+    updateIssueVote: (value) => updateIssueVote(value),
   };
 };

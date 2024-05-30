@@ -1,18 +1,25 @@
-import { View, TouchableOpacity, Text, Image, StyleSheet, Animated } from "react-native";
+import { View, Text, Image, StyleSheet, Animated } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { useState, useRef } from "react";
-import { Ionicons } from '@expo/vector-icons';
-import { TapGestureHandler, State } from 'react-native-gesture-handler';
+import { TapGestureHandler, State } from "react-native-gesture-handler";
+import { ContactDispatchers } from "../../store/features/contact";
 
-const SingleCard = ({ item, marginTop = 0, width = "100%", activeTag }) => {
-  const navigation = useNavigation();
+const SingleCard = ({
+  item,
+  marginTop = 0,
+  width = "100%",
+  activeTag,
+  itemIdx,
+}) => {
   const [liked, setLiked] = useState(false);
   const scale = useRef(new Animated.Value(0)).current;
   const doubleTapRef = useRef(null);
+  const { updateIssueVote } = ContactDispatchers();
 
   const handleDoubleTap = ({ nativeEvent }) => {
     if (nativeEvent.state === State.ACTIVE) {
       setLiked(!liked);
+      updateIssueVote(itemIdx);
       Animated.spring(scale, {
         toValue: 1,
         friction: 5,
@@ -40,23 +47,21 @@ const SingleCard = ({ item, marginTop = 0, width = "100%", activeTag }) => {
             {
               width: width,
               marginTop: marginTop,
-            }
+            },
           ]}
           activeOpacity={1}
           onPress={() => {}}
         >
           <View style={styles.imageContainer}>
-            <Image
-              source={item.image}
-              style={styles.image}
-            />
+            <Image source={item.image} style={styles.image} />
           </View>
           <Text
             style={[
               styles.name,
               {
-                textDecorationLine: activeTag === "completed" ? "line-through" : "none",
-              }
+                textDecorationLine:
+                  activeTag === "completed" ? "line-through" : "none",
+              },
             ]}
           >
             {item.name}
@@ -65,8 +70,9 @@ const SingleCard = ({ item, marginTop = 0, width = "100%", activeTag }) => {
             style={[
               styles.description,
               {
-                textDecorationLine: activeTag === "completed" ? "line-through" : "none",
-              }
+                textDecorationLine:
+                  activeTag === "completed" ? "line-through" : "none",
+              },
             ]}
           >
             {item.description}
@@ -101,18 +107,20 @@ const SingleCard = ({ item, marginTop = 0, width = "100%", activeTag }) => {
                   source={require("../../assets/workers.png")}
                   style={styles.icon}
                 />
-                <Text style={[styles.iconText, { marginTop: 1 }]}>{ item.isPending ? "Pending" : "Assigned" }</Text>
+                <Text style={[styles.iconText, { marginTop: 1 }]}>
+                  {item.isPending ? "Pending" : "Assigned"}
+                </Text>
               </View>
             </View>
           )}
           {liked && (
-            <Animated.View style={[styles.likeIcon, { transform: [{ scale }] }]}>
-              {/* <Ionicons name="heart" size={100} color="white" /> */}
+            <Animated.View
+              style={[styles.likeIcon, { transform: [{ scale }] }]}
+            >
               <Image
-                  source={require("../../assets/vote3.png")}
-                  style={{height:110, width: 110}}
-                  // tintColor={"white"}
-                />
+                source={require("../../assets/vote3.png")}
+                style={{ height: 110, width: 110 }}
+              />
             </Animated.View>
           )}
         </View>
@@ -172,9 +180,9 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   likeIcon: {
-    position: 'absolute',
-    top: '36%',
-    left: '36%',
+    position: "absolute",
+    top: "36%",
+    left: "36%",
     transform: [{ translateX: -50 }, { translateY: -50 }],
   },
 });
