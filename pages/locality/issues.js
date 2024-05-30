@@ -6,6 +6,7 @@ import {
   FlatList,
   Image,
   TouchableOpacity,
+  ToastAndroid,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import SingleCard from "./single-card";
@@ -23,6 +24,22 @@ const Issues = ({ activeTag }) => {
   useEffect(()=>{
    setIssueList(issueData)
   },[])
+
+  const handleVoteUpdate = (itemIdx) => {
+    const updatedIssues = { ...issueList };
+    updatedIssues[activeTag][itemIdx].vote += 1;
+
+    const sortedIssues = [...updatedIssues[activeTag]].sort((a, b) => b.vote - a.vote);
+
+    const hasOrderChanged = sortedIssues.some((issue, index) => issue !== updatedIssues[activeTag][index]);
+
+    updatedIssues[activeTag] = sortedIssues;
+    setIssueList(updatedIssues);
+
+    if (hasOrderChanged) {
+      ToastAndroid.show("Issue order updated based on votes", ToastAndroid.SHORT);
+    }
+  };
 
   return (
     <View style={{ marginTop: 6 }}>
@@ -69,7 +86,7 @@ const Issues = ({ activeTag }) => {
             </View>
           )}
           {issueList[activeTag].map((data, index) => {
-            return <SingleCard activeTag={activeTag} item={data} itemIdx={index} key={index} />;
+            return <SingleCard activeTag={activeTag} handleVoteUpdate={handleVoteUpdate} item={data} itemIdx={index} key={index} />;
           })}
         </>
       )}

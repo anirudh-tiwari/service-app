@@ -1,19 +1,16 @@
 import React, { useState, useRef } from 'react';
 import { View, Text, Image, StyleSheet, Animated } from 'react-native';
 import { TapGestureHandler, State } from 'react-native-gesture-handler';
-import { ContactDispatchers } from '../../store/features/contact';
 
-const SingleCard = ({ item, marginTop = 0, width = "100%", activeTag, itemIdx }) => {
+const SingleCard = ({ item, marginTop = 0, width = "100%", activeTag, itemIdx, handleVoteUpdate }) => {
   const [liked, setLiked] = useState(false);
   const scale = useRef(new Animated.Value(0)).current;
   const doubleTapRef = useRef(null);
-  const { updateIssueVote } = ContactDispatchers();
 
   const handleDoubleTap = ({ nativeEvent }) => {
-    if (nativeEvent.state === State.ACTIVE) {
-      console.log("Double tap detected");
+    if (nativeEvent.state === State.ACTIVE & activeTag !== "completed") {
       setLiked((prevLiked) => !prevLiked);
-      updateIssueVote(itemIdx);
+      handleVoteUpdate(itemIdx);
       Animated.spring(scale, {
         toValue: 1,
         friction: 5,

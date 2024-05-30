@@ -64,7 +64,7 @@ export const issueData = {
     {
       name: "Broken Streetlight",
       description: `The streetlight on Yamuna Vihar near the bus stop is not working, creating a safety hazard at night. `,
-      vote: 1160,
+      vote: 2,
       location: "Yamuna Vihar Bus Stop",
       isPending: true,
       image: require("../../assets/Streetlight.jpg"),
