@@ -25,7 +25,7 @@ const Issues = ({ activeTag }) => {
    setIssueList(issueData)
   },[])
 
-  const handleVoteUpdate = (itemIdx) => {
+  const handleVoteUpdate = (itemIdx, firstTap) => {
     const updatedIssues = { ...issueList };
     updatedIssues[activeTag][itemIdx].vote += 1;
 
@@ -36,8 +36,8 @@ const Issues = ({ activeTag }) => {
     updatedIssues[activeTag] = sortedIssues;
     setIssueList(updatedIssues);
 
-    if (hasOrderChanged) {
-      ToastAndroid.show("Issue order updated based on votes", ToastAndroid.SHORT);
+    if (hasOrderChanged && firstTap) {
+      ToastAndroid.show("Issue updated based on votes.", ToastAndroid.SHORT);
     }
   };
 

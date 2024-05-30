@@ -4,13 +4,15 @@ import { TapGestureHandler, State } from 'react-native-gesture-handler';
 
 const SingleCard = ({ item, marginTop = 0, width = "100%", activeTag, itemIdx, handleVoteUpdate }) => {
   const [liked, setLiked] = useState(false);
+  const [firstTap, setFirstTap] = useState(false);
   const scale = useRef(new Animated.Value(0)).current;
   const doubleTapRef = useRef(null);
 
   const handleDoubleTap = ({ nativeEvent }) => {
     if (nativeEvent.state === State.ACTIVE & activeTag !== "completed") {
       setLiked((prevLiked) => !prevLiked);
-      handleVoteUpdate(itemIdx);
+      handleVoteUpdate(itemIdx, firstTap);
+      setFirstTap( true );
       Animated.spring(scale, {
         toValue: 1,
         friction: 5,
