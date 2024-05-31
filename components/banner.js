@@ -105,11 +105,11 @@ const styles = StyleSheet.create({
   },
   paginationDot: {
     margin: 3,
-    fontSize: 18,
-    color: "#888",
+    fontSize: 14,
+    color: "black",
   },
   activeDot: {
-    color: "black",
+    color: "white",
   },
   footer: {
     position: "absolute",
