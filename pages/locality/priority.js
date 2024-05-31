@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   heading: {
-    fontSize: 16,
+    fontSize: 17,
     color: "white",
     fontWeight: "600",
     // marginBottom: 6,

@@ -18,11 +18,11 @@ const Locality = () => {
   return (
     <View style={styles.Wrapper}>
       <Header />
-      <Banner containerWidth={containerWidth} />
       <ScrollView
-        stickyHeaderIndices={[2]}
+        stickyHeaderIndices={[3]}
         showsVerticalScrollIndicator={false}
       >
+        <Banner containerWidth={containerWidth} />
         <Priority />
         <View style={styles.container}>
           <Text style={[styles.heading]}>Reported Issues</Text>
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   heading: {
-    fontSize: 16,
+    fontSize: 17,
     color: "white",
     fontWeight: "600",
     marginBottom: 6,

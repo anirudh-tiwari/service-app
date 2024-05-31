@@ -46,7 +46,7 @@ const Issues = ({ activeTag }) => {
       {isEmpty(issueList[activeTag]) ? (
         <View
           style={{
-            marginTop: 40,
+            marginTop: 24,
             flexDirection: "column",
             gap: 2,
             alignItems: "center",
@@ -55,8 +55,8 @@ const Issues = ({ activeTag }) => {
           <Image
             source={require("../../assets/no-data.png")}
             style={{
-              width: 130,
-              height: 130,
+              width: 110,
+              height: 110,
               objectFit: "cover",
             }}
           />
@@ -65,6 +65,7 @@ const Issues = ({ activeTag }) => {
               fontSize: 18,
               color: "white",
               fontWeight: "600",
+              marginTop: 4
             }}
           >
             No Issue Found
