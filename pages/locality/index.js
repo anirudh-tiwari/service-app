@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, Text, StyleSheet, ScrollView, Dimensions } from "react-native";
 import Header from "./header";
 import { useState } from "react";
 import Priority from "./priority";
@@ -7,18 +7,18 @@ import SingleCard from "./single-card";
 import Tags from "./tags";
 import { tagsData } from "./utils";
 import Thumbnail from "./thumbnail";
+import Carousel from "../../components/carousel";
+import Banner from "../../components/banner";
 
 const Locality = () => {
   const [activeTag, setActiveTag] = useState("reported");
+  const { width } = Dimensions.get("window");
+  const containerWidth = width - 32;
 
   return (
     <View style={styles.Wrapper}>
       <Header />
-      <Thumbnail url={require("../../assets/electricity.png")} />
-      <Thumbnail url={require("../../assets/waterBanner.png")} />
-      <Thumbnail url={require("../../assets/roadMaintainance.png")} />
-      <Thumbnail url={require("../../assets/garbage.png")} />
-      <Thumbnail url={require("../../assets/environment.png")} />
+      <Banner containerWidth={containerWidth} />
       <ScrollView
         stickyHeaderIndices={[2]}
         showsVerticalScrollIndicator={false}
