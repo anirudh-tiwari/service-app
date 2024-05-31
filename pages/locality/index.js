@@ -6,6 +6,7 @@ import Issues from "./issues";
 import SingleCard from "./single-card";
 import Tags from "./tags";
 import { tagsData } from "./utils";
+import Thumbnail from "./thumbnail";
 
 const Locality = () => {
   const [activeTag, setActiveTag] = useState("reported");
@@ -13,20 +14,25 @@ const Locality = () => {
   return (
     <View style={styles.Wrapper}>
       <Header />
+      <Thumbnail url={require("../../assets/electricity.png")} />
+      <Thumbnail url={require("../../assets/waterBanner.png")} />
+      <Thumbnail url={require("../../assets/roadMaintainance.png")} />
+      <Thumbnail url={require("../../assets/garbage.png")} />
+      <Thumbnail url={require("../../assets/environment.png")} />
       <ScrollView
         stickyHeaderIndices={[2]}
         showsVerticalScrollIndicator={false}
       >
         <Priority />
         <View style={styles.container}>
-        <Text style={[styles.heading]}>Reported Issues</Text>
-      </View>
-      <Tags
-        listData={tagsData}
-        activeTag={activeTag}
-        setActiveTag={setActiveTag}
-      />
-        <Issues  activeTag={activeTag} />
+          <Text style={[styles.heading]}>Reported Issues</Text>
+        </View>
+        <Tags
+          listData={tagsData}
+          activeTag={activeTag}
+          setActiveTag={setActiveTag}
+        />
+        <Issues activeTag={activeTag} />
       </ScrollView>
     </View>
   );
