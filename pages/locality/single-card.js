@@ -1,5 +1,6 @@
+import { useNavigation } from '@react-navigation/native';
 import React, { useState, useRef } from 'react';
-import { View, Text, Image, StyleSheet, Animated } from 'react-native';
+import { View, Text, Image, StyleSheet, Animated, TouchableOpacity } from 'react-native';
 import { TapGestureHandler, State } from 'react-native-gesture-handler';
 
 const SingleCard = ({ item, marginTop = 0, width = "100%", activeTag, itemIdx, handleVoteUpdate }) => {
@@ -7,6 +8,7 @@ const SingleCard = ({ item, marginTop = 0, width = "100%", activeTag, itemIdx, h
   const [firstTap, setFirstTap] = useState(false);
   const scale = useRef(new Animated.Value(0)).current;
   const doubleTapRef = useRef(null);
+  navigation = useNavigation();
 
   const handleDoubleTap = ({ nativeEvent }) => {
     if (nativeEvent.state === State.ACTIVE & activeTag !== "completed") {
@@ -43,9 +45,9 @@ const SingleCard = ({ item, marginTop = 0, width = "100%", activeTag, itemIdx, h
             },
           ]}
         >
-          <View style={styles.imageContainer}>
+          <TouchableOpacity style={styles.imageContainer} activeOpacity={1} onPress={()=> navigation.navigate("Discussion")}>
             <Image source={item.image} style={styles.image} />
-          </View>
+          </TouchableOpacity>
           <Text
             style={[
               styles.name,
