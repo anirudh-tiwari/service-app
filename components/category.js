@@ -26,6 +26,7 @@ const Category = ({
         marginTop: 0,
         // width: cardWidth
       }}
+      activeOpacity={0.8}
     >
       <View style={{ width: "100%" }}>
         <Image

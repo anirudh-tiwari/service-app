@@ -1,9 +1,23 @@
-import { useNavigation } from '@react-navigation/native';
-import React, { useState, useRef } from 'react';
-import { View, Text, Image, StyleSheet, Animated, TouchableOpacity } from 'react-native';
-import { TapGestureHandler, State } from 'react-native-gesture-handler';
+import { useNavigation } from "@react-navigation/native";
+import React, { useState, useRef } from "react";
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  Animated,
+  TouchableOpacity,
+} from "react-native";
+import { TapGestureHandler, State } from "react-native-gesture-handler";
 
-const SingleCard = ({ item, marginTop = 0, width = "100%", activeTag, itemIdx, handleVoteUpdate }) => {
+const SingleCard = ({
+  item,
+  marginTop = 0,
+  width = "100%",
+  activeTag,
+  itemIdx,
+  handleVoteUpdate,
+}) => {
   const [liked, setLiked] = useState(false);
   const [firstTap, setFirstTap] = useState(false);
   const scale = useRef(new Animated.Value(0)).current;
@@ -11,10 +25,10 @@ const SingleCard = ({ item, marginTop = 0, width = "100%", activeTag, itemIdx, h
   navigation = useNavigation();
 
   const handleDoubleTap = ({ nativeEvent }) => {
-    if (nativeEvent.state === State.ACTIVE & activeTag !== "completed") {
+    if ((nativeEvent.state === State.ACTIVE) & (activeTag !== "completed")) {
       setLiked((prevLiked) => !prevLiked);
       handleVoteUpdate(itemIdx, firstTap);
-      setFirstTap( true );
+      setFirstTap(true);
       Animated.spring(scale, {
         toValue: 1,
         friction: 5,
@@ -45,7 +59,11 @@ const SingleCard = ({ item, marginTop = 0, width = "100%", activeTag, itemIdx, h
             },
           ]}
         >
-          <TouchableOpacity style={styles.imageContainer} activeOpacity={1} onPress={()=> navigation.navigate("Discussion")}>
+          <TouchableOpacity
+            style={styles.imageContainer}
+            activeOpacity={1}
+            onPress={() => navigation.navigate("IssueDetail", {item})}
+          >
             <Image source={item.image} style={styles.image} />
           </TouchableOpacity>
           <Text
@@ -88,13 +106,17 @@ const SingleCard = ({ item, marginTop = 0, width = "100%", activeTag, itemIdx, h
                 />
                 <Text style={styles.iconText}>{item.vote}</Text>
               </View>
-              <View style={styles.iconWrapper}>
+              <TouchableOpacity
+                style={styles.iconWrapper}
+                activeOpacity={1}
+                onPress={() => navigation.navigate("Discussion")}
+              >
                 <Image
                   source={require("../../assets/discussion2.png")}
                   style={styles.icon}
                 />
                 <Text style={styles.iconText}>Debate</Text>
-              </View>
+              </TouchableOpacity>
               <View style={styles.iconWrapper}>
                 <Image
                   source={require("../../assets/workers.png")}

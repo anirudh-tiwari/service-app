@@ -30,7 +30,7 @@ export const issueData = {
       image: require("../../assets/tree.jpg"),
     },
     {
-      name: "Pothole",
+      name: "Large Pothole",
       description: `A large pothole has formed on Main Street near the intersection with 2nd Avenue. It's causing significant traffic issues and needs immediate attention.`,
       vote: 1220,
       location: "Chandini chowk",

@@ -26,6 +26,7 @@ import Safety from "../pages/security/create/safety";
 import Locality from "../pages/locality";
 import CreateIssue from '../pages/locality/create';
 import Discussion from '../pages/locality/discussion';
+import IssueDetail from '../pages/locality/issue-detail';
 
 const Stack = createNativeStackNavigator();
 
@@ -159,6 +160,13 @@ const AppNavigator = () => {
           }}
           name="Discussion"
           component={Discussion}
+        />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="IssueDetail"
+          component={IssueDetail}
         />
       </Stack.Navigator>
     </NavigationContainer>
