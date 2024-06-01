@@ -32,7 +32,7 @@ export const issueData = {
     {
       name: "Large Pothole",
       description: `A large pothole has formed on Main Street near the intersection with 2nd Avenue. It's causing significant traffic issues and needs immediate attention.`,
-      vote: 1220,
+      vote: 1520,
       location: "Chandini chowk",
       isPending: true,
       image: require("../../assets/pathole2.jpg"),
@@ -48,7 +48,7 @@ export const issueData = {
     {
       name: "Graffiti",
       description: `There is graffiti on the wall of the central park, which needs to be cleaned up.`,
-      vote: 1800,
+      vote: 1020,
       location: "Central Park (C.P)",
       isPending: false,
       image: require("../../assets/Graffiti.jpg"),
@@ -56,7 +56,7 @@ export const issueData = {
     {
       name: "Water Supply",
       description: `Residents on Maple Street are experiencing low water pressure, affecting daily activities.`,
-      vote: 1740,
+      vote: 940,
       location: "Central Park (C.P)",
       isPending: true,
       image: require("../../assets/waterSupply.jpg"),
