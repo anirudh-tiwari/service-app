@@ -188,7 +188,7 @@ export default Carousel;
 
 const data = [
   {
-    image: require("../assets/electricity.png"),
+    image: require("../assets/eatingHealthy.png"),
     heading: "Healthy Kitchen",
     text: "Enjoy healthier versions of your favorite meals without sacrificing taste.",
   },

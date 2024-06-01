@@ -84,6 +84,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginBottom: 20,
+    marginTop: 0,
   },
   scrollView: {
     // width will be dynamically set

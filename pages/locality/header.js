@@ -25,7 +25,7 @@ const Header = () => {
   useEffect
 
   return (
-    <View style={{ marginBottom: 18 }}>
+    <View style={{ marginBottom: 14 }}>
       <View
         style={{
           flexDirection: "row",
@@ -37,11 +37,14 @@ const Header = () => {
           <Text style={styles.description}>North East, Delhi</Text>
         </View>
         <View style={styles.container2}>
-          <TouchableOpacity onPress={pickImage}>
-            <Ionicons name="add" size={28} color="#E23288" />
+          <View style={styles.add}>
+          <TouchableOpacity onPress={pickImage} activeOpacity={1}>
+            <Ionicons name="add" size={26} color="white" />
           </TouchableOpacity>
+          </View>
+
           <TouchableOpacity onPress={() => navigation.navigate("Home")}>
-            <Ionicons name="notifications" size={28} color="#E23288" />
+            <Ionicons name="notifications-outline" size={28} color="#E74C3C" />
           </TouchableOpacity>
         </View>
       </View>
@@ -69,5 +72,14 @@ const styles = StyleSheet.create({
   container2: {
     flexDirection: "row",
     gap: 16
+  },
+  add: {
+    height: 27,
+    width: 27,
+    backgroundColor: "#E74C3C",
+    borderRadius: 10,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
   }
 });

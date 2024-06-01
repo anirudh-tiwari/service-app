@@ -56,7 +56,7 @@ const Header = () => {
         />
       </View>
       <Text style={styles.userName}>{time}</Text>
-      <Text style={styles.userName}>Anirudh 🙏</Text>
+      <Text style={[styles.userName, {marginTop: -4}]}>Anirudh 🙏</Text>
     </View>
   );
 };
@@ -68,5 +68,6 @@ const styles = StyleSheet.create({
     fontSize: 28,
     color: "white",
     fontWeight: "500",
+    marginTop: -6
   },
 });
