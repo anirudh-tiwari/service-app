@@ -1,6 +1,8 @@
 import { View } from "react-native";
-import Category from "../components/category";
 import Header from "../components/header";
+import { Suspense, lazy } from "react";
+
+const Category = lazy(() => import("../components/category"));
 
 const Home = () => {
   return (
@@ -13,6 +15,7 @@ const Home = () => {
       }}
     >
       <Header />
+      <Suspense fallback={<></>}>
       <View
         style={{
           flexDirection: "row",
@@ -75,6 +78,7 @@ const Home = () => {
           navigate={'Locality'}
         />
       </View>
+      </Suspense>
     </View>
   );
 };
