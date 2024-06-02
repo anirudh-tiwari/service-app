@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { heading } from './utils'
 import SafetyCheck from './safety-check'
 import Create from './create'
+import Track from './track'
 
 const Security = () => {
   const [selectedTab, setSelectedTab] = useState(0);
@@ -13,6 +14,7 @@ const Security = () => {
   return (
     <View style={styles.Wrapper}>
       <Header list={heading[selectedTab]} />
+      { selectedTab === 0 && <Track /> }
       { selectedTab === 1 && <SafetyCheck /> }
       { selectedTab === 3 && <Create /> }
       { selectedTab === 4 && <Helpline /> }
