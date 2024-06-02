@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { View, Text, TextInput, Image, StyleSheet, TouchableOpacity, PanResponder, FlatList, Dimensions, Keyboard } from 'react-native';
+import { View, Text, TextInput, Image, StyleSheet, TouchableOpacity, PanResponder, FlatList, Dimensions, KeyboardAvoidingView, Platform } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 
 const Slider = ({ isVisible, onClose }) => {
@@ -12,7 +12,7 @@ const Slider = ({ isVisible, onClose }) => {
   const isDragging = useRef(false);
 
   const contacts = [
-    { id: 1, name: 'Avinash Tiwari', image: require("../../assets/avinash.jpeg")},
+    { id: 1, name: 'Avinash Tiwari', image: require("../../assets/avinash.jpeg") },
     // Add more contacts here
   ];
 
@@ -67,7 +67,7 @@ const Slider = ({ isVisible, onClose }) => {
 
   const renderContactItem = ({ item }) => (
     <View style={styles.contactItem}>
-      <Image source={ item.image } style={styles.contactImage} />
+      <Image source={item.image} style={styles.contactImage} />
       <Text style={styles.contactName}>{item.name}</Text>
     </View>
   );
@@ -78,52 +78,57 @@ const Slider = ({ isVisible, onClose }) => {
       style={[styles.sliderContainer, { bottom: -sliderPosition }]}
       {...panResponder.panHandlers}
     >
-      <View style={styles.handleBarContainer}>
-        <View style={styles.handleBar} />
-      </View>
-      <Text style={styles.title}>Select friends & share your live location</Text>
-      <TextInput
-        style={styles.searchInput}
-        placeholder="Type to search"
-        placeholderTextColor="#999"
-        value={searchText}
-        onChangeText={setSearchText}
-      />
-      <View style={styles.contactsContainer}>
-        <Text style={styles.allContactsText}>All contacts</Text>
-        <FlatList
-          data={filteredContacts}
-          renderItem={renderContactItem}
-          keyExtractor={item => item.id.toString()}
-          ListEmptyComponent={<Text style={styles.noContactsText}>No Friends Found</Text>}
+      <KeyboardAvoidingView
+        style={styles.keyboardAvoidingView}
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      >
+        <View style={styles.handleBarContainer}>
+          <View style={styles.handleBar} />
+        </View>
+        <Text style={styles.title}>Select friends & share your live location</Text>
+        <TextInput
+          style={styles.searchInput}
+          placeholder="Type to search"
+          placeholderTextColor="#999"
+          value={searchText}
+          onChangeText={setSearchText}
         />
-      </View>
-      <View style={styles.bottomContainer}>
-      <Text style={styles.liveLocationDurationText}>Live location duration</Text>
-      <View style={styles.radioButtonsContainer}>
-        <TouchableOpacity style={styles.radioButton} onPress={() => setSelectedDuration('Always')}>
-          <View style={[styles.radioButtonOuter, selectedDuration === 'Always' && styles.radioButtonOuterSelected]}>
-            {selectedDuration === 'Always' && <View style={styles.radioButtonInner} />}
+        <View style={styles.contactsContainer}>
+          <Text style={styles.allContactsText}>All contacts</Text>
+          <FlatList
+            data={filteredContacts}
+            renderItem={renderContactItem}
+            keyExtractor={item => item.id.toString()}
+            ListEmptyComponent={<Text style={styles.noContactsText}>No Friends Found</Text>}
+          />
+        </View>
+        <View style={styles.bottomContainer}>
+          <Text style={styles.liveLocationDurationText}>Live location duration</Text>
+          <View style={styles.radioButtonsContainer}>
+            <TouchableOpacity style={styles.radioButton} onPress={() => setSelectedDuration('Always')}>
+              <View style={[styles.radioButtonOuter, selectedDuration === 'Always' && styles.radioButtonOuterSelected]}>
+                {selectedDuration === 'Always' && <View style={styles.radioButtonInner} />}
+              </View>
+              <Text style={styles.radioButtonText}>Always</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.radioButton} onPress={() => setSelectedDuration('1 Hour')}>
+              <View style={[styles.radioButtonOuter, selectedDuration === '1 Hour' && styles.radioButtonOuterSelected]}>
+                {selectedDuration === '1 Hour' && <View style={styles.radioButtonInner} />}
+              </View>
+              <Text style={styles.radioButtonText}>1 Hour</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.radioButton} onPress={() => setSelectedDuration('8 Hour')}>
+              <View style={[styles.radioButtonOuter, selectedDuration === '8 Hour' && styles.radioButtonOuterSelected]}>
+                {selectedDuration === '8 Hour' && <View style={styles.radioButtonInner} />}
+              </View>
+              <Text style={styles.radioButtonText}>8 Hour</Text>
+            </TouchableOpacity>
           </View>
-          <Text style={styles.radioButtonText}>Always</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.radioButton} onPress={() => setSelectedDuration('1 Hour')}>
-          <View style={[styles.radioButtonOuter, selectedDuration === '1 Hour' && styles.radioButtonOuterSelected]}>
-            {selectedDuration === '1 Hour' && <View style={styles.radioButtonInner} />}
-          </View>
-          <Text style={styles.radioButtonText}>1 Hour</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.radioButton} onPress={() => setSelectedDuration('8 Hour')}>
-          <View style={[styles.radioButtonOuter, selectedDuration === '8 Hour' && styles.radioButtonOuterSelected]}>
-            {selectedDuration === '8 Hour' && <View style={styles.radioButtonInner} />}
-          </View>
-          <Text style={styles.radioButtonText}>8 Hour</Text>
-        </TouchableOpacity>
-      </View>
-      <TouchableOpacity style={styles.continueButton}>
-        <Text style={styles.continueButtonText}>Continue</Text>
-      </TouchableOpacity>
-      </View>
+          <TouchableOpacity style={styles.continueButton}>
+            <Text style={styles.continueButtonText}>Continue</Text>
+          </TouchableOpacity>
+        </View>
+      </KeyboardAvoidingView>
     </Animatable.View>
   );
 };
@@ -140,6 +145,10 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 30,
     padding: 20,
     alignItems: 'center',
+  },
+  keyboardAvoidingView: {
+    flex: 1,
+    width: '100%',
   },
   handleBarContainer: {
     width: '100%',
@@ -168,6 +177,7 @@ const styles = StyleSheet.create({
     borderColor: '#ddd',
   },
   contactsContainer: {
+    flex: 1,
     width: '100%',
     marginBottom: 20,
   },
@@ -195,21 +205,21 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#333',
     textAlign: 'center',
-    marginTop: 54
+    marginTop: 54,
   },
   liveLocationDurationText: {
     fontSize: 17,
     color: '#666',
     marginBottom: 10,
-    fontWeight: "700",
-    marginBottom: 24
+    fontWeight: '700',
+    marginBottom: 24,
   },
   radioButtonsContainer: {
     flexDirection: 'row',
     gap: 30,
     width: '100%',
-    justifyContent: "center",
-    marginBottom: 24
+    justifyContent: 'center',
+    marginBottom: 24,
   },
   radioButton: {
     flexDirection: 'row',
@@ -239,14 +249,9 @@ const styles = StyleSheet.create({
     color: '#333',
   },
   bottomContainer: {
-    position: 'absolute',
-    bottom: 30,
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems:"center",
-    flex: 1,
-    width: "100%",
-    marginBottom: 10,
+    paddingBottom: 30,
+    alignItems: 'center',
+    width: '100%',
   },
   continueButton: {
     backgroundColor: '#388E3C', // Adjust this color to match your theme
