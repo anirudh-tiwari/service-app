@@ -1,7 +1,17 @@
-import { View, Text, Image, Switch, StyleSheet, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  Switch,
+  StyleSheet,
+  TouchableOpacity,
+} from "react-native";
 import Button from "../../components/button";
 import { useNavigation } from "@react-navigation/native";
-import { ContactDispatchers, ContactSelectors } from "../../store/features/contact";
+import {
+  ContactDispatchers,
+  ContactSelectors,
+} from "../../store/features/contact";
 import { size } from "lodash";
 
 const SafetyCheck = () => {
@@ -11,11 +21,11 @@ const SafetyCheck = () => {
 
   const toggleChange = (val, index) => {
     const updatedList = safetyCheckList.map((data, idx) => {
-      if(idx === index ){
-        return {...data, isEnabled: val};
+      if (idx === index) {
+        return { ...data, isEnabled: val };
       }
       return data;
-    } )
+    });
     updateSafetyCheck(updatedList);
   };
 
@@ -44,7 +54,7 @@ const SafetyCheck = () => {
                         style={{
                           transform: [{ scaleX: 1.4 }, { scaleY: 1.3 }],
                         }}
-                        onValueChange={(val) => toggleChange(val,index)}
+                        onValueChange={(val) => toggleChange(val, index)}
                         value={data.isEnabled}
                       />
                     </View>
@@ -81,9 +91,10 @@ const SafetyCheck = () => {
                   lineHeight: 18,
                 }}
               >
-                Set up Safety Checks and we'll prompt you to enter your PIN at
+                {/* Set up Safety Checks and we'll prompt you to enter your PIN at
                 selected times. Let your emergency contacts know you're safe.
-                We'll activate SOS if you're not.
+                We'll activate SOS if you're not. */}
+                Enter your PIN when prompted at your selected times. Notify your emergency contacts that you're safe. We'll activate SOS if you're not.
               </Text>
               <View
                 style={{
@@ -146,7 +157,7 @@ const styles = StyleSheet.create({
     padding: 16,
     flexDirection: "row",
     justifyContent: "space-between",
-    marginTop: 16
+    marginTop: 16,
   },
   safetyCheckHeading: {
     fontSize: 17,

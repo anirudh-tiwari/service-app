@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { View, Text, TextInput, Image, StyleSheet, TouchableOpacity, PanResponder, FlatList, Dimensions, KeyboardAvoidingView, Platform } from 'react-native';
+import { View, Text, TextInput, Image, StyleSheet, TouchableOpacity, PanResponder, FlatList, Dimensions, KeyboardAvoidingView, Platform, ToastAndroid } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 
 const Slider = ({ isVisible, onClose }) => {
@@ -13,6 +13,7 @@ const Slider = ({ isVisible, onClose }) => {
 
   const contacts = [
     { id: 1, name: 'Avinash Tiwari', image: require("../../assets/avinash.jpeg") },
+    { id: 2, name: 'Anurag', image: require("../../assets/anurag.jpeg") },
     // Add more contacts here
   ];
 
@@ -124,7 +125,10 @@ const Slider = ({ isVisible, onClose }) => {
               <Text style={styles.radioButtonText}>8 Hour</Text>
             </TouchableOpacity>
           </View>
-          <TouchableOpacity style={styles.continueButton}>
+          <TouchableOpacity style={styles.continueButton} activeOpacity={1} onPress={()=>{
+            ToastAndroid.show("Successfully Shared", ToastAndroid.SHORT);
+            onClose();
+          }}>
             <Text style={styles.continueButtonText}>Continue</Text>
           </TouchableOpacity>
         </View>
@@ -139,7 +143,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0,
-    height: '94%',
+    height: '111%',
     backgroundColor: '#E8F5E9', // Updated color
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,

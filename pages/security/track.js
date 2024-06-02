@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { View, StyleSheet, Button } from 'react-native';
-import Slider from './slider';
+import React, { useState } from "react";
+import { View, StyleSheet, Button, TouchableOpacity, Text } from "react-native";
+import Slider from "./slider";
+import MapComponent from "./map";
 
 const Track = () => {
   const [isSliderVisible, setIsSliderVisible] = useState(false);
@@ -15,7 +16,14 @@ const Track = () => {
 
   return (
     <View style={styles.container}>
-      <Button title="Show Slider" onPress={handleSlideUp} />
+      <MapComponent />
+      <TouchableOpacity
+        style={styles.trackButton}
+        activeOpacity={1}
+        onPress={handleSlideUp}
+      >
+        <Text style={styles.trackButtonText}>Track me</Text>
+      </TouchableOpacity>
       <Slider isVisible={isSliderVisible} onClose={handleSlideDown} />
     </View>
   );
@@ -24,8 +32,20 @@ const Track = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  trackButton: {
+    backgroundColor: '#388E3C', // Adjust this color to match your theme
+    paddingVertical: 10,
+    paddingHorizontal: 40,
+    borderRadius: 20,
+    position:"absolute",
+    bottom: 30
+  },
+  trackButtonText: {
+    color: '#fff',
+    fontSize: 16,
   },
 });
 
