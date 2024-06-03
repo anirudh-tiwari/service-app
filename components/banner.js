@@ -86,9 +86,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     marginTop: 0,
   },
-  scrollView: {
-    // width will be dynamically set
-  },
   slide: {
     flex: 1,
     alignItems: "center",
