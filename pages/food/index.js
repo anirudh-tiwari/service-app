@@ -22,22 +22,22 @@ const styles = StyleSheet.create({
 
 const data = [
   {
-    image: require("../assets/eatingHealthy.png"),
+    image: require("../../assets/eatingHealthy.png"),
     heading: "Healthy Kitchen",
     text: "Enjoy healthier versions of your favorite meals without sacrificing taste.",
   },
   {
-    image: require("../assets/liveFood.png"),
+    image: require("../../assets/liveFood.png"),
     heading: "Live Webcam",
     text: "Watch live your healthy meal being made on a webcam",
   },
   {
-    image: require("../assets/customizeFood.png"),
+    image: require("../../assets/customizeFood.png"),
     heading: "Customize Meals",
     text: "Design your nutritious meal with our customization features.",
   },
   {
-    image: require("../assets/fixEating.png"),
+    image: require("../../assets/fixEating.png"),
     heading: "Fix Problem",
     class: "fixProblem",
     text: "Sweetened without sugar, no Maida, full of fiber, natural ingredients, and healthy fats can solve: ",
