@@ -1,9 +1,10 @@
 import { View, Text } from 'react-native'
+import ClassList from './classList'
 
 const Skill = () => {
   return (
     <View>
-      <Text>Skill</Text>
+      <ClassList />
     </View>
   )
 }

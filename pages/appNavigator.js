@@ -28,6 +28,7 @@ import Locality from "../pages/locality";
 import CreateIssue from '../pages/locality/create';
 import Discussion from '../pages/locality/discussion';
 import IssueDetail from '../pages/locality/issue-detail';
+import Curriculum from '../pages/skill/Curriculum';
 
 const Stack = createNativeStackNavigator();
 
@@ -175,6 +176,13 @@ const AppNavigator = () => {
           }}
           name="Skill"
           component={Skill}
+        />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="Curriculum"
+          component={Curriculum}
         />
       </Stack.Navigator>
     </NavigationContainer>
