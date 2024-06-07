@@ -11,6 +11,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Splash from "../components/splash";
 import Home from "../pages/home";
 import Food from "../pages/food";
+import Skill from "../pages/skill";
 import Health from "../pages/health";
 import FoodList from "../pages/food/list";
 import SingleMenu from "../pages/food/single";
@@ -167,6 +168,13 @@ const AppNavigator = () => {
           }}
           name="IssueDetail"
           component={IssueDetail}
+        />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="Skill"
+          component={Skill}
         />
       </Stack.Navigator>
     </NavigationContainer>

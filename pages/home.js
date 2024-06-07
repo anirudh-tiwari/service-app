@@ -53,6 +53,7 @@ const Home = () => {
             image: require("../assets/education.png"),
             index: 3,
           }}
+          navigate={'Skill'}
         />
         <Category
           item={{
