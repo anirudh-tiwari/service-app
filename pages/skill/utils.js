@@ -5,44 +5,89 @@ export const curriculum = {
         {
           title: "Basic Health and Hygiene",
           topics: [
-            "Personal Hygiene - Importance of maintaining personal cleanliness.",
-            "Daily Hygiene Routines - Basic daily practices for hygiene.",
-            "Understanding Germs - How germs spread and how to prevent it.",
-          ],
+            {
+              chapter: "Personal Hygiene",
+              desc: "Importance of maintaining personal cleanliness."
+            },
+            {
+              chapter: "Daily Hygiene Routines",
+              desc: "Basic daily practices for hygiene."
+            },
+            {
+              chapter: "Understanding Germs",
+              desc: "How germs spread and how to prevent it."
+            }
+          ]
         },
         {
           title: "Basic Cooking",
           topics: [
-            "Introduction to Cooking - Simple recipes and kitchen safety.",
-            "Basic Nutrition - Understanding the food groups.",
-            "Preparing Healthy Snacks - Easy and nutritious snack recipes.",
-          ],
+            {
+              chapter: "Introduction to Cooking",
+              desc: "Simple recipes and kitchen safety."
+            },
+            {
+              chapter: "Basic Nutrition",
+              desc: "Understanding the food groups."
+            },
+            {
+              chapter: "Preparing Healthy Snacks",
+              desc: "Easy and nutritious snack recipes."
+            }
+          ]
         },
         {
           title: "Communication Skills",
           topics: [
-            "Basic Communication - Importance of clear communication.",
-            "Listening Skills - How to listen effectively.",
-            "Expressing Yourself - Tips for expressing thoughts clearly.",
-          ],
+            {
+              chapter: "Basic Communication",
+              desc: "Importance of clear communication."
+            },
+            {
+              chapter: "Listening Skills",
+              desc: "How to listen effectively."
+            },
+            {
+              chapter: "Expressing Yourself",
+              desc: "Tips for expressing thoughts clearly."
+            }
+          ]
         },
         {
           title: "Environmental Conservation",
           topics: [
-            "Introduction to Environment - Importance of protecting nature.",
-            "Ways to Conserve - Simple habits to protect the environment.",
-            "Recycling - How to recycle and its benefits.",
-          ],
+            {
+              chapter: "Introduction to Environment",
+              desc: "Importance of protecting nature."
+            },
+            {
+              chapter: "Ways to Conserve",
+              desc: "Simple habits to protect the environment."
+            },
+            {
+              chapter: "Recycling",
+              desc: "How to recycle and its benefits."
+            }
+          ]
         },
         {
           title: "Road Safety",
           topics: [
-            "Basic Road Safety Rules - Importance of following traffic rules.",
-            "Pedestrian Safety - How to stay safe while walking.",
-            "Understanding Traffic Signs - Common traffic signs and their meanings.",
-          ],
-        },
-      ],
+            {
+              chapter: "Basic Road Safety Rules",
+              desc: "Importance of following traffic rules."
+            },
+            {
+              chapter: "Pedestrian Safety",
+              desc: "How to stay safe while walking."
+            },
+            {
+              chapter: "Understanding Traffic Signs",
+              desc: "Common traffic signs and their meanings."
+            }
+          ]
+        }
+      ]
     },
     class7: {
       title: "Class 7",
@@ -50,44 +95,89 @@ export const curriculum = {
         {
           title: "Financial Literacy",
           topics: [
-            "How to Fill a Cheque - Understanding and writing cheques.",
-            "Opening a Bank Account - Process and benefits.",
-            "Importance of Saving Money - Basics of saving.",
-          ],
+            {
+              chapter: "How to Fill a Cheque",
+              desc: "Understanding and writing cheques."
+            },
+            {
+              chapter: "Opening a Bank Account",
+              desc: "Process and benefits."
+            },
+            {
+              chapter: "Importance of Saving Money",
+              desc: "Basics of saving."
+            }
+          ]
         },
         {
           title: "Basic First Aid",
           topics: [
-            "Introduction to First Aid - Importance of first aid knowledge.",
-            "Common Injuries - How to handle common injuries.",
-            "Emergency Situations - Steps to take during emergencies.",
-          ],
+            {
+              chapter: "Introduction to First Aid",
+              desc: "Importance of first aid knowledge."
+            },
+            {
+              chapter: "Common Injuries",
+              desc: "How to handle common injuries."
+            },
+            {
+              chapter: "Emergency Situations",
+              desc: "Steps to take during emergencies."
+            }
+          ]
         },
         {
           title: "Self-Awareness",
           topics: [
-            "Understanding Yourself - Importance of self-awareness.",
-            "Identifying Strengths and Weaknesses - How to assess yourself.",
-            "Setting Personal Goals - Importance of goals and how to set them.",
-          ],
+            {
+              chapter: "Understanding Yourself",
+              desc: "Importance of self-awareness."
+            },
+            {
+              chapter: "Identifying Strengths and Weaknesses",
+              desc: "How to assess yourself."
+            },
+            {
+              chapter: "Setting Personal Goals",
+              desc: "Importance of goals and how to set them."
+            }
+          ]
         },
         {
           title: "Gardening",
           topics: [
-            "Introduction to Gardening - Basics of starting a garden.",
-            "Planting and Caring for Plants - How to grow and maintain plants.",
-            "Benefits of Gardening - Physical and mental benefits.",
-          ],
+            {
+              chapter: "Introduction to Gardening",
+              desc: "Basics of starting a garden."
+            },
+            {
+              chapter: "Planting and Caring for Plants",
+              desc: "How to grow and maintain plants."
+            },
+            {
+              chapter: "Benefits of Gardening",
+              desc: "Physical and mental benefits."
+            }
+          ]
         },
         {
           title: "Time Management",
           topics: [
-            "Importance of Time Management - Why managing time is crucial.",
-            "Creating a Schedule - How to make an effective schedule.",
-            "Avoiding Procrastination - Tips to stay productive.",
-          ],
-        },
-      ],
+            {
+              chapter: "Importance of Time Management",
+              desc: "Why managing time is crucial."
+            },
+            {
+              chapter: "Creating a Schedule",
+              desc: "How to make an effective schedule."
+            },
+            {
+              chapter: "Avoiding Procrastination",
+              desc: "Tips to stay productive."
+            }
+          ]
+        }
+      ]
     },
     class8: {
       title: "Class 8",
@@ -95,44 +185,89 @@ export const curriculum = {
         {
           title: "Investment Basics",
           topics: [
-            "Introduction to Investments - Understanding investment basics.",
-            "Types of Investments - Different ways to invest money.",
-            "Benefits of Investing - How investments can grow your wealth.",
-          ],
+            {
+              chapter: "Introduction to Investments",
+              desc: "Understanding investment basics."
+            },
+            {
+              chapter: "Types of Investments",
+              desc: "Different ways to invest money."
+            },
+            {
+              chapter: "Benefits of Investing",
+              desc: "How investments can grow your wealth."
+            }
+          ]
         },
         {
           title: "Stress Management",
           topics: [
-            "Understanding Stress - What causes stress.",
-            "Managing Stress - Techniques to reduce stress.",
-            "Healthy Mindset - Maintaining a positive outlook.",
-          ],
+            {
+              chapter: "Understanding Stress",
+              desc: "What causes stress."
+            },
+            {
+              chapter: "Managing Stress",
+              desc: "Techniques to reduce stress."
+            },
+            {
+              chapter: "Healthy Mindset",
+              desc: "Maintaining a positive outlook."
+            }
+          ]
         },
         {
           title: "Coding Basics",
           topics: [
-            "Introduction to Coding - Importance and basics of coding.",
-            "Simple Coding Projects - Hands-on coding exercises.",
-            "Future of Coding - Career opportunities in coding.",
-          ],
+            {
+              chapter: "Introduction to Coding",
+              desc: "Importance and basics of coding."
+            },
+            {
+              chapter: "Simple Coding Projects",
+              desc: "Hands-on coding exercises."
+            },
+            {
+              chapter: "Future of Coding",
+              desc: "Career opportunities in coding."
+            }
+          ]
         },
         {
           title: "Entrepreneurship",
           topics: [
-            "Introduction to Entrepreneurship - Basics of starting a business.",
-            "Business Ideas - How to come up with business ideas.",
-            "Building a Business Plan - Steps to create a business plan.",
-          ],
+            {
+              chapter: "Introduction to Entrepreneurship",
+              desc: "Basics of starting a business."
+            },
+            {
+              chapter: "Business Ideas",
+              desc: "How to come up with business ideas."
+            },
+            {
+              chapter: "Building a Business Plan",
+              desc: "Steps to create a business plan."
+            }
+          ]
         },
         {
           title: "Fitness and Exercise",
           topics: [
-            "Importance of Fitness - Why staying fit is important.",
-            "Basic Exercises - Simple exercises for daily routine.",
-            "Healthy Lifestyle - Combining diet and exercise for health.",
-          ],
-        },
-      ],
+            {
+              chapter: "Importance of Fitness",
+              desc: "Why staying fit is important."
+            },
+            {
+              chapter: "Basic Exercises",
+              desc: "Simple exercises for daily routine."
+            },
+            {
+              chapter: "Healthy Lifestyle",
+              desc: "Combining diet and exercise for health."
+            }
+          ]
+        }
+      ]
     },
     class9: {
       title: "Class 9",
@@ -140,44 +275,89 @@ export const curriculum = {
         {
           title: "Advanced Financial Literacy",
           topics: [
-            "Credit Cards - Understanding and managing credit cards.",
-            "Staying Away from Debt - Tips to avoid falling into debt.",
-            "Applying for Loans - Understanding different types of loans.",
-          ],
+            {
+              chapter: "Credit Cards",
+              desc: "Understanding and managing credit cards."
+            },
+            {
+              chapter: "Staying Away from Debt",
+              desc: "Tips to avoid falling into debt."
+            },
+            {
+              chapter: "Applying for Loans",
+              desc: "Understanding different types of loans."
+            }
+          ]
         },
         {
           title: "Leadership Skills",
           topics: [
-            "Introduction to Leadership - What makes a good leader.",
-            "Developing Leadership Skills - How to improve leadership abilities.",
-            "Leading by Example - Importance of leading with integrity.",
-          ],
+            {
+              chapter: "Introduction to Leadership",
+              desc: "What makes a good leader."
+            },
+            {
+              chapter: "Developing Leadership Skills",
+              desc: "How to improve leadership abilities."
+            },
+            {
+              chapter: "Leading by Example",
+              desc: "Importance of leading with integrity."
+            }
+          ]
         },
         {
           title: "Advanced IT Skills",
           topics: [
-            "Computer Skills - Essential computer skills for students.",
-            "Internet Safety - Staying safe online.",
-            "Basic Programming - Introduction to programming languages.",
-          ],
+            {
+              chapter: "Computer Skills",
+              desc: "Essential computer skills for students."
+            },
+            {
+              chapter: "Internet Safety",
+              desc: "Staying safe online."
+            },
+            {
+              chapter: "Basic Programming",
+              desc: "Introduction to programming languages."
+            }
+          ]
         },
         {
           title: "Negotiation Skills",
           topics: [
-            "Introduction to Negotiation - Importance of negotiation skills.",
-            "Negotiation Techniques - Effective negotiation strategies.",
-            "Practicing Negotiation - Role-play and practice scenarios.",
-          ],
+            {
+              chapter: "Introduction to Negotiation",
+              desc: "Importance of negotiation skills."
+            },
+            {
+              chapter: "Negotiation Techniques",
+              desc: "Effective negotiation strategies."
+            },
+            {
+              chapter: "Practicing Negotiation",
+              desc: "Role-play and practice scenarios."
+            }
+          ]
         },
         {
           title: "Basic Health and Hygiene",
           topics: [
-            "Healthy Living - Daily habits for a healthy lifestyle.",
-            "Mental Health - Importance of mental well-being.",
-            "Preventive Healthcare - Importance of regular health check-ups.",
-          ],
-        },
-      ],
+            {
+              chapter: "Healthy Living",
+              desc: "Daily habits for a healthy lifestyle."
+            },
+            {
+              chapter: "Mental Health",
+              desc: "Importance of mental well-being."
+            },
+            {
+              chapter: "Preventive Healthcare",
+              desc: "Importance of regular health check-ups."
+            }
+          ]
+        }
+      ]
     },
     class10: {
       title: "Class 10",
@@ -185,44 +365,89 @@ export const curriculum = {
         {
           title: "Advanced Investments",
           topics: [
-            "Types of Investments - Stocks, bonds, mutual funds, etc.",
-            "Benefits and Risks - Understanding risks and rewards.",
-            "Long-term Investment Strategies - Planning for the future.",
-          ],
+            {
+              chapter: "Types of Investments",
+              desc: "Stocks, bonds, mutual funds, etc."
+            },
+            {
+              chapter: "Benefits and Risks",
+              desc: "Understanding risks and rewards."
+            },
+            {
+              chapter: "Long-term Investment Strategies",
+              desc: "Planning for the future."
+            }
+          ]
         },
         {
           title: "Healthy Eating",
           topics: [
-            "Reading Food Labels - Understanding ingredients and nutritional info.",
-            "Balanced Diet - Importance of a balanced diet.",
-            "Cooking Healthy Meals - Simple recipes for healthy eating.",
-          ],
+            {
+              chapter: "Reading Food Labels",
+              desc: "Understanding ingredients and nutritional info."
+            },
+            {
+              chapter: "Balanced Diet",
+              desc: "Importance of a balanced diet."
+            },
+            {
+              chapter: "Cooking Healthy Meals",
+              desc: "Simple recipes for healthy eating."
+            }
+          ]
         },
         {
           title: "Communication Skills",
           topics: [
-            "Effective Communication - How to communicate clearly.",
-            "Public Speaking - Tips for speaking confidently in public.",
-            "Non-verbal Communication - Understanding body language.",
-          ],
+            {
+              chapter: "Effective Communication",
+              desc: "How to communicate clearly."
+            },
+            {
+              chapter: "Public Speaking",
+              desc: "Tips for speaking confidently in public."
+            },
+            {
+              chapter: "Non-verbal Communication",
+              desc: "Understanding body language."
+            }
+          ]
         },
         {
           title: "Entrepreneurship",
           topics: [
-            "Starting a Business - Steps to start your own business.",
-            "Marketing Basics - How to market your business.",
-            "Financial Planning - Managing finances for your business.",
-          ],
+            {
+              chapter: "Starting a Business",
+              desc: "Steps to start your own business."
+            },
+            {
+              chapter: "Marketing Basics",
+              desc: "How to market your business."
+            },
+            {
+              chapter: "Financial Planning",
+              desc: "Managing finances for your business."
+            }
+          ]
         },
         {
           title: "Road Safety",
           topics: [
-            "Driving Rules - Importance of following traffic rules.",
-            "Safe Driving Tips - Tips for staying safe on the road.",
-            "Understanding Traffic Signs - Common traffic signs and their meanings.",
-          ],
-        },
-      ],
+            {
+              chapter: "Driving Rules",
+              desc: "Importance of following traffic rules."
+            },
+            {
+              chapter: "Safe Driving Tips",
+              desc: "Tips for staying safe on the road."
+            },
+            {
+              chapter: "Understanding Traffic Signs",
+              desc: "Common traffic signs and their meanings."
+            }
+          ]
+        }
+      ]
     },
     class11: {
       title: "Class 11",
@@ -230,44 +455,89 @@ export const curriculum = {
         {
           title: "Advanced Cooking",
           topics: [
-            "Meal Planning - Planning meals for the week.",
-            "Cooking Techniques - Advanced cooking methods.",
-            "Healthy Recipes - Cooking nutritious meals.",
-          ],
+            {
+              chapter: "Meal Planning",
+              desc: "Planning meals for the week."
+            },
+            {
+              chapter: "Cooking Techniques",
+              desc: "Advanced cooking methods."
+            },
+            {
+              chapter: "Healthy Recipes",
+              desc: "Cooking nutritious meals."
+            }
+          ]
         },
         {
           title: "Personal Finance Management",
           topics: [
-            "Budgeting - Creating and maintaining a budget.",
-            "Saving and Investing - Importance of saving and investment.",
-            "Financial Independence - Steps to achieve financial independence.",
-          ],
+            {
+              chapter: "Budgeting",
+              desc: "Creating and maintaining a budget."
+            },
+            {
+              chapter: "Saving and Investing",
+              desc: "Importance of saving and investment."
+            },
+            {
+              chapter: "Financial Independence",
+              desc: "Steps to achieve financial independence."
+            }
+          ]
         },
         {
           title: "Leadership Skills",
           topics: [
-            "Team Management - Managing and leading a team effectively.",
-            "Conflict Resolution - Resolving conflicts within a team.",
-            "Motivating Others - Techniques to inspire and motivate.",
-          ],
+            {
+              chapter: "Team Management",
+              desc: "Managing and leading a team effectively."
+            },
+            {
+              chapter: "Conflict Resolution",
+              desc: "Resolving conflicts within a team."
+            },
+            {
+              chapter: "Motivating Others",
+              desc: "Techniques to inspire and motivate."
+            }
+          ]
         },
         {
           title: "Environmental Conservation",
           topics: [
-            "Sustainability - Importance of sustainable living.",
-            "Reducing Waste - Tips to reduce and manage waste.",
-            "Eco-friendly Practices - How to live an eco-friendly lifestyle.",
-          ],
+            {
+              chapter: "Sustainability",
+              desc: "Importance of sustainable living."
+            },
+            {
+              chapter: "Reducing Waste",
+              desc: "Tips to reduce and manage waste."
+            },
+            {
+              chapter: "Eco-friendly Practices",
+              desc: "How to live an eco-friendly lifestyle."
+            }
+          ]
         },
         {
           title: "Self-Awareness",
           topics: [
-            "Understanding Emotions - Identifying and managing emotions.",
-            "Self-Reflection - Importance of reflecting on actions and decisions.",
-            "Personal Growth - Strategies for continuous self-improvement.",
-          ],
-        },
-      ],
+            {
+              chapter: "Understanding Emotions",
+              desc: "Identifying and managing emotions."
+            },
+            {
+              chapter: "Self-Reflection",
+              desc: "Importance of reflecting on actions and decisions."
+            },
+            {
+              chapter: "Personal Growth",
+              desc: "Strategies for continuous self-improvement."
+            }
+          ]
+        }
+      ]
     },
     class12: {
       title: "Class 12",
@@ -275,44 +545,89 @@ export const curriculum = {
         {
           title: "Advanced Financial Literacy",
           topics: [
-            "Investment Portfolios - How to create and manage a portfolio.",
-            "Taxation Basics - Understanding taxes and how to file them.",
-            "Retirement Planning - Planning and saving for retirement.",
-          ],
+            {
+              chapter: "Investment Portfolios",
+              desc: "How to create and manage a portfolio."
+            },
+            {
+              chapter: "Taxation Basics",
+              desc: "Understanding taxes and how to file them."
+            },
+            {
+              chapter: "Retirement Planning",
+              desc: "Planning and saving for retirement."
+            }
+          ]
         },
         {
           title: "Professional Networking",
           topics: [
-            "Building a Network - Importance of professional networking.",
-            "Using LinkedIn - How to use LinkedIn effectively.",
-            "Networking Etiquette - Do's and don'ts of networking.",
-          ],
+            {
+              chapter: "Building a Network",
+              desc: "Importance of professional networking."
+            },
+            {
+              chapter: "Using LinkedIn",
+              desc: "How to use LinkedIn effectively."
+            },
+            {
+              chapter: "Networking Etiquette",
+              desc: "Do's and don'ts of networking."
+            }
+          ]
         },
         {
           title: "Entrepreneurship",
           topics: [
-            "Scaling a Business - Strategies to grow your business.",
-            "Market Analysis - Understanding and analyzing the market.",
-            "Financial Management - Managing finances in a growing business.",
-          ],
+            {
+              chapter: "Scaling a Business",
+              desc: "Strategies to grow your business."
+            },
+            {
+              chapter: "Market Analysis",
+              desc: "Understanding and analyzing the market."
+            },
+            {
+              chapter: "Financial Management",
+              desc: "Managing finances in a growing business."
+            }
+          ]
         },
         {
           title: "Fitness and Exercise",
           topics: [
-            "Creating a Fitness Plan - How to create a personalized fitness plan.",
-            "Types of Exercises - Different exercises and their benefits.",
-            "Staying Motivated - Tips to stay motivated with fitness goals.",
-          ],
+            {
+              chapter: "Creating a Fitness Plan",
+              desc: "How to create a personalized fitness plan."
+            },
+            {
+              chapter: "Types of Exercises",
+              desc: "Different exercises and their benefits."
+            },
+            {
+              chapter: "Staying Motivated",
+              desc: "Tips to stay motivated with fitness goals."
+            }
+          ]
         },
         {
           title: "Coding and IT Skills",
           topics: [
-            "Advanced Programming - In-depth programming concepts.",
-            "Web Development - Basics of developing a website.",
-            "Cybersecurity - Understanding the basics of cybersecurity.",
-          ],
-        },
-      ],
-    },
+            {
+              chapter: "Advanced Programming",
+              desc: "In-depth programming concepts."
+            },
+            {
+              chapter: "Web Development",
+              desc: "Basics of developing a website."
+            },
+            {
+              chapter: "Cybersecurity",
+              desc: "Understanding the basics of cybersecurity."
+            }
+          ]
+        }
+      ]
+    }
   };
   
