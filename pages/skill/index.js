@@ -1,10 +1,10 @@
 import { View, Text } from 'react-native'
-import ClassList from './classList'
+import Curriculum from './Curriculum'
 
 const Skill = () => {
   return (
-    <View>
-      <ClassList />
+    <View style={{flex:1, backgroundColor: "black"}}>
+      <Curriculum />
     </View>
   )
 }
