@@ -24,17 +24,15 @@ const classType = [
 const Curriculum = () => {
   const route = useRoute();
   const navigation = useNavigation();
-  const classCurriculum = curriculum["class6"];
   const [type, setType] = useState({ key: "class6", label: "Class 6" });
+  const classCurriculum = curriculum[type.key];
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity
-        onPress={() => navigation.goBack()}
-        style={styles.header}
-        activeOpacity={1}
-      >
-        <Ionicons name="arrow-back-outline" size={24} color="#FFFFFF" />
+      <View style={styles.header}>
+        <TouchableOpacity onPress={() => navigation.goBack()} activeOpacity={1}>
+          <Ionicons name="arrow-back-outline" size={24} color="#FFFFFF" />
+        </TouchableOpacity>
         <Dropdown
           options={classType}
           selected={type}
@@ -42,7 +40,7 @@ const Curriculum = () => {
           placeHolder="ss"
           type={2}
         />
-      </TouchableOpacity>
+      </View>
       <ScrollView contentContainerStyle={styles.scrollContent}>
         {classCurriculum.chapters.map((chapter, index) => (
           <View key={index} style={styles.chapter}>
@@ -54,7 +52,7 @@ const Curriculum = () => {
                 <Ionicons
                   name="caret-forward-circle-outline"
                   size={34}
-                  color="#f69722"
+                  color="#fbd957"
                   style={styles.icon}
                 />
                 <View style={styles.topicTextContainer}>
@@ -109,7 +107,7 @@ const styles = StyleSheet.create({
   },
   chapterTitle: {
     fontSize: 20,
-    color: "#f69722",
+    color: "#fbd957",
     fontWeight: "bold",
     marginBottom: 10,
   },
@@ -141,7 +139,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#1F1F1F",
   },
   buyButton: {
-    backgroundColor: "#f69722",
+    backgroundColor: "#fbd957",
     paddingVertical: 10,
     borderRadius: 8,
     alignItems: "center",
@@ -152,7 +150,7 @@ const styles = StyleSheet.create({
     elevation: 4,
   },
   buyButtonText: {
-    color: "#FFFFFF",
+    color: "#1F1F1F",
     fontSize: 20,
     fontWeight: "700",
   },
