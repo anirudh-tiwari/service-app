@@ -88,6 +88,7 @@ const styles = StyleSheet.create({
     padding: 16,
     backgroundColor: "#1F1F1F",
     height: 62,
+    zIndex: 9999,
   },
   headerText: {
     color: "#FFFFFF",
