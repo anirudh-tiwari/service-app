@@ -1,3 +1,4 @@
+import { size } from "lodash";
 import React, { useState, useRef, useEffect } from "react";
 import {
   View,
@@ -20,7 +21,11 @@ const Dropdown = ({
   const [search, setSearch] = useState("");
   const [clicked, setClicked] = useState(false);
   const [data, setData] = useState(options);
-  const [dropdownDimensions, setDropdownDimensions] = useState({ width: 0, top: 0, left: 0 });
+  const [dropdownDimensions, setDropdownDimensions] = useState({
+    width: 0,
+    top: 0,
+    left: 0,
+  });
   const dropdownRef = useRef(null);
 
   const onSearch = (search) => {
@@ -38,17 +43,20 @@ const Dropdown = ({
     setData(options);
   }, [options]);
 
-useEffect(() => {
-  if (clicked && dropdownRef.current) {
-    setTimeout(() => {
-      dropdownRef.current.measure((fx, fy, width, height, px, py) => {
-        const spacing = type === 1 ? 2 : 7; // 2px space if type is 1, otherwise 6px
-        setDropdownDimensions({ width, top: py + height + spacing, left: px });
-      });
-    }, 0);
-  }
-}, [clicked, type]);
-
+  useEffect(() => {
+    if (clicked && dropdownRef.current) {
+      setTimeout(() => {
+        dropdownRef.current.measure((fx, fy, width, height, px, py) => {
+          const spacing = type === 1 ? 2 : 7; // 2px space if type is 1, otherwise 6px
+          setDropdownDimensions({
+            width,
+            top: py + height + spacing,
+            left: px,
+          });
+        });
+      }, 0);
+    }
+  }, [clicked, type]);
 
   const handleOutsidePress = () => {
     if (clicked) {
@@ -165,7 +173,12 @@ useEffect(() => {
                   {data.map((item, index) => (
                     <TouchableOpacity
                       key={index}
-                      style={styles.dropdownItem}
+                      style={[
+                        styles.dropdownItem,
+                        size(data) - 1 === index
+                          ? { borderBottomWidth: 0 }
+                          : "",
+                      ]}
                       activeOpacity={1}
                       onPress={() => {
                         onChange(item);
@@ -174,9 +187,7 @@ useEffect(() => {
                         setSearch("");
                       }}
                     >
-                      <Text style={styles.dropdownItemText}>
-                        {item.label}
-                      </Text>
+                      <Text style={styles.dropdownItemText}>{item.label}</Text>
                     </TouchableOpacity>
                   ))}
                 </ScrollView>
@@ -192,9 +203,9 @@ useEffect(() => {
 const styles = StyleSheet.create({
   modalOverlay: {
     flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    justifyContent: "flex-start",
+    alignItems: "flex-start",
   },
   dropdownContainer: {
     position: "absolute",
