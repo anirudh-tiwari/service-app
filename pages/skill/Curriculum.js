@@ -22,7 +22,8 @@ const classType = [
 ];
 
 const Curriculum = () => {
-  const route = useRoute();
+  const category = useRoute();
+  const { chapters, title } = category?.params?.skill?.curriculum;
   const navigation = useNavigation();
   const [type, setType] = useState({ key: "class6", label: "Class 6" });
   const classCurriculum = curriculum[type.key];
@@ -33,38 +34,44 @@ const Curriculum = () => {
         <TouchableOpacity onPress={() => navigation.goBack()} activeOpacity={1}>
           <Ionicons name="arrow-back-outline" size={24} color="#FFFFFF" />
         </TouchableOpacity>
-        <Dropdown
+        {title === "School" ? (
+          <Dropdown
           options={classType}
           selected={type}
           onChange={(value) => setType(value)}
           placeHolder="ss"
           type={2}
         />
+        ) : (
+          <Text style={styles.headerText}>{title}</Text>          
+        )}
       </View>
       <ScrollView contentContainerStyle={styles.scrollContent}>
-        {classCurriculum.chapters.map((chapter, index) => (
-          <View key={index} style={styles.chapter}>
-            <Text style={styles.chapterTitle}>
-              {index + 1}. {chapter.title}
-            </Text>
-            {chapter.topics.map((topic, subIndex) => (
-              <View key={subIndex} style={styles.topic}>
-                <Ionicons
-                  name="caret-forward-circle-outline"
-                  size={34}
-                  color="#fbd957"
-                  style={styles.icon}
-                />
-                <View style={styles.topicTextContainer}>
-                  <Text style={styles.topicTitle}>
-                    {index + 1}.{subIndex + 1} {topic.chapter}
-                  </Text>
-                  <Text style={styles.topicDesc}>{topic.desc}</Text>
+        {[...(title === "School" ? classCurriculum?.chapters : chapters)].map(
+          (chapter, index) => (
+            <View key={index} style={styles.chapter}>
+              <Text style={styles.chapterTitle}>
+                {index + 1}. {chapter.title}
+              </Text>
+              {chapter.topics.map((topic, subIndex) => (
+                <View key={subIndex} style={styles.topic}>
+                  <Ionicons
+                    name="caret-forward-circle-outline"
+                    size={34}
+                    color="#fbd957"
+                    style={styles.icon}
+                  />
+                  <View style={styles.topicTextContainer}>
+                    <Text style={styles.topicTitle}>
+                      {index + 1}.{subIndex + 1} {topic.chapter}
+                    </Text>
+                    <Text style={styles.topicDesc}>{topic.desc}</Text>
+                  </View>
                 </View>
-              </View>
-            ))}
-          </View>
-        ))}
+              ))}
+            </View>
+          )
+        )}
       </ScrollView>
       <View style={styles.footer}>
         <TouchableOpacity style={styles.buyButton}>

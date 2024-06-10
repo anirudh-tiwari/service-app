@@ -634,6 +634,14 @@ export const curriculum = {
   // utils.js
 export const skills = [
   {
+    name: "School",
+    // image:  require("../../images/acting.png"),
+    curriculum: {
+      title: "School",
+      chapters: []
+    }
+  },
+  {
       name: "Acting",
       // image:  require("../../images/acting.png"),
       curriculum: {
