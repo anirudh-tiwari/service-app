@@ -1,4 +1,5 @@
 import SearchComponent from "../../components/Search";
+import Header from "./header";
 import { skills } from "./utils";
 import {
   View,
@@ -8,6 +9,7 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from "react-native";
+import FilterIcon from "../../components/filter";
 
 const HomePage = ({ navigation }) => {
   const renderSkillCard = ({ item }) => (
@@ -41,16 +43,13 @@ const HomePage = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
+      <Header />
+      <View style={styles.container2}>
+        <View style={styles.column1}>
+          <SearchComponent />
+        </View>
+      </View>
       <FlatList
-        ListHeaderComponent={() => (
-          <>
-            <Text style={styles.header}>
-              Hey Anirudh, Find a course you want to learn
-            </Text>
-            {/* Assuming SearchComponent is imported and available */}
-            <SearchComponent />
-          </>
-        )}
         data={skills}
         renderItem={renderCategory}
         keyExtractor={(item) => item.category}
@@ -65,7 +64,16 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#000", // Black background color
     paddingHorizontal: 20,
-    paddingTop: 40,
+    paddingVertical: 16,
+  },
+  container2: {
+    flexDirection: "row",
+    gap: 20,
+    alignItems: "center",
+  },
+  column1: {
+    width: '100%',
+    marginBottom: 8
   },
   header: {
     fontSize: 24,
@@ -74,26 +82,23 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   categoryContainer: {
-    marginBottom: 30,
+    marginBottom: 24,
   },
   categoryHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    marginBottom: 10,
+    marginBottom: 8,
   },
   categoryTitle: {
     fontSize: 20,
     color: "#fbd957", // Primary color
-    fontWeight: "bold",
+    fontWeight: "600",
   },
   viewAll: {
     fontSize: 14,
     color: "#ff6347", // Tomato color for "View All" text
     textDecorationLine: "underline",
-  },
-  skillList: {
-    paddingLeft: 5,
   },
   card: {
     backgroundColor: "#1e1e1e", // White background for cards
@@ -104,11 +109,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "flex-end",
     paddingTop: 10,
-    shadowColor: "#000",
-    shadowOpacity: 0.3,
-    shadowRadius: 5,
-    shadowOffset: { width: 0, height: 2 },
-    elevation: 5, // Shadow for Android
   },
   image: {
     width: 120,
@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
   },
   cardTitle: {
     fontSize: 16,
-    fontWeight: "700",
+    fontWeight: "900",
     color: "#000", // Black text color
   },
 });
