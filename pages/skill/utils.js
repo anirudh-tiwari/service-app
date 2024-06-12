@@ -638,7 +638,7 @@ export const skills = [
   //   skills: [
   //     {
   //       name: "School",
-  //       // image:  require("../../images/acting.png"),
+  //       // image:  require("../../assets/acting.png"),
   //       curriculum: {
   //         title: "School",
   //         chapters: [],
@@ -651,7 +651,7 @@ export const skills = [
     skills: [
       {
         name: "Acting",
-        // image:  require("../../images/acting.png"),
+        image:  require("../../assets/srk.jpg"),
         curriculum: {
           title: "Acting",
           chapters: [
@@ -745,7 +745,7 @@ export const skills = [
       },
       {
         name: "Film Director",
-        // image:  require("../../images/film_director.png"),
+        image:  require("../../assets/director.jpeg"),
         curriculum: {
           title: "Film Direction",
           chapters: [
@@ -839,7 +839,7 @@ export const skills = [
       },
       {
         name: "Singer",
-        // image:  require("../../images/singer.png"),
+        image:  require("../../assets/singer.jpg"),
         curriculum: {
           title: "Singing",
           chapters: [
@@ -901,7 +901,7 @@ export const skills = [
       },
       {
         name: "Music Director",
-        // image:  require("../../images/music_director.png"),
+        image:  require("../../assets/musicDirector.jpg"),
         curriculum: {
           title: "Music Direction",
           chapters: [
@@ -966,7 +966,7 @@ export const skills = [
       },
       {
         name: "Comedian",
-        // image:  require("../../images/comedian.png"),
+        image:  require("../../assets/comedy.jpg"),
         curriculum: {
           title: "Comedy",
           chapters: [
@@ -1027,7 +1027,7 @@ export const skills = [
     skills: [
       {
         name: "Cricket",
-        // image:  require("../../images/cricket.png"),
+        image:  require("../../assets/cricketer.jpg"),
         curriculum: {
           title: "Cricket",
           chapters: [
@@ -1112,7 +1112,7 @@ export const skills = [
       },
       {
         name: "Javelin Throw",
-        // image:  require("../../images/javelin_throw.png"),
+        image:  require("../../assets/javeline.jpg"),
         curriculum: {
           title: "Javelin Throw",
           chapters: [
@@ -1205,7 +1205,7 @@ export const skills = [
     skills: [
       {
         name: "Fashion Designer",
-        // image:  require("../../images/fashion_designer.png"),
+        image:  require("../../assets/fashionDesigner.jpg"),
         curriculum: {
           title: "Fashion Designing",
           chapters: [
@@ -1298,8 +1298,76 @@ export const skills = [
         },
       },
       {
+        name: "Makeup",
+        image:  require("../../assets/makeupArtist.jpg"),
+        curriculum: {
+          title: "Makeup",
+          chapters: [
+            {
+              title: "Introduction to Beauty and Makeup",
+              topics: [
+                {
+                  chapter: "History of Makeup",
+                  desc: "The history of makeup and beauty.",
+                },
+                {
+                  chapter: "Basic Makeup Techniques",
+                  desc: "Basic makeup application techniques.",
+                },
+                { chapter: "Skin Care Basics", desc: "Basics of skin care." },
+              ],
+            },
+            {
+              title: "Makeup Application",
+              topics: [
+                {
+                  chapter: "Foundation and Concealer",
+                  desc: "Applying foundation and concealer.",
+                },
+                { chapter: "Eye Makeup", desc: "Techniques for eye makeup." },
+                {
+                  chapter: "Lips and Cheeks",
+                  desc: "Techniques for lips and cheeks.",
+                },
+              ],
+            },
+            {
+              title: "Specialized Makeup",
+              topics: [
+                { chapter: "Bridal Makeup", desc: "Techniques for bridal makeup." },
+                {
+                  chapter: "Editorial Makeup",
+                  desc: "Makeup for editorial shoots.",
+                },
+                {
+                  chapter: "Special Effects Makeup",
+                  desc: "Basics of special effects makeup.",
+                },
+              ],
+            },
+            {
+              title: "Beauty Business",
+              topics: [
+                {
+                  chapter: "Building a Portfolio",
+                  desc: "Creating a professional portfolio.",
+                },
+                {
+                  chapter: "Marketing Yourself",
+                  desc: "Marketing yourself as a makeup artist.",
+                },
+                {
+                  chapter: "Client Management",
+                  desc: "Managing client relationships.",
+                },
+              ],
+            },
+          ],
+        },
+      },
+      {
         name: "Interior Design",
-        // image:  require("../../images/interior_design.png"),
+        image:  require("../../assets/interiorDesign.jpg"),
         curriculum: {
           title: "Interior Design",
           chapters: [
@@ -1365,74 +1433,6 @@ export const skills = [
           ],
         },
       },
-      {
-        name: "Beauty and Makeup",
-        // image:  require("../../images/beauty_and_makeup.png"),
-        curriculum: {
-          title: "Beauty and Makeup",
-          chapters: [
-            {
-              title: "Introduction to Beauty and Makeup",
-              topics: [
-                {
-                  chapter: "History of Makeup",
-                  desc: "The history of makeup and beauty.",
-                },
-                {
-                  chapter: "Basic Makeup Techniques",
-                  desc: "Basic makeup application techniques.",
-                },
-                { chapter: "Skin Care Basics", desc: "Basics of skin care." },
-              ],
-            },
-            {
-              title: "Makeup Application",
-              topics: [
-                {
-                  chapter: "Foundation and Concealer",
-                  desc: "Applying foundation and concealer.",
-                },
-                { chapter: "Eye Makeup", desc: "Techniques for eye makeup." },
-                {
-                  chapter: "Lips and Cheeks",
-                  desc: "Techniques for lips and cheeks.",
-                },
-              ],
-            },
-            {
-              title: "Specialized Makeup",
-              topics: [
-                { chapter: "Bridal Makeup", desc: "Techniques for bridal makeup." },
-                {
-                  chapter: "Editorial Makeup",
-                  desc: "Makeup for editorial shoots.",
-                },
-                {
-                  chapter: "Special Effects Makeup",
-                  desc: "Basics of special effects makeup.",
-                },
-              ],
-            },
-            {
-              title: "Beauty Business",
-              topics: [
-                {
-                  chapter: "Building a Portfolio",
-                  desc: "Creating a professional portfolio.",
-                },
-                {
-                  chapter: "Marketing Yourself",
-                  desc: "Marketing yourself as a makeup artist.",
-                },
-                {
-                  chapter: "Client Management",
-                  desc: "Managing client relationships.",
-                },
-              ],
-            },
-          ],
-        },
-      },
     ],
   },
   {
@@ -1440,7 +1440,7 @@ export const skills = [
     skills: [
       {
         name: "Entrepreneurship",
-        // image:  require("../../images/entrepreneurship.png"),
+        image:  require("../../assets/entrepreneurship.jpg"),
         curriculum: {
           title: "Entrepreneurship",
           chapters: [
@@ -1530,10 +1530,10 @@ export const skills = [
         },
       },
       {
-        name: "Motivational Speaking",
-        // image:  require("../../images/motivational_speaking.png"),
+        name: "Motivational",
+        image:  require("../../assets/motivation.jpg"),
         curriculum: {
-          title: "Motivational Speaking",
+          title: "Motivational",
           chapters: [
             {
               title: "Introduction to Motivational Speaking",
@@ -1610,7 +1610,7 @@ export const skills = [
     skills: [
       {
         name: "Technology",
-        // image:  require("../../images/technology.png"),
+        image:  require("../../assets/technology.jpg"),
         curriculum: {
           title: "Technology",
           chapters: [
@@ -1698,7 +1698,7 @@ export const skills = [
       },
       {
         name: "Engineer",
-        // image:  require("../../images/engineer.png"),
+        image:  require("../../assets/engineer.jpg"),
         curriculum: {
           title: "Engineering",
           chapters: [
@@ -1780,7 +1780,7 @@ export const skills = [
       },
       {
         name: "Scientist",
-        // image:  require("../../images/scientist.png"),
+        image:  require("../../assets/scientist.jpg"),
         curriculum: {
           title: "Scientific Research",
           chapters: [
@@ -1854,7 +1854,7 @@ export const skills = [
       },
       {
         name: "Web Development",
-        // image:  require("../../images/web_development.png"),
+        image:  require("../../assets/coder.png"),
         curriculum: {
           title: "Web Development",
           chapters: [
@@ -1932,7 +1932,7 @@ export const skills = [
     skills: [
       {
         name: "Cooking",
-        // image:  require("../../images/cooking.png"),
+        image:  require("../../assets/cooker.jpg"),
         curriculum: {
           title: "Cooking",
           chapters: [
@@ -2016,7 +2016,7 @@ export const skills = [
     skills: [
       {
         name: "Leadership",
-        // image:  require("../../images/leadership.png"),
+        image:  require("../../assets/leadership.jpg"),
         curriculum: {
           title: "Leadership",
           chapters: [
@@ -2109,8 +2109,8 @@ export const skills = [
         },
       },
       {
-        name: "Indian Army Officer",
-        // image:  require("../../images/army_officer.png"),
+        name: "Army",
+        image:  require("../../assets/army.jpg"),
         curriculum: {
           title: "Military Training",
           chapters: [
@@ -2173,8 +2173,8 @@ export const skills = [
     category: "Media and Communication",
     skills: [
       {
-        name: "Digital Content Creation",
-        // image:  require("../../images/content_creation.png"),
+        name: "Content Creation",
+        image:  require("../../assets/youtuber.jpg"),
         curriculum: {
           title: "Digital Content Creation",
           chapters: [
@@ -2245,7 +2245,7 @@ export const skills = [
       },
       {
         name: "Journalism",
-        // image:  require("../../images/journalism.png"),
+        image:  require("../../assets/journalism.jpg"),
         curriculum: {
           title: "Journalism",
           chapters: [
@@ -2316,7 +2316,7 @@ export const skills = [
       },
       {
         name: "Writer",
-        // image:  require("../../images/writer.png"),
+        image:  require("../../assets/writer.jpg"),
         curriculum: {
           title: "Writing",
           chapters: [
@@ -2380,7 +2380,7 @@ export const skills = [
     skills: [  
       {
       name: "Doctor",
-      // image:  require("../../images/doctor.png"),
+      image:  require("../../assets/doctor.jpg"),
       curriculum: {
         title: "Medicine",
         chapters: [
@@ -2459,7 +2459,7 @@ export const skills = [
     },
     {
       name: "Ayurveda",
-      // image:  require("../../images/ayurveda.png"),
+      image:  require("../../assets/yoga.jpg"),
       curriculum: {
         title: "Ayurveda",
         chapters: [
@@ -2530,7 +2530,7 @@ export const skills = [
     },
     {
       name: "Fitness Training",
-      // image:  require("../../images/fitness_training.png"),
+      image:  require("../../assets/fitness.jpg"),
       curriculum: {
         title: "Fitness Training",
         chapters: [
@@ -2606,7 +2606,7 @@ export const skills = [
     skills: [
       {
         name: "Photography",
-        // image:  require("../../images/photography.png"),
+        image:  require("../../assets/photographer.jpg"),
         curriculum: {
           title: "Photography",
           chapters: [
