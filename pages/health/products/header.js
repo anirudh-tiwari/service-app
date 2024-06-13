@@ -1,23 +1,28 @@
-import { View, Text, StyleSheet, Dimensions } from "react-native";
+import { View, Text, StyleSheet, Dimensions, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
 const screenWidth = Dimensions.get("window").width;
 const cardWidth = (screenWidth - 32) / 2;
+import { useNavigation } from "@react-navigation/native";
 
-const Header = ({title}) => {
+const Header = ({ title }) => {
+  navigation = useNavigation();
+
   return (
     <View style={styles.wrapper}>
       <View style={{ position: "relative", paddingHorizontal: 12 }}>
         <View style={styles.container1}>
           <View style={{ flexDirection: "row", alignItems: "center", gap: 12 }}>
-            <Ionicons
-              name="arrow-back-outline"
-              size={24}
-              color="white"
-              style={styles.icon}
-            />
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <Ionicons
+                name="arrow-back-outline"
+                size={24}
+                color="white"
+                style={styles.icon}
+              />
+            </TouchableOpacity>
             <Text style={{ fontWeight: "600", fontSize: 18, color: "white" }}>
-              { title }
+              {title}
             </Text>
           </View>
           <View style={{ flexDirection: "row", gap: 14 }}>
@@ -54,7 +59,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     // height: 44,
-    height: 54
+    height: 54,
   },
   icon: {
     alignSelf: "center",
