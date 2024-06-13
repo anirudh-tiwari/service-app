@@ -125,8 +125,8 @@ const styles = StyleSheet.create({
   },
   cardTitle: {
     fontSize: 16,
-    fontWeight: "900",
-    color: "#000", // Black text color
+    fontWeight: "700",
+    color: "#E1D9A9",
   },
 });
 

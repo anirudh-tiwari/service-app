@@ -633,19 +633,27 @@ export const curriculum = {
 
 // utils.js
 export const skills = [
-  // {
-  //   category: "School",
-  //   skills: [
-  //     {
-  //       name: "School",
-  //       // image:  require("../../assets/acting.png"),
-  //       curriculum: {
-  //         title: "School",
-  //         chapters: [],
-  //       },
-  //     },
-  //   ]
-  // },
+  {
+    category: "Education",
+    skills: [
+      {
+        name: "School",
+        image:  require("../../assets/school.png"),
+        curriculum: {
+          title: "School",
+          chapters: [],
+        },
+      },
+      {
+        name: "Podcast",
+        image:  require("../../assets/college.png"),
+        curriculum: {
+          title: "School",
+          chapters: [],
+        },
+      },
+    ]
+  },
   {
     category: "Performing Arts",
     skills: [
